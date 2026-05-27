@@ -1,4 +1,5 @@
 import pandas as pd
+import joblib
 
 from sklearn.model_selection import train_test_split
 
@@ -80,6 +81,14 @@ def train_model():
     )
 
     model.fit(X_train, y_train)
+
+    # =========================
+    # GUARDAR MODELO
+    # =========================
+
+    joblib.dump(model, 'ml/risk_model.pkl')
+
+    print("\nModelo guardado correctamente")
 
     # =========================
     # PREDICCIONES
