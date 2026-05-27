@@ -1,4 +1,4 @@
-````md
+
 # 🏥 Healthcare ETL & AI Platform
 
 Full Stack Healthcare Analytics Platform built with:
@@ -487,4 +487,3 @@ Sara Cervantes
 # 📄 License
 
 Educational & Portfolio Project
-````
