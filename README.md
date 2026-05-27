@@ -1,367 +1,187 @@
-# README — Healthcare ETL Platform
+````md
+# 🏥 Healthcare ETL & AI Platform
 
-## 📌 Descripción del Proyecto
+Full Stack Healthcare Analytics Platform built with:
 
-Healthcare ETL Platform es una plataforma clínica desarrollada con:
-
-* Django REST Framework
-* PostgreSQL
-* React
-* Pandas
-* Machine Learning (Random Forest)
-
-El sistema permite:
-
-✅ Procesar datasets clínicos
-✅ Limpiar y transformar datos médicos
-✅ Cargar información a PostgreSQL
-✅ Exponer APIs REST
-✅ Entrenar modelos de IA médica
-✅ Visualizar estadísticas clínicas en un dashboard
+- Django REST Framework
+- React
+- PostgreSQL
+- Machine Learning
+- Random Forest
+- JWT Authentication
+- ETL Pipeline
 
 ---
 
-# 🏗 Arquitectura
+# 📌 Project Overview
 
-```text
-React Frontend
-       ↓
-Django REST API
-       ↓
-PostgreSQL
-       ↓
-ETL + Machine Learning
-```
+This project was developed as a complete healthcare analytics solution capable of:
 
----
-
-# 🚀 Tecnologías Utilizadas
-
-## Backend
-
-* Python
-* Django
-* Django REST Framework
-
-## Base de Datos
-
-* PostgreSQL
-
-## ETL y Ciencia de Datos
-
-* Pandas
-* NumPy
-
-## Machine Learning
-
-* Scikit-learn
-
-## Frontend
-
-* React
-* Axios
-* Chart.js
+- Processing clinical datasets
+- Cleaning and transforming healthcare data
+- Storing information in PostgreSQL
+- Exposing REST APIs
+- Visualizing KPIs and analytics
+- Predicting disease risk using Artificial Intelligence
+- Protecting endpoints with JWT authentication
 
 ---
 
-# ⚙ Requisitos Previos
-
-Instalar:
-
-## 1. Python
-
-[Python Oficial](https://www.python.org/downloads/?utm_source=chatgpt.com)
-
-⚠ IMPORTANTE:
-Durante la instalación marcar:
-
-```text
-Add Python to PATH
-```
-
----
-
-## 2. Visual Studio Code
-
-[Visual Studio Code](https://code.visualstudio.com/?utm_source=chatgpt.com)
-
----
-
-## 3. Git
-
-[Git Oficial](https://git-scm.com/downloads?utm_source=chatgpt.com)
-
----
-
-## 4. PostgreSQL
-
-[PostgreSQL Oficial](https://www.postgresql.org/download/?utm_source=chatgpt.com)
-
-Guardar:
-
-* usuario
-* contraseña
-* puerto
-
----
-
-# 📥 Clonar Proyecto
-
-```bash
-git clone https://github.com/cervantessaralucia4-dotcom/pipeline-reto.git
-```
-
-Entrar al proyecto:
-
-```bash
-cd pipeline-reto
-```
-
----
-
-# 🐍 Configuración Backend
-
-# 1. Crear entorno virtual
-
-```bash
-python -m venv venv
-```
-
----
-
-# 2. Activar entorno virtual
-
-## Windows
-
-```bash
-venv\Scripts\activate
-```
-
----
-
-# 3. Instalar dependencias
-
-```bash
-pip install -r requirements.txt
-```
-
----
-
-# 📦 Librerías Principales
-
-El proyecto utiliza:
-
-* Django
-* djangorestframework
-* pandas
-* numpy
-* scikit-learn
-* psycopg2-binary
-* python-dotenv
-* matplotlib
-* openpyxl
-
----
-
-# 🗄 Configurar Base de Datos
-
-Verificar configuración en:
-
-```text
-backend/settings.py
-```
-
-Ejemplo PostgreSQL:
-
-```python
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'healthcare_db',
-        'USER': 'postgres',
-        'PASSWORD': 'tu_password',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
-}
-```
-
----
-
-# 🔥 Migraciones
-
-Crear tablas:
-
-```bash
-python manage.py makemigrations
-```
-
-Aplicar migraciones:
-
-```bash
-python manage.py migrate
-```
-
----
-
-# 👤 Crear Superusuario
-
-```bash
-python manage.py createsuperuser
-```
-
----
-
-# ▶ Ejecutar Backend
-
-```bash
-python manage.py runserver
-```
-
-Backend disponible en:
-
-```text
-http://127.0.0.1:8000
-```
-
----
-
-# ⚛ Configuración Frontend
-
-Entrar al frontend:
-
-```bash
-cd frontend
-```
-
----
-
-# Instalar dependencias React
-
-```bash
-npm install
-```
-
-Instalar librerías adicionales:
-
-```bash
-npm install axios
-```
-
-```bash
-npm install chart.js react-chartjs-2
-```
-
----
-
-# ▶ Ejecutar Frontend
-
-```bash
-npm start
-```
-
-Frontend disponible en:
-
-```text
-http://localhost:3000
-```
-
----
-
-# 🔄 ETL (Extract Transform Load)
-
-## Ejecutar limpieza de datos
-
-```bash
-python etl/etl_process.py
-```
-
-Esto:
-
-✅ limpia nulos
-✅ elimina duplicados
-✅ corrige diagnósticos
-✅ recalcula IMC
-✅ genera CSV limpio
-
----
-
-# 📥 Cargar pacientes
-
-```bash
-python manage.py load_patients
-```
+# 🚀 Main Features
+
+## ✅ ETL Pipeline
+
+Implemented complete ETL processing:
+
+### Extraction
+- Excel dataset loading
+- CSV generation
+
+### Transformation
+- Duplicate removal
+- Null handling
+- Text normalization
+- Feature engineering
+- Risk calculation
+- Data standardization
+
+### Load
+- PostgreSQL integration
+- Clean dataset export
 
 ---
 
 # 🤖 Machine Learning
 
-Entrenar modelo:
+Random Forest model implemented for disease risk prediction.
+
+## Clinical Variables Used
+
+- Edad
+- IMC
+- Glucosa
+- Colesterol
+- Presión sistólica
+- Frecuencia cardíaca
+
+## Predictions
+
+The AI predicts:
+
+- Bajo
+- Medio
+- Alto
+- Crítico
+
+## Metrics Implemented
+
+- Accuracy
+- Precision
+- Recall
+- F1 Score
+- Confusion Matrix
+
+---
+
+# 🔐 JWT Authentication
+
+Authentication implemented using:
 
 ```bash
-python ml/train_model.py
+djangorestframework-simplejwt
 ```
 
-Métricas generadas:
+Features:
 
-* Accuracy
-* Precision
-* Recall
-* F1 Score
-* Confusion Matrix
+- Login endpoint
+- JWT tokens
+- Protected routes
+- Session management
+- Role-ready architecture
 
 ---
 
-# 🔗 API REST
+# 📊 Dashboard & Analytics
 
-Endpoint principal:
+React dashboard includes:
+
+- KPIs
+- Patient analytics
+- AI prediction form
+- Charts
+- Risk distribution
+- Critical alerts
+- Protected dashboard
+- JWT authentication
+
+---
+
+# 🧠 AI Prediction System
+
+The platform includes real-time AI predictions using a trained Random Forest model.
+
+## AI Workflow
 
 ```text
-http://127.0.0.1:8000/api/patients/
+User Input → React → Django API → ML Model → Prediction
 ```
 
 ---
 
-# 📊 Dashboard
+# 🛠️ Technologies
 
-Frontend React consume APIs Django y muestra:
+## Backend
 
-✅ estadísticas clínicas
-✅ pacientes críticos
-✅ KPIs médicos
-✅ gráficas clínicas
+- Python
+- Django
+- Django REST Framework
+- PostgreSQL
+
+## Frontend
+
+- React
+- Axios
+- Chart.js
+
+## Data Engineering & AI
+
+- Pandas
+- NumPy
+- Scikit-learn
+- Joblib
+
+## Security
+
+- JWT Authentication
 
 ---
 
-# 🧠 Modelo Machine Learning
+# 🗄️ Database
 
-Se utiliza:
+Database engine:
 
 ```text
-Random Forest Classifier
+PostgreSQL
 ```
 
-Variables utilizadas:
+Main table:
 
-* edad
-* IMC
-* glucosa
-* colesterol
-* presión sistólica
-* frecuencia cardíaca
+```text
+Patients
+```
 
 ---
 
-# 📁 Estructura del Proyecto
+# 📂 Project Structure
 
-```text
+```bash
 pipeline-reto/
 │
 ├── backend/
+├── frontend/
 ├── patients/
 ├── etl/
 ├── ml/
-├── frontend/
 ├── datasets/
 ├── manage.py
 ├── requirements.txt
@@ -370,33 +190,104 @@ pipeline-reto/
 
 ---
 
-# 📌 Comandos Importantes
+# ⚙️ Environment Setup
 
-## Activar entorno
+## 1️⃣ Clone Repository
+
+```bash
+git clone https://github.com/cervantessaralucia4-dotcom/pipeline-reto.git
+```
+
+---
+
+## 2️⃣ Enter Project
+
+```bash
+cd pipeline-reto
+```
+
+---
+
+## 3️⃣ Create Virtual Environment
+
+```bash
+python -m venv venv
+```
+
+---
+
+## 4️⃣ Activate Environment
+
+### Windows
 
 ```bash
 venv\Scripts\activate
 ```
 
----
-
-## Backend
+### Mac/Linux
 
 ```bash
-python manage.py runserver
+source venv/bin/activate
 ```
 
 ---
 
-## Frontend
+# 📦 Install Dependencies
+
+## Install all requirements
 
 ```bash
-npm start
+pip install -r requirements.txt
+```
+
+## Main Libraries
+
+```bash
+pip install django
+pip install djangorestframework
+pip install psycopg2-binary
+pip install pandas
+pip install numpy
+pip install scikit-learn
+pip install joblib
+pip install python-dotenv
+pip install djangorestframework-simplejwt
 ```
 
 ---
 
-## Migraciones
+# 🗄️ PostgreSQL Configuration
+
+## Create database
+
+```sql
+CREATE DATABASE healthcare_db;
+```
+
+---
+
+## Update backend/settings.py
+
+Configure:
+
+```python
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'healthcare_db',
+        'USER': 'postgres',
+        'PASSWORD': 'your_password',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
+```
+
+---
+
+# ▶️ Run Backend
+
+## Apply migrations
 
 ```bash
 python manage.py migrate
@@ -404,34 +295,196 @@ python manage.py migrate
 
 ---
 
-## ETL
+## Create admin user
+
+```bash
+python manage.py createsuperuser
+```
+
+---
+
+## Run Django server
+
+```bash
+python manage.py runserver
+```
+
+Backend:
+
+```text
+http://127.0.0.1:8000/
+```
+
+---
+
+# ▶️ Run Frontend
+
+```bash
+cd frontend
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run React:
+
+```bash
+npm start
+```
+
+Frontend:
+
+```text
+http://localhost:3000/
+```
+
+---
+
+# 🔄 ETL Execution
+
+Run ETL pipeline:
 
 ```bash
 python etl/etl_process.py
 ```
 
+Features:
+
+- Cleans dataset
+- Removes duplicates
+- Handles null values
+- Generates clean dataset
+
 ---
 
-## ML
+# 🤖 Train Machine Learning Model
 
 ```bash
 python ml/train_model.py
 ```
 
----
+Generated model:
 
-# ✅ Estado del Proyecto
-
-* [x] Backend Django
-* [x] PostgreSQL
-* [x] APIs REST
-* [x] ETL clínico
-* [x] Machine Learning
-* [ ] Dashboard avanzado
-* [ ] Deployment
+```text
+ml/risk_model.pkl
+```
 
 ---
 
-# 👨‍💻 Autor
+# 🔥 API Endpoints
+
+## Authentication
+
+| Endpoint | Method | Description |
+|---|---|---|
+| /api/token/ | POST | JWT Login |
+| /api/token/refresh/ | POST | Refresh Token |
+
+---
+
+## Patients
+
+| Endpoint | Method | Description |
+|---|---|---|
+| /api/patients/ | GET | List patients |
+| /api/patients/ | POST | Create patient |
+
+---
+
+## AI Prediction
+
+| Endpoint | Method | Description |
+|---|---|---|
+| /api/predict/ | POST | Predict disease risk |
+
+---
+
+## Dashboard APIs
+
+| Endpoint | Method | Description |
+|---|---|---|
+| /api/dashboard/kpis/ | GET | Dashboard KPIs |
+| /api/dashboard/charts/ | GET | Charts data |
+
+---
+
+## Reports
+
+| Endpoint | Method | Description |
+|---|---|---|
+| /api/reportes/ | GET | Analytics reports |
+
+---
+
+## ETL
+
+| Endpoint | Method | Description |
+|---|---|---|
+| /api/etl/run/ | POST | Execute ETL |
+
+---
+
+# 🔐 Protected APIs
+
+Protected endpoints require:
+
+```bash
+Authorization: Bearer TOKEN
+```
+
+---
+
+# 📈 KPIs Implemented
+
+- Total patients
+- Critical patients
+- High risk patients
+- Average glucose
+- Average BMI
+- Risk distribution
+
+---
+
+# 🔥 Current Project Status
+
+## ✅ Completed
+
+- ETL Pipeline
+- PostgreSQL Integration
+- Django REST APIs
+- React Dashboard
+- Machine Learning
+- Random Forest
+- JWT Authentication
+- Protected Routes
+- AI Prediction
+- Analytics APIs
+- Reports APIs
+- ETL API
+
+---
+
+# 🚀 Future Improvements
+
+- Docker
+- Deployment
+- Role permissions
+- Advanced analytics
+- Real-time monitoring
+- CI/CD pipelines
+
+---
+
+# 👨‍💻 Author
 
 Sara Cervantes
+
+---
+
+# 📄 License
+
+Educational & Portfolio Project
+````
