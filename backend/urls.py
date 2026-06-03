@@ -7,13 +7,13 @@ from rest_framework_simplejwt.views import (
 )
 
 urlpatterns = [
-
+    # Admin
     path('admin/', admin.site.urls),
 
+    # Patients API
     path('api/', include('patients.urls')),
 
-    # JWT
-
+    # JWT Authentication
     path(
         'api/token/',
         TokenObtainPairView.as_view(),

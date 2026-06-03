@@ -1,5 +1,4 @@
 from django.urls import path, include
-
 from rest_framework.routers import DefaultRouter
 
 from .views import (
@@ -8,26 +7,27 @@ from .views import (
     dashboard_kpis,
     dashboard_charts,
     reports_view,
-    run_etl
+    run_etl,
 )
 
 router = DefaultRouter()
-
 router.register(
     r'patients',
-    PatientViewSet
+    PatientViewSet,
+    basename='patients'
 )
 
 urlpatterns = [
-
     path('', include(router.urls)),
 
+    # IA
     path(
         'predict/',
         predict_view,
         name='predict'
     ),
 
+    # Dashboard
     path(
         'dashboard/kpis/',
         dashboard_kpis,
@@ -40,12 +40,14 @@ urlpatterns = [
         name='dashboard-charts'
     ),
 
+    # Reportes
     path(
         'reportes/',
         reports_view,
         name='reportes'
     ),
 
+    # ETL
     path(
         'etl/run/',
         run_etl,

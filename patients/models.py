@@ -71,7 +71,9 @@ class Patient(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def calculate_bmi(self):
-        return round(self.weight / (self.height ** 2), 2)
+        if self.height and self.height > 0:
+            return round(self.weight / (self.height ** 2), 2)
+        return 0
 
     def save(self, *args, **kwargs):
         self.bmi = self.calculate_bmi()

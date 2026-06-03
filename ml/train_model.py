@@ -60,6 +60,11 @@ def train_model():
 
     y_encoded = encoder.fit_transform(y)
 
+    joblib.dump(
+    encoder,
+    'ml/label_encoder.pkl'
+)
+
     # =========================
     # TRAIN TEST SPLIT
     # =========================

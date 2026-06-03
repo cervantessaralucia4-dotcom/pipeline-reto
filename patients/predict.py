@@ -1,15 +1,17 @@
+import os
 import joblib
 import pandas as pd
 
-# =========================
-# CARGAR MODELO
-# =========================
 
-model = joblib.load('ml/risk_model.pkl')
+MODEL_PATH = os.path.join(
+    os.path.dirname(__file__),
+    '..',
+    'ml',
+    'risk_model.pkl'
+)
 
-# =========================
-# PREDICCIÓN
-# =========================
+model = joblib.load(MODEL_PATH)
+
 
 def predict_risk(data):
 
@@ -31,4 +33,4 @@ def predict_risk(data):
         3: 'Medio'
     }
 
-    return labels[prediction[0]]
+    return labels.get(prediction[0], 'Desconocido')

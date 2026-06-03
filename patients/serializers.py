@@ -11,29 +11,44 @@ class PatientSerializer(serializers.ModelSerializer):
 
     peso = serializers.FloatField(source='weight')
     altura = serializers.FloatField(source='height')
-    IMC = serializers.FloatField(source='bmi')
+    imc = serializers.FloatField(source='bmi', read_only=True)
 
-    presión_sistólica = serializers.IntegerField(source='systolic_pressure')
-    presión_diastólica = serializers.IntegerField(source='diastolic_pressure')
+    presion_sistolica = serializers.IntegerField(
+        source='systolic_pressure'
+    )
 
-    frecuencia_cardiaca = serializers.IntegerField(source='heart_rate')
+    presion_diastolica = serializers.IntegerField(
+        source='diastolic_pressure'
+    )
+
+    frecuencia_cardiaca = serializers.IntegerField(
+        source='heart_rate'
+    )
 
     glucosa = serializers.FloatField(source='glucose')
     colesterol = serializers.FloatField(source='cholesterol')
 
-    saturación_oxígeno = serializers.FloatField(source='oxygen_saturation')
+    saturacion_oxigeno = serializers.FloatField(
+        source='oxygen_saturation'
+    )
 
     temperatura = serializers.FloatField(source='temperature')
 
-    antecedentes_familiares = serializers.BooleanField(source='family_history')
+    antecedentes_familiares = serializers.BooleanField(
+        source='family_history'
+    )
 
     fumador = serializers.BooleanField(source='smoker')
 
-    consumo_alcohol = serializers.BooleanField(source='alcohol_consumption')
+    consumo_alcohol = serializers.BooleanField(
+        source='alcohol_consumption'
+    )
 
-    actividad_física = serializers.CharField(source='physical_activity')
+    actividad_fisica = serializers.CharField(
+        source='physical_activity'
+    )
 
-    diagnóstico_preliminar = serializers.CharField(
+    diagnostico_preliminar = serializers.CharField(
         source='preliminary_diagnosis'
     )
 
@@ -56,19 +71,19 @@ class PatientSerializer(serializers.ModelSerializer):
             'sexo',
             'peso',
             'altura',
-            'IMC',
-            'presión_sistólica',
-            'presión_diastólica',
+            'imc',
+            'presion_sistolica',
+            'presion_diastolica',
             'frecuencia_cardiaca',
             'glucosa',
             'colesterol',
-            'saturación_oxígeno',
+            'saturacion_oxigeno',
             'temperatura',
             'antecedentes_familiares',
             'fumador',
             'consumo_alcohol',
-            'actividad_física',
-            'diagnóstico_preliminar',
+            'actividad_fisica',
+            'diagnostico_preliminar',
             'riesgo_calculado',
-            'fecha_consulta'
+            'fecha_consulta',
         ]
