@@ -12,12 +12,20 @@ from .serializers import PatientSerializer
 from .predict import predict_risk
 
 
+# ==================================
+# PACIENTES CRUD
+# ==================================
+
 class PatientViewSet(viewsets.ModelViewSet):
 
     queryset = Patient.objects.all()
     serializer_class = PatientSerializer
     permission_classes = [IsAuthenticated]
 
+
+# ==================================
+# MACHINE LEARNING PREDICTION
+# ==================================
 
 @api_view(['POST'])
 def predict_view(request):
@@ -28,6 +36,10 @@ def predict_view(request):
         'prediction': prediction
     })
 
+
+# ==================================
+# DASHBOARD KPIs
+# ==================================
 
 @api_view(['GET'])
 def dashboard_kpis(request):
@@ -61,15 +73,31 @@ def dashboard_kpis(request):
     return Response({
 
         'total_patients': total_patients,
+
         'critical_patients': critical_patients,
+
         'high_risk': high_risk,
+
         'medium_risk': medium_risk,
+
         'low_risk': low_risk,
-        'average_glucose': round(average_glucose, 2),
-        'average_bmi': round(average_bmi, 2)
+
+        'average_glucose': round(
+            average_glucose,
+            2
+        ),
+
+        'average_bmi': round(
+            average_bmi,
+            2
+        )
 
     })
 
+
+# ==================================
+# CHARTS DATA
+# ==================================
 
 @api_view(['GET'])
 def dashboard_charts(request):
@@ -91,12 +119,33 @@ def dashboard_charts(request):
         'Bajo': Patient.objects.filter(
             disease_risk='Bajo'
         ).count(),
+
+    }
+
+    gender_distribution = {
+
+        'Masculino': Patient.objects.filter(
+            sex='M'
+        ).count(),
+
+        'Femenino': Patient.objects.filter(
+            sex='F'
+        ).count(),
+
     }
 
     return Response({
-        'risk_distribution': risk_distribution
+
+        'risk_distribution': risk_distribution,
+
+        'gender_distribution': gender_distribution
+
     })
 
+
+# ==================================
+# REPORTS API
+# ==================================
 
 @api_view(['GET'])
 def reports_view(request):
@@ -132,18 +181,33 @@ def reports_view(request):
         'Bajo': Patient.objects.filter(
             disease_risk='Bajo'
         ).count(),
+
     }
 
     return Response({
 
         'total_patients': total_patients,
+
         'critical_patients': critical_patients,
-        'average_glucose': round(average_glucose, 2),
-        'average_bmi': round(average_bmi, 2),
+
+        'average_glucose': round(
+            average_glucose,
+            2
+        ),
+
+        'average_bmi': round(
+            average_bmi,
+            2
+        ),
+
         'risk_distribution': risk_distribution
 
     })
 
+
+# ==================================
+# ETL EXECUTION
+# ==================================
 
 @api_view(['POST'])
 def run_etl(request):
@@ -156,11 +220,15 @@ def run_etl(request):
         )
 
         return Response({
+
             'message': 'ETL ejecutado correctamente'
+
         })
 
     except Exception as e:
 
         return Response({
+
             'error': str(e)
+
         })
