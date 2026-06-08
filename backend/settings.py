@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'corsheaders',
+    'drf_spectacular',       # Swagger / OpenAPI
 
     # Apps locales
     'authentication',
@@ -112,12 +113,41 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAuthenticated',
     ),
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
 
 # ── JWT ───────────────────────────────────────────────────────
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME':  timedelta(hours=1),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+}
+
+# ── Swagger / OpenAPI ─────────────────────────────────────────
+SPECTACULAR_SETTINGS = {
+    'TITLE':       'HealthAnalytics IPS — API',
+    'DESCRIPTION': (
+        'Plataforma Inteligente de Analítica Clínica para Detección de Riesgo Médico. '
+        'Incluye ETL, analítica estadística, Machine Learning y gestión de pacientes. '
+        'Todos los endpoints requieren autenticación JWT — usa /api/token/ para obtener el token '
+        'y luego Authorize con el formato: Bearer <token>'
+    ),
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
+    'CONTACT': {
+        'name': 'Sara Lucía Cervantes',
+    },
+    'LICENSE': {'name': 'Proyecto Educativo SENA 2026'},
+    'TAGS': [
+        {'name': 'Autenticación',  'description': 'Login y tokens JWT'},
+        {'name': 'Pacientes',      'description': 'CRUD de pacientes clínicos'},
+        {'name': 'Dashboard',      'description': 'KPIs y datos para gráficas'},
+        {'name': 'ETL',            'description': 'Pipeline ETL e historial de ejecuciones'},
+        {'name': 'Analytics',      'description': 'Estadísticas descriptivas y segmentación'},
+        {'name': 'Machine Learning','description': 'Entrenamiento, métricas y predicción'},
+        {'name': 'Reportes',       'description': 'Reportes generales del sistema'},
+    ],
+    'COMPONENT_SPLIT_REQUEST': True,
+    'SORT_OPERATIONS': False,
 }
 
 # ── Clave primaria por defecto ────────────────────────────────

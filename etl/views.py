@@ -1,13 +1,6 @@
-# ═══════════════════════════════════════════════════════════════
-#  etl/views.py
-#  Endpoints:
-#    POST /api/etl/run/         — ejecuta el ETL
-#    GET  /api/etl/historial/   — lista todos los logs
-#    GET  /api/etl/historial/<id>/ — detalle de un log
-# ═══════════════════════════════════════════════════════════════
-import os
 from datetime import datetime, timezone
 
+from drf_spectacular.utils import extend_schema, OpenApiParameter, OpenApiExample
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
@@ -19,21 +12,28 @@ from .serializers import ETLLogSerializer
 from .etl_process import run_etl
 
 
-# ── POST /api/etl/run/ ────────────────────────────────────────
+@extend_schema(
+    tags=['ETL'],
+    summary='Ejecutar pipeline ETL completo',
+    description=(
+        'Ejecuta el pipeline ETL sobre el dataset clínico original. '
+        'Extrae el archivo Excel, elimina duplicados, trata nulos, '
+        'valida rangos clínicos, normaliza variables y carga los pacientes '
+        'limpios en la base de datos. Registra un log completo de la ejecución.'
+    ),
+    request={'application/json': {'type': 'object', 'properties': {
+        'archivo': {'type': 'string', 'example': 'datasets/dataset_clinico_etl_1800_registros.xlsx'}
+    }}},
+    responses={200: ETLLogSerializer},
+)
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def run_etl_view(request):
-    """
-    Ejecuta el pipeline ETL completo.
-    Acepta opcionalmente el campo 'archivo' en el body
-    para usar un path distinto al default.
-    """
     archivo = request.data.get(
         'archivo',
         'datasets/dataset_clinico_etl_1800_registros.xlsx'
     )
 
-    # Crear log inicial
     log = ETLLog.objects.create(
         usuario=request.user,
         estado='en_proceso',
@@ -43,10 +43,9 @@ def run_etl_view(request):
     try:
         stats = run_etl(file_path=archivo)
 
-        # Cargar pacientes limpios en la BD
         df = stats.get('df_limpio')
         if df is not None:
-            Patient.objects.all().delete()     # limpia antes de reinsertar
+            Patient.objects.all().delete()
             pacientes = []
             for _, row in df.iterrows():
                 try:
@@ -74,10 +73,8 @@ def run_etl_view(request):
                     ))
                 except Exception:
                     continue
-
             Patient.objects.bulk_create(pacientes, ignore_conflicts=True)
 
-        # Actualizar log con resultados
         log.fecha_fin             = datetime.now(timezone.utc)
         log.tiempo_ejecucion      = stats['tiempo_ejecucion']
         log.registros_extraidos   = stats['registros_extraidos']
@@ -90,49 +87,50 @@ def run_etl_view(request):
         log.save()
 
         return Response({
-            'estado':               'exitoso',
-            'log_id':               log.pk,
-            'registros_extraidos':  log.registros_extraidos,
-            'registros_duplicados': log.registros_duplicados,
-            'registros_nulos':      log.registros_nulos,
+            'estado':                'exitoso',
+            'log_id':                log.pk,
+            'registros_extraidos':   log.registros_extraidos,
+            'registros_duplicados':  log.registros_duplicados,
+            'registros_nulos':       log.registros_nulos,
             'registros_fuera_rango': log.registros_fuera_rango,
-            'registros_cargados':   log.registros_cargados,
-            'tiempo_ejecucion':     log.tiempo_ejecucion,
-            'mensaje':              log.mensaje,
+            'registros_cargados':    log.registros_cargados,
+            'tiempo_ejecucion':      log.tiempo_ejecucion,
+            'mensaje':               log.mensaje,
         }, status=status.HTTP_200_OK)
 
     except Exception as e:
-        log.estado  = 'fallido'
-        log.mensaje = str(e)
+        log.estado   = 'fallido'
+        log.mensaje  = str(e)
         log.fecha_fin = datetime.now(timezone.utc)
         log.save()
-
-        return Response({
-            'estado':  'fallido',
-            'log_id':  log.pk,
-            'mensaje': str(e),
-        }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return Response({'estado': 'fallido', 'log_id': log.pk, 'mensaje': str(e)},
+                        status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
-# ── GET /api/etl/historial/ ───────────────────────────────────
+@extend_schema(
+    tags=['ETL'],
+    summary='Historial de ejecuciones ETL',
+    description='Retorna los últimos 50 registros de ejecuciones del pipeline ETL.',
+    responses={200: ETLLogSerializer(many=True)},
+)
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def etl_historial(request):
-    """Lista el historial de ejecuciones ETL."""
     logs = ETLLog.objects.all()[:50]
-    serializer = ETLLogSerializer(logs, many=True)
-    return Response(serializer.data)
+    return Response(ETLLogSerializer(logs, many=True).data)
 
 
-# ── GET /api/etl/historial/<id>/ ──────────────────────────────
+@extend_schema(
+    tags=['ETL'],
+    summary='Detalle de una ejecución ETL',
+    description='Retorna el detalle completo de un log ETL por su ID.',
+    responses={200: ETLLogSerializer},
+)
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def etl_detalle(request, pk):
-    """Detalle de un log ETL específico."""
     try:
         log = ETLLog.objects.get(pk=pk)
     except ETLLog.DoesNotExist:
         return Response({'error': 'Log no encontrado.'}, status=status.HTTP_404_NOT_FOUND)
-
-    serializer = ETLLogSerializer(log)
-    return Response(serializer.data)
+    return Response(ETLLogSerializer(log).data)
