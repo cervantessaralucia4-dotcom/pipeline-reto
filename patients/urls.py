@@ -1,12 +1,6 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views import (
-    PatientViewSet,
-    predict_view,
-    dashboard_kpis,
-    dashboard_charts,
-    reports_view,
-)
+from .views import PatientViewSet, predict_view, dashboard_kpis, dashboard_charts, reports_view
 
 router = DefaultRouter()
 router.register(r'patients', PatientViewSet, basename='patients')

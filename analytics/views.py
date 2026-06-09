@@ -1,9 +1,10 @@
 from drf_spectacular.utils import extend_schema
 from rest_framework.decorators import api_view, permission_classes
-from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from django.db.models import Avg, Max, Min, Count, StdDev
 import statistics
+
+from authentication.permissions import IsAnalista, IsMedicoOrAnalista
 from patients.models import Patient
 
 
@@ -11,13 +12,10 @@ def _lista(campo):
     return list(Patient.objects.exclude(**{f"{campo}__isnull": True}).values_list(campo, flat=True))
 
 
-@extend_schema(
-    tags=['Analytics'],
-    summary='Estadística descriptiva de variables clínicas',
-    description='Retorna media, mediana, moda, desviación estándar, mínimo y máximo de 9 variables clínicas.',
-)
+@extend_schema(tags=['Analytics'], summary='Estadística descriptiva',
+               description='Media, mediana, moda, desv. estándar de 9 variables. Acceso: Analista y Administrador.')
 @api_view(['GET'])
-@permission_classes([IsAuthenticated])
+@permission_classes([IsAnalista])
 def estadisticas_descriptivas(request):
     campos = {
         'glucosa': 'glucose', 'imc': 'bmi', 'edad': 'age',
@@ -36,33 +34,25 @@ def estadisticas_descriptivas(request):
         except statistics.StatisticsError:
             moda = None
         agg = Patient.objects.aggregate(
-            media=Avg(campo), maximo=Max(campo), minimo=Min(campo), desviacion=StdDev(campo),
-        )
+            media=Avg(campo), maximo=Max(campo), minimo=Min(campo), desviacion=StdDev(campo))
         resultado[nombre] = {
-            'media':              round(agg['media'] or 0, 2),
-            'mediana':            round(statistics.median(valores), 2),
-            'moda':               moda,
-            'desviacion_estandar':round(agg['desviacion'] or 0, 2),
-            'minimo':             round(agg['minimo'] or 0, 2),
-            'maximo':             round(agg['maximo'] or 0, 2),
-            'n':                  len(valores),
+            'media': round(agg['media'] or 0, 2), 'mediana': round(statistics.median(valores), 2),
+            'moda': moda, 'desviacion_estandar': round(agg['desviacion'] or 0, 2),
+            'minimo': round(agg['minimo'] or 0, 2), 'maximo': round(agg['maximo'] or 0, 2),
+            'n': len(valores),
         }
     return Response(resultado)
 
 
-@extend_schema(
-    tags=['Analytics'],
-    summary='KPIs médicos extendidos',
-    description='Hipertensos, diabéticos, fumadores, obesidad, saturación baja y promedios clínicos con porcentajes.',
-)
+@extend_schema(tags=['Analytics'], summary='KPIs médicos extendidos',
+               description='Hipertensos, diabéticos, fumadores, obesidad. Acceso: Médico, Analista y Administrador.')
 @api_view(['GET'])
-@permission_classes([IsAuthenticated])
+@permission_classes([IsMedicoOrAnalista])
 def kpis_medicos(request):
     total = Patient.objects.count()
     if total == 0:
         return Response({'error': 'No hay pacientes registrados.'})
-    def pct(n): return round((n / total) * 100, 1) if total else 0
-
+    def pct(n): return round((n / total) * 100, 1)
     hipertensos = Patient.objects.filter(systolic_pressure__gt=140).count()
     diabeticos  = Patient.objects.filter(glucose__gt=126).count()
     fumadores   = Patient.objects.filter(smoker=True).count()
@@ -75,31 +65,26 @@ def kpis_medicos(request):
         avg_colesterol=Avg('cholesterol'), avg_pres_sis=Avg('systolic_pressure'),
     )
     return Response({
-        'total_pacientes':   total,
-        'hipertensos':       {'cantidad': hipertensos,  'porcentaje': pct(hipertensos)},
-        'diabeticos':        {'cantidad': diabeticos,   'porcentaje': pct(diabeticos)},
-        'fumadores':         {'cantidad': fumadores,    'porcentaje': pct(fumadores)},
-        'con_antecedentes':  {'cantidad': con_antec,    'porcentaje': pct(con_antec)},
-        'alcoholismo':       {'cantidad': alcoholismo,  'porcentaje': pct(alcoholismo)},
-        'obesidad':          {'cantidad': obesidad,     'porcentaje': pct(obesidad)},
-        'saturacion_baja':   {'cantidad': sat_baja,     'porcentaje': pct(sat_baja)},
+        'total_pacientes': total,
+        'hipertensos':     {'cantidad': hipertensos, 'porcentaje': pct(hipertensos)},
+        'diabeticos':      {'cantidad': diabeticos,  'porcentaje': pct(diabeticos)},
+        'fumadores':       {'cantidad': fumadores,   'porcentaje': pct(fumadores)},
+        'con_antecedentes':{'cantidad': con_antec,   'porcentaje': pct(con_antec)},
+        'alcoholismo':     {'cantidad': alcoholismo, 'porcentaje': pct(alcoholismo)},
+        'obesidad':        {'cantidad': obesidad,    'porcentaje': pct(obesidad)},
+        'saturacion_baja': {'cantidad': sat_baja,    'porcentaje': pct(sat_baja)},
         'promedios': {
-            'glucosa':           round(agg['avg_gluc']       or 0, 2),
-            'imc':               round(agg['avg_bmi']        or 0, 2),
-            'edad':              round(agg['avg_edad']       or 0, 1),
-            'colesterol':        round(agg['avg_colesterol'] or 0, 2),
-            'presion_sistolica': round(agg['avg_pres_sis']   or 0, 1),
+            'glucosa': round(agg['avg_gluc'] or 0, 2), 'imc': round(agg['avg_bmi'] or 0, 2),
+            'edad': round(agg['avg_edad'] or 0, 1), 'colesterol': round(agg['avg_colesterol'] or 0, 2),
+            'presion_sistolica': round(agg['avg_pres_sis'] or 0, 1),
         },
     })
 
 
-@extend_schema(
-    tags=['Analytics'],
-    summary='Segmentación de pacientes',
-    description='Segmentación por riesgo, sexo, diagnóstico, grupo etario y clasificación IMC.',
-)
+@extend_schema(tags=['Analytics'], summary='Segmentación de pacientes',
+               description='Por riesgo, sexo, diagnóstico, edad e IMC. Acceso: Médico, Analista y Administrador.')
 @api_view(['GET'])
-@permission_classes([IsAuthenticated])
+@permission_classes([IsMedicoOrAnalista])
 def segmentacion(request):
     return Response({
         'por_riesgo':      list(Patient.objects.values('disease_risk').annotate(cantidad=Count('id')).order_by('-cantidad')),
@@ -122,13 +107,10 @@ def segmentacion(request):
     })
 
 
-@extend_schema(
-    tags=['Analytics'],
-    summary='Detección de pacientes críticos',
-    description='Detecta pacientes críticos por presión sistólica > 180, glucosa > 300 o saturación < 85.',
-)
+@extend_schema(tags=['Analytics'], summary='Detección de pacientes críticos',
+               description='Presión > 180, glucosa > 300, saturación < 85. Acceso: Médico, Analista y Administrador.')
 @api_view(['GET'])
-@permission_classes([IsAuthenticated])
+@permission_classes([IsMedicoOrAnalista])
 def pacientes_criticos(request):
     criticos = Patient.objects.filter(disease_risk='Crítico').values(
         'id','first_name','last_name','age','sex',

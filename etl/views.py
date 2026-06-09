@@ -1,11 +1,11 @@
 from datetime import datetime, timezone
-
-from drf_spectacular.utils import extend_schema, OpenApiParameter, OpenApiExample
+from drf_spectacular.utils import extend_schema
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework import status
 
+from authentication.permissions import IsAdministrador, IsAnalista, IsMedicoOrAnalista
 from patients.models import Patient
 from .models import ETLLog
 from .serializers import ETLLogSerializer
@@ -17,32 +17,19 @@ from .etl_process import run_etl
     summary='Ejecutar pipeline ETL completo',
     description=(
         'Ejecuta el pipeline ETL sobre el dataset clínico original. '
-        'Extrae el archivo Excel, elimina duplicados, trata nulos, '
-        'valida rangos clínicos, normaliza variables y carga los pacientes '
-        'limpios en la base de datos. Registra un log completo de la ejecución.'
+        'Extrae el Excel, elimina duplicados, trata nulos, valida rangos, '
+        'normaliza variables y carga pacientes limpios en BD. '
+        'Acceso: Analista y Administrador.'
     ),
-    request={'application/json': {'type': 'object', 'properties': {
-        'archivo': {'type': 'string', 'example': 'datasets/dataset_clinico_etl_1800_registros.xlsx'}
-    }}},
-    responses={200: ETLLogSerializer},
 )
 @api_view(['POST'])
-@permission_classes([IsAuthenticated])
+@permission_classes([IsAnalista])
 def run_etl_view(request):
-    archivo = request.data.get(
-        'archivo',
-        'datasets/dataset_clinico_etl_1800_registros.xlsx'
-    )
-
-    log = ETLLog.objects.create(
-        usuario=request.user,
-        estado='en_proceso',
-        archivo_fuente=archivo,
-    )
+    archivo = request.data.get('archivo', 'datasets/dataset_clinico_etl_1800_registros.xlsx')
+    log = ETLLog.objects.create(usuario=request.user, estado='en_proceso', archivo_fuente=archivo)
 
     try:
         stats = run_etl(file_path=archivo)
-
         df = stats.get('df_limpio')
         if df is not None:
             Patient.objects.all().delete()
@@ -87,8 +74,7 @@ def run_etl_view(request):
         log.save()
 
         return Response({
-            'estado':                'exitoso',
-            'log_id':                log.pk,
+            'estado': 'exitoso', 'log_id': log.pk,
             'registros_extraidos':   log.registros_extraidos,
             'registros_duplicados':  log.registros_duplicados,
             'registros_nulos':       log.registros_nulos,
@@ -96,38 +82,26 @@ def run_etl_view(request):
             'registros_cargados':    log.registros_cargados,
             'tiempo_ejecucion':      log.tiempo_ejecucion,
             'mensaje':               log.mensaje,
-        }, status=status.HTTP_200_OK)
-
+        })
     except Exception as e:
-        log.estado   = 'fallido'
-        log.mensaje  = str(e)
-        log.fecha_fin = datetime.now(timezone.utc)
-        log.save()
+        log.estado = 'fallido'; log.mensaje = str(e)
+        log.fecha_fin = datetime.now(timezone.utc); log.save()
         return Response({'estado': 'fallido', 'log_id': log.pk, 'mensaje': str(e)},
                         status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
-@extend_schema(
-    tags=['ETL'],
-    summary='Historial de ejecuciones ETL',
-    description='Retorna los últimos 50 registros de ejecuciones del pipeline ETL.',
-    responses={200: ETLLogSerializer(many=True)},
-)
+@extend_schema(tags=['ETL'], summary='Historial de ejecuciones ETL',
+               description='Acceso: Analista y Administrador.')
 @api_view(['GET'])
-@permission_classes([IsAuthenticated])
+@permission_classes([IsAnalista])
 def etl_historial(request):
     logs = ETLLog.objects.all()[:50]
     return Response(ETLLogSerializer(logs, many=True).data)
 
 
-@extend_schema(
-    tags=['ETL'],
-    summary='Detalle de una ejecución ETL',
-    description='Retorna el detalle completo de un log ETL por su ID.',
-    responses={200: ETLLogSerializer},
-)
+@extend_schema(tags=['ETL'], summary='Detalle de una ejecución ETL')
 @api_view(['GET'])
-@permission_classes([IsAuthenticated])
+@permission_classes([IsAnalista])
 def etl_detalle(request, pk):
     try:
         log = ETLLog.objects.get(pk=pk)
