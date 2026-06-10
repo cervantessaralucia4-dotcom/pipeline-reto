@@ -6,7 +6,7 @@ from rest_framework import viewsets
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
-from django.db.models import Avg
+from django.db.models import Avg, Count, Q
 
 from authentication.permissions import IsAdministrador, IsMedicoOrAnalista
 from .models import Patient
@@ -56,22 +56,24 @@ def predict_view(request):
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def dashboard_kpis(request):
-    total   = Patient.objects.count()
-    critico = Patient.objects.filter(disease_risk='Crítico').count()
-    alto    = Patient.objects.filter(disease_risk='Alto').count()
-    medio   = Patient.objects.filter(disease_risk='Medio').count()
-    bajo    = Patient.objects.filter(disease_risk='Bajo').count()
-    avg_gluc = Patient.objects.aggregate(Avg('glucose'))['glucose__avg'] or 0
-    avg_bmi  = Patient.objects.aggregate(Avg('bmi'))['bmi__avg'] or 0
+    kpis = Patient.objects.aggregate(
+        total=Count('id'),
+        critico=Count('id', filter=Q(disease_risk='Crítico')),
+        alto=Count('id', filter=Q(disease_risk='Alto')),
+        medio=Count('id', filter=Q(disease_risk='Medio')),
+        bajo=Count('id', filter=Q(disease_risk='Bajo')),
+        avg_gluc=Avg('glucose'),
+        avg_bmi=Avg('bmi')
+    )
 
     return Response({
-        'total_patients':    total,
-        'critical_patients': critico,
-        'high_risk':         alto,
-        'medium_risk':       medio,
-        'low_risk':          bajo,
-        'average_glucose':   round(avg_gluc, 2),
-        'average_bmi':       round(avg_bmi,  2),
+        'total_patients':    kpis['total'] or 0,
+        'critical_patients': kpis['critico'] or 0,
+        'high_risk':         kpis['alto'] or 0,
+        'medium_risk':       kpis['medio'] or 0,
+        'low_risk':          kpis['bajo'] or 0,
+        'average_glucose':   round(kpis['avg_gluc'] or 0, 2),
+        'average_bmi':       round(kpis['avg_bmi'] or 0, 2),
     })
 
 
@@ -84,16 +86,24 @@ def dashboard_kpis(request):
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def dashboard_charts(request):
+    dist = Patient.objects.aggregate(
+        critico=Count('id', filter=Q(disease_risk='Crítico')),
+        alto=Count('id', filter=Q(disease_risk='Alto')),
+        medio=Count('id', filter=Q(disease_risk='Medio')),
+        bajo=Count('id', filter=Q(disease_risk='Bajo')),
+        masc=Count('id', filter=Q(sex='M')),
+        fem=Count('id', filter=Q(sex='F'))
+    )
     return Response({
         'risk_distribution': {
-            'Crítico': Patient.objects.filter(disease_risk='Crítico').count(),
-            'Alto':    Patient.objects.filter(disease_risk='Alto').count(),
-            'Medio':   Patient.objects.filter(disease_risk='Medio').count(),
-            'Bajo':    Patient.objects.filter(disease_risk='Bajo').count(),
+            'Crítico': dist['critico'] or 0,
+            'Alto':    dist['alto'] or 0,
+            'Medio':   dist['medio'] or 0,
+            'Bajo':    dist['bajo'] or 0,
         },
         'gender_distribution': {
-            'Masculino': Patient.objects.filter(sex='M').count(),
-            'Femenino':  Patient.objects.filter(sex='F').count(),
+            'Masculino': dist['masc'] or 0,
+            'Femenino':  dist['fem'] or 0,
         },
     })
 

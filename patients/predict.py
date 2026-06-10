@@ -11,14 +11,15 @@ BASE_DIR     = os.path.dirname(os.path.abspath(__file__))
 MODEL_PATH   = os.path.join(BASE_DIR, '..', 'ml', 'risk_model.pkl')
 ENCODER_PATH = os.path.join(BASE_DIR, '..', 'ml', 'label_encoder.pkl')
 
-# Carga en módulo (una sola vez al iniciar el servidor)
-try:
-    _model   = joblib.load(MODEL_PATH)
-    _encoder = joblib.load(ENCODER_PATH)
-except Exception as e:
-    _model   = None
-    _encoder = None
-    print(f"[WARN] No se pudo cargar el modelo ML: {e}")
+# Carga dinámica del modelo ML para permitir reentrenamientos sin reiniciar el servidor
+def load_ml_model():
+    try:
+        model   = joblib.load(MODEL_PATH)
+        encoder = joblib.load(ENCODER_PATH)
+        return model, encoder
+    except Exception as e:
+        print(f"[WARN] No se pudo cargar el modelo ML: {e}")
+        return None, None
 
 
 def predict_risk(data: dict) -> dict:
@@ -26,6 +27,7 @@ def predict_risk(data: dict) -> dict:
     Recibe un dict con los campos del paciente y retorna
     la predicción de riesgo con la probabilidad por clase.
     """
+    _model, _encoder = load_ml_model()
     if _model is None or _encoder is None:
         return {'error': 'Modelo no disponible. Ejecuta el entrenamiento primero.'}
 

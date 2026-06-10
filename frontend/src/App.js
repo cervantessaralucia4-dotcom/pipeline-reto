@@ -853,14 +853,18 @@ function SectionReportes() {
     } catch {}
   };
 
+  const exportPDF = () => {
+    window.print();
+  };
+
   return (
     <>
       <div>
-        <p className="sec-label">Resumen ejecutivo</p>
+        <p className="sec-label no-print">Resumen ejecutivo</p>
         {loading ? (
           <div style={{color:"#4a607e"}}>Cargando reporte…</div>
         ) : (
-          <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(180px,1fr))",gap:10}}>
+          <div className="report-print-area" style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(180px,1fr))",gap:10}}>
             {[
               {label:"Total pacientes",    val:reporte?.total_patients,    color:"blue"},
               {label:"Pacientes críticos", val:reporte?.critical_patients, color:"red"},
@@ -876,7 +880,7 @@ function SectionReportes() {
         )}
       </div>
 
-      <div>
+      <div className="no-print">
         <p className="sec-label">Exportar datos</p>
         <div className="card" style={{padding:20,display:"flex",flexDirection:"column",gap:12}}>
           <p style={{fontSize:12,color:"#8596b3"}}>
@@ -885,6 +889,9 @@ function SectionReportes() {
           <div style={{display:"flex",gap:10,flexWrap:"wrap"}}>
             <button className="btn btn-ghost" onClick={exportCSV}>
               <FiDownload size={13}/> Exportar CSV
+            </button>
+            <button className="btn btn-primary" onClick={exportPDF}>
+              <FiFileText size={13}/> Exportar Reporte PDF / Imprimir
             </button>
           </div>
         </div>

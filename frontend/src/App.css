@@ -247,3 +247,41 @@ tbody tr:last-child td { border-bottom:none; }
   .main-content{margin-left:60px} .charts-row{grid-template-columns:1fr} .form-grid{grid-template-columns:1fr}
   .ml-row{grid-template-columns:1fr} .seg-row{grid-template-columns:1fr} .ml-metrics-grid{grid-template-columns:1fr 1fr}
 }
+
+/* ── PRINT / PDF EXPORT ── */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  .sidebar, .topbar, .no-print, .btn, button, input {
+    display: none !important;
+  }
+  .main-content {
+    margin-left: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+  .page-content {
+    background: transparent !important;
+    padding: 0 !important;
+  }
+  .kpi-card {
+    border: 1px solid #ddd !important;
+    box-shadow: none !important;
+    background: #fcfcfc !important;
+    color: #000000 !important;
+  }
+  .kpi-value {
+    color: #111827 !important;
+  }
+  .kpi-label {
+    color: #4b5563 !important;
+  }
+  .report-print-area {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 15px !important;
+    page-break-inside: avoid !important;
+  }
+}

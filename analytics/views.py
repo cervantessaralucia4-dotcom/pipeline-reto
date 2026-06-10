@@ -1,15 +1,11 @@
+import pandas as pd
+from django.db.models import Avg, Count, Q
+import statistics
 from drf_spectacular.utils import extend_schema
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
-from django.db.models import Avg, Max, Min, Count, StdDev
-import statistics
-
 from authentication.permissions import IsAnalista, IsMedicoOrAnalista
 from patients.models import Patient
-
-
-def _lista(campo):
-    return list(Patient.objects.exclude(**{f"{campo}__isnull": True}).values_list(campo, flat=True))
 
 
 @extend_schema(tags=['Analytics'], summary='Estadística descriptiva',
@@ -17,29 +13,43 @@ def _lista(campo):
 @api_view(['GET'])
 @permission_classes([IsAnalista])
 def estadisticas_descriptivas(request):
+    pacientes = list(Patient.objects.all().values(
+        'glucose', 'bmi', 'age', 'systolic_pressure', 'diastolic_pressure',
+        'heart_rate', 'cholesterol', 'temperature', 'oxygen_saturation'
+    ))
+    
     campos = {
         'glucosa': 'glucose', 'imc': 'bmi', 'edad': 'age',
         'presion_sistolica': 'systolic_pressure', 'presion_diastolica': 'diastolic_pressure',
         'frecuencia_cardiaca': 'heart_rate', 'colesterol': 'cholesterol',
         'temperatura': 'temperature', 'saturacion_oxigeno': 'oxygen_saturation',
     }
+    
+    if not pacientes:
+        return Response({k: {} for k in campos.keys()})
+        
+    df = pd.DataFrame(pacientes)
     resultado = {}
-    for nombre, campo in campos.items():
-        valores = _lista(campo)
-        if not valores:
+    
+    for nombre, col in campos.items():
+        if col not in df.columns or df[col].isnull().all():
             resultado[nombre] = {}
             continue
+            
+        serie = df[col].dropna()
         try:
-            moda = statistics.mode(round(v) for v in valores)
-        except statistics.StatisticsError:
+            moda = float(serie.round().mode()[0]) if not serie.empty else None
+        except Exception:
             moda = None
-        agg = Patient.objects.aggregate(
-            media=Avg(campo), maximo=Max(campo), minimo=Min(campo), desviacion=StdDev(campo))
+            
         resultado[nombre] = {
-            'media': round(agg['media'] or 0, 2), 'mediana': round(statistics.median(valores), 2),
-            'moda': moda, 'desviacion_estandar': round(agg['desviacion'] or 0, 2),
-            'minimo': round(agg['minimo'] or 0, 2), 'maximo': round(agg['maximo'] or 0, 2),
-            'n': len(valores),
+            'media': round(float(serie.mean()), 2),
+            'mediana': round(float(serie.median()), 2),
+            'moda': moda,
+            'desviacion_estandar': round(float(serie.std(ddof=0)), 2) if len(serie) > 1 else 0.0,
+            'minimo': round(float(serie.min()), 2),
+            'maximo': round(float(serie.max()), 2),
+            'n': int(serie.count()),
         }
     return Response(resultado)
 
@@ -49,34 +59,43 @@ def estadisticas_descriptivas(request):
 @api_view(['GET'])
 @permission_classes([IsMedicoOrAnalista])
 def kpis_medicos(request):
-    total = Patient.objects.count()
+    kpis = Patient.objects.aggregate(
+        total=Count('id'),
+        hipertensos=Count('id', filter=Q(systolic_pressure__gt=140)),
+        diabeticos=Count('id', filter=Q(glucose__gt=126)),
+        fumadores=Count('id', filter=Q(smoker=True)),
+        con_antec=Count('id', filter=Q(family_history=True)),
+        alcohol=Count('id', filter=Q(alcohol_consumption=True)),
+        obesidad=Count('id', filter=Q(bmi__gte=30)),
+        sat_baja=Count('id', filter=Q(oxygen_saturation__lt=90)),
+        avg_glucosa=Avg('glucose'),
+        avg_bmi=Avg('bmi'),
+        avg_edad=Avg('age'),
+        avg_colesterol=Avg('cholesterol'),
+        avg_pres_sis=Avg('systolic_pressure')
+    )
+    
+    total = kpis['total'] or 0
     if total == 0:
         return Response({'error': 'No hay pacientes registrados.'})
+        
     def pct(n): return round((n / total) * 100, 1)
-    hipertensos = Patient.objects.filter(systolic_pressure__gt=140).count()
-    diabeticos  = Patient.objects.filter(glucose__gt=126).count()
-    fumadores   = Patient.objects.filter(smoker=True).count()
-    con_antec   = Patient.objects.filter(family_history=True).count()
-    alcoholismo = Patient.objects.filter(alcohol_consumption=True).count()
-    obesidad    = Patient.objects.filter(bmi__gte=30).count()
-    sat_baja    = Patient.objects.filter(oxygen_saturation__lt=90).count()
-    agg = Patient.objects.aggregate(
-        avg_gluc=Avg('glucose'), avg_bmi=Avg('bmi'), avg_edad=Avg('age'),
-        avg_colesterol=Avg('cholesterol'), avg_pres_sis=Avg('systolic_pressure'),
-    )
+    
     return Response({
         'total_pacientes': total,
-        'hipertensos':     {'cantidad': hipertensos, 'porcentaje': pct(hipertensos)},
-        'diabeticos':      {'cantidad': diabeticos,  'porcentaje': pct(diabeticos)},
-        'fumadores':       {'cantidad': fumadores,   'porcentaje': pct(fumadores)},
-        'con_antecedentes':{'cantidad': con_antec,   'porcentaje': pct(con_antec)},
-        'alcoholismo':     {'cantidad': alcoholismo, 'porcentaje': pct(alcoholismo)},
-        'obesidad':        {'cantidad': obesidad,    'porcentaje': pct(obesidad)},
-        'saturacion_baja': {'cantidad': sat_baja,    'porcentaje': pct(sat_baja)},
+        'hipertensos':     {'cantidad': kpis['hipertensos'], 'porcentaje': pct(kpis['hipertensos'])},
+        'diabeticos':      {'cantidad': kpis['diabeticos'],  'porcentaje': pct(kpis['diabeticos'])},
+        'fumadores':       {'cantidad': kpis['fumadores'],   'porcentaje': pct(kpis['fumadores'])},
+        'con_antecedentes':{'cantidad': kpis['con_antec'],   'porcentaje': pct(kpis['con_antec'])},
+        'alcoholismo':     {'cantidad': kpis['alcohol'],     'porcentaje': pct(kpis['alcohol'])},
+        'obesidad':        {'cantidad': kpis['obesidad'],    'porcentaje': pct(kpis['obesidad'])},
+        'saturacion_baja': {'cantidad': kpis['sat_baja'],    'porcentaje': pct(kpis['sat_baja'])},
         'promedios': {
-            'glucosa': round(agg['avg_gluc'] or 0, 2), 'imc': round(agg['avg_bmi'] or 0, 2),
-            'edad': round(agg['avg_edad'] or 0, 1), 'colesterol': round(agg['avg_colesterol'] or 0, 2),
-            'presion_sistolica': round(agg['avg_pres_sis'] or 0, 1),
+            'glucosa': round(kpis['avg_glucosa'] or 0, 2), 
+            'imc': round(kpis['avg_bmi'] or 0, 2),
+            'edad': round(kpis['avg_edad'] or 0, 1), 
+            'colesterol': round(kpis['avg_colesterol'] or 0, 2),
+            'presion_sistolica': round(kpis['avg_pres_sis'] or 0, 1),
         },
     })
 
