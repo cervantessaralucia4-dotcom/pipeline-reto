@@ -1,0 +1,59 @@
+# ═══════════════════════════════════════════════════════════════
+#  Render Blueprint — HealthAnalytics IPS
+#  https://render.com/docs/blueprint-spec
+# ═══════════════════════════════════════════════════════════════
+
+services:
+
+  # ── Backend: Django + Gunicorn ──────────────────────────────
+  - type: web
+    name: healthcare-backend
+    runtime: python
+    plan: free
+    buildCommand: |
+      pip install -r requirements.txt
+      python manage.py collectstatic --noinput
+      python manage.py migrate
+    startCommand: gunicorn backend.wsgi:application --bind 0.0.0.0:$PORT --workers 2 --timeout 120
+    envVars:
+      - key: DEBUG
+        value: "False"
+      - key: ALLOWED_HOSTS
+        value: ".onrender.com,localhost"
+      - key: CORS_ALLOW_ALL_ORIGINS
+        value: "False"
+      - key: CORS_ALLOWED_ORIGINS
+        value: "https://healthcare-frontend.onrender.com"
+      - key: CSRF_TRUSTED_ORIGINS
+        value: "https://healthcare-backend.onrender.com"
+      - key: DATABASE_URL
+        fromDatabase:
+          name: healthcare-db
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+    healthCheckPath: /api/token/
+
+  # ── Frontend: React Static Site ─────────────────────────────
+  - type: web
+    name: healthcare-frontend
+    runtime: static
+    plan: free
+    buildCommand: |
+      cd frontend
+      npm install
+      npm run build
+    staticPublishPath: frontend/build
+    envVars:
+      - key: REACT_APP_API_URL
+        value: https://healthcare-backend.onrender.com/api
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: public, max-age=0, must-revalidate
+
+databases:
+  - name: healthcare-db
+    plan: free
+    databaseName: healthcare
+    ipAllowList: []

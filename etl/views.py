@@ -81,6 +81,7 @@ def run_etl_view(request):
             'registros_duplicados':  log.registros_duplicados,
             'registros_nulos':       log.registros_nulos,
             'registros_fuera_rango': log.registros_fuera_rango,
+            'generos_corregidos':    stats.get('generos_corregidos', 0),
             'registros_cargados':    log.registros_cargados,
             'tiempo_ejecucion':      log.tiempo_ejecucion,
             'mensaje':               log.mensaje,

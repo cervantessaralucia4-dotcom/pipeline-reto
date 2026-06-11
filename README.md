@@ -67,8 +67,9 @@ y expone los resultados a través de un dashboard interactivo.
 |---|---|
 | React 19 | UI principal |
 | Axios | Consumo de APIs |
-| Recharts | Visualizaciones |
-| react-icons | Iconografía |
+| Recharts | Visualizaciones (Pie, Bar) |
+| react-icons | Iconografía (Feather Icons) |
+| Create React App | Build tool |
 
 ---
 
@@ -122,10 +123,6 @@ pipeline-reto/
 │   ├── admin.py
 │   └── urls.py
 │
-├── analytics/                # Módulo de analítica estadística
-│   ├── views.py              # Estadísticas · KPIs · Segmentación · Críticos
-│   └── urls.py
-│
 ├── ml/                       # Módulo Machine Learning
 │   ├── train_model.py        # Entrenamiento RandomForest + métricas
 │   ├── models.py             # MLMetrics — historial de entrenamientos
@@ -136,14 +133,23 @@ pipeline-reto/
 │   ├── risk_model.pkl        # Modelo entrenado
 │   └── label_encoder.pkl     # Encoder de clases
 │
-├── authentication/           # App de autenticación (JWT)
+├── authentication/           # Autenticación JWT + perfiles de usuario
+│   ├── models.py             # UserProfile (rol: administrador/medico/analista)
+│   ├── permissions.py        # Permisos por rol (IsAnalista, IsMedicoOrAnalista, etc.)
+│   ├── serializers.py
+│   ├── views.py              # Register, Profile, List users, Change rol
+│   └── urls.py
 │
-├── dashboard/                # App de dashboard
+├── dashboard/                # App de dashboard (endpoints)
+│
+├── analytics/                # Módulo de analítica estadística
+│   ├── views.py              # Estadísticas · KPIs · Segmentación · Críticos · Pacientes por filtro
+│   └── urls.py
 │
 ├── frontend/                 # React 19
 │   └── src/
-│       ├── App.js            # Dashboard completo
-│       ├── App.css           # Estilos tipo Power BI
+│       ├── App.js            # Dashboard completo (7 secciones, roles, polling)
+│       ├── App.css           # Estilos dark glassmorphism con gradientes
 │       └── index.css         # Fuentes globales
 │
 ├── datasets/
@@ -305,23 +311,35 @@ Authorization: Bearer <access_token>
 |---|---|---|
 | POST | `/api/token/` | Login — obtener access + refresh token |
 | POST | `/api/token/refresh/` | Renovar access token |
+| GET | `/api/auth/me/` | Obtener perfil del usuario autenticado |
+| POST | `/api/auth/register/` | Registrar nuevo usuario (Admin) |
+| GET | `/api/auth/users/` | Listar todos los usuarios (Admin) |
+| PUT | `/api/auth/users/{id}/rol/` | Cambiar rol de usuario (Admin) |
 
 **Body login:**
 ```json
 { "username": "admin", "password": "tu_password" }
 ```
 
+**Roles disponibles:**
+- `administrador` — Acceso total al sistema, gestión de usuarios
+- `medico` — Solo visualización (Dashboard, Pacientes, Analytics, Reportes). Sin ETL, ML ni exportación CSV
+- `analista` — Ejecución ETL y ML, más todos los módulos de visualización
+
 ---
+
+
 
 ### 👥 Pacientes
 
 | Método | Endpoint | Descripción |
 |---|---|---|
 | GET | `/api/patients/` | Listar todos los pacientes |
-| POST | `/api/patients/` | Crear paciente |
+| POST | `/api/patients/` | Crear paciente (Admin) |
 | GET | `/api/patients/{id}/` | Detalle de un paciente |
-| PUT | `/api/patients/{id}/` | Actualizar paciente |
-| DELETE | `/api/patients/{id}/` | Eliminar paciente |
+| PUT | `/api/patients/{id}/` | Actualizar paciente (Admin) |
+| DELETE | `/api/patients/{id}/` | Eliminar paciente (Admin) |
+| GET | `/api/patients/export/csv/` | Exportar todos los pacientes a CSV con BOM UTF-8 |
 
 ---
 
@@ -331,18 +349,19 @@ Authorization: Bearer <access_token>
 |---|---|---|
 | GET | `/api/dashboard/kpis/` | 7 KPIs principales |
 | GET | `/api/dashboard/charts/` | Datos para gráficas |
-| GET | `/api/reportes/` | Reporte general |
+| GET | `/api/reportes/` | Reporte general (usado en sección Reportes) |
+| GET | `/api/patients/export/csv/` | Exportar CSV con BOM UTF-8 y quoting |
 
 **Respuesta `/api/dashboard/kpis/`:**
 ```json
 {
   "total_patients": 1792,
-  "critical_patients": 120,
-  "high_risk": 450,
-  "medium_risk": 780,
-  "low_risk": 442,
+  "critical_patients": 1043,
+  "high_risk": 419,
+  "medium_risk": 198,
+  "low_risk": 132,
   "average_glucose": 207.61,
-  "average_bmi": 27.2
+  "average_bmi": 29.06
 }
 ```
 
@@ -365,8 +384,9 @@ Authorization: Bearer <access_token>
   "registros_duplicados": 48,
   "registros_nulos": 183,
   "registros_fuera_rango": 10,
+  "generos_corregidos": 183,
   "registros_cargados": 1792,
-  "tiempo_ejecucion": 0.63
+  "tiempo_ejecucion": 0.8
 }
 ```
 
@@ -380,22 +400,30 @@ Authorization: Bearer <access_token>
 | GET | `/api/analytics/kpis/` | KPIs médicos: hipertensos, diabéticos, fumadores, etc. |
 | GET | `/api/analytics/segmentacion/` | Por riesgo, sexo, edad, IMC, diagnóstico |
 | GET | `/api/analytics/criticos/` | Alertas y listado de pacientes críticos |
+| GET | `/api/analytics/pacientes-por-filtro/?filtro=<filtro>` | Pacientes que cumplen un filtro médico (hipertensos, diabeticos, etc.) |
 
 **Respuesta `/api/analytics/kpis/`:**
 ```json
 {
   "total_pacientes": 1792,
-  "hipertensos":   { "cantidad": 936,  "porcentaje": 52.2 },
-  "diabeticos":    { "cantidad": 1415, "porcentaje": 79.0 },
-  "fumadores":     { "cantidad": 900,  "porcentaje": 50.2 },
-  "obesidad":      { "cantidad": 791,  "porcentaje": 44.1 },
+  "hipertensos":       { "cantidad": 936,  "porcentaje": 52.2 },
+  "diabeticos":        { "cantidad": 1415, "porcentaje": 79.0 },
+  "fumadores":         { "cantidad": 900,  "porcentaje": 50.2 },
+  "con_antecedentes":  { "cantidad": 883,  "porcentaje": 49.3 },
+  "alcoholismo":       { "cantidad": 870,  "porcentaje": 48.5 },
+  "obesidad":          { "cantidad": 791,  "porcentaje": 44.1 },
+  "saturacion_baja":   { "cantidad": 1035, "porcentaje": 57.8 },
   "promedios": {
     "glucosa": 207.61,
-    "imc": 27.2,
-    "edad": 49.3
+    "imc": 29.06,
+    "edad": 54.8,
+    "colesterol": 234.81,
+    "presion_sistolica": 144.3
   }
 }
 ```
+
+**Filtros disponibles para `pacientes-por-filtro/`:** `hipertensos`, `diabeticos`, `fumadores`, `con_antecedentes`, `alcoholismo`, `obesidad`, `saturacion_baja`
 
 ---
 
@@ -463,15 +491,16 @@ dataset_clinico_etl_1800_registros.xlsx
         1. EXTRACT
          └── Leer Excel (1850 registros)
               │
-        2. TRANSFORM
-         ├── Eliminar duplicados        → -48 registros
-         ├── Convertir tipos de datos   (edad='Treinta' → 30)
-         ├── Tratar nulos               → media/mediana/moda
-         ├── Validar rangos clínicos    → -10 registros
-         ├── Normalizar sexo            (m/f/Femenino → M/F)
-         ├── Normalizar diagnósticos    (hipertencion → Hipertensión)
-         ├── Recalcular IMC             (peso / altura²)
-         └── Clasificar riesgo          (reglas clínicas)
+         2. TRANSFORM
+          ├── Eliminar duplicados        → -48 registros
+          ├── Convertir tipos de datos   (edad='Treinta' → 30)
+          ├── Tratar nulos               → media/mediana/moda
+          ├── Validar rangos clínicos    → -10 registros
+          ├── Normalizar sexo            (m/f/Femenino → M/F)
+          ├── Corregir género por nombre → detecta nombres femeninos/masculinos y corrige sexo
+          ├── Normalizar diagnósticos    (hipertencion → Hipertensión)
+          ├── Recalcular IMC             (peso / altura²)
+          └── Clasificar riesgo          (reglas clínicas)
               │
         3. LOAD
          ├── Guardar en PostgreSQL      (1792 pacientes)
@@ -614,70 +643,91 @@ Dataset limpio (1792 registros)
 
 ## Manual de Usuario
 
+### Roles y permisos
+
+El sistema tiene 3 roles con diferentes niveles de acceso:
+
+| Sección | Administrador | Médico | Analista |
+|---|---|---|---|
+| Dashboard | ✅ | ✅ | ✅ |
+| Pacientes | ✅ CRUD | ✅ Solo lectura | ✅ Solo lectura |
+| ETL | ✅ | ❌ Oculto | ✅ |
+| Analytics | ✅ | ✅ | ✅ |
+| Machine Learning | ✅ | ❌ Oculto | ✅ |
+| Reportes | ✅ (CSV+PDF) | ✅ (solo PDF) | ✅ (CSV+PDF) |
+| Usuarios | ✅ | ❌ | ❌ |
+
 ### 1. Login
 
 1. Abrir `http://localhost:3000/`
-2. Ingresar usuario y contraseña del superusuario creado con `createsuperuser`
+2. Ingresar usuario y contraseña
 3. Hacer clic en **Ingresar**
+
+**Usuarios de prueba preconfigurados:**
+- `admin` / `admin123` — Superusuario (todos los permisos)
+- `analista_ips` / `analista123` — Rol Analista
+- `medico_ips` / `medico123` — Rol Médico
+- `admin_ips` / `admin123` — Rol Administrador
 
 ### 2. Dashboard principal
 
-El dashboard muestra automáticamente al iniciar sesión:
+El dashboard se actualiza automáticamente cada 30 segundos. Muestra:
 - **7 KPI cards** — Total pacientes, Críticos, Riesgo Alto/Medio/Bajo, Glucosa promedio, IMC promedio
-- **Gráfica de distribución** — Pie chart con porcentajes de riesgo
+- **Gráfica de distribución** — Pie chart con porcentajes de riesgo (con centro donut)
 - **Gráfica de barras** — Pacientes por nivel de riesgo
-- **Indicadores clínicos** — Glucosa e IMC con porcentajes de críticos y riesgo alto
-- **Tabla de pacientes** — Con búsqueda, ordenamiento por columna y paginación
+- **Indicadores clínicos** — Glucosa, IMC, % Críticos, % Riesgo alto
+- **Tabla de pacientes** — Con búsqueda en vivo, ordenamiento por columna (ID, Nombre, Edad, Riesgo) y paginación
 
-### 3. Ejecutar el ETL
+### 3. Sección Pacientes
+
+- Lista completa de pacientes con paginación (10 por página)
+- Búsqueda por nombre, riesgo o ID
+- Ordenamiento ascendente/descendente por columnas
+- Los datos se refrescan automáticamente cada 30 segundos (ideal para ver cambios post-ETL)
+
+### 4. Ejecutar el ETL (Analista/Admin)
+
+1. Navegar a la sección **ETL**
+2. Hacer clic en **Ejecutar ETL ahora**
+3. El pipeline procesa el archivo Excel, elimina duplicados, corrige nulos, valida rangos, **corrige género según el nombre**, y carga los pacientes
+4. Se muestran estadísticas: extraídos, duplicados, nulos, fuera de rango, géneros corregidos, cargados
+5. El historial de ejecuciones queda registrado con trazabilidad
 
 ```
 POST /api/etl/run/
 Authorization: Bearer <token>
 ```
 
-El ETL procesa el archivo `datasets/dataset_clinico_etl_1800_registros.xlsx`,
-limpia los datos y carga 1792 pacientes en la base de datos.
+### 5. Sección Analytics
 
-Puedes ver el historial en `GET /api/etl/historial/`
+- **KPIs médicos interactivos:** Hipertensos, Diabéticos, Fumadores, Con antecedentes, Alcoholismo, Obesidad, Saturación baja
+- Cada tarjeta KPI es cliqueable → abre un modal con la lista de pacientes que cumplen ese criterio
+- El modal incluye búsqueda en vivo dentro de los resultados filtrados
+- **Estadística descriptiva:** Media, mediana, moda, desv. estándar, mínimo y máximo de 9 variables clínicas
+- **Segmentación:** Por nivel de riesgo, grupo de edad y clasificación IMC (con barras de progreso)
+- **Alertas clínicas:** Presión sistólica > 180, Glucosa > 300, Saturación < 85%
 
-### 4. Entrenar el modelo ML
+### 6. Entrenar el modelo ML (Analista/Admin)
 
-```
-POST /api/ml/train/
-Authorization: Bearer <token>
-```
+1. Navegar a la sección **Machine Learning**
+2. Hacer clic en **Reentrenar modelo**
+3. Se muestran métricas: Accuracy, Precision, Recall, F1 Score
+4. **Predicción individual:** Ingresar datos clínicos del paciente y obtener riesgo predicho con probabilidades
 
-Reentrena el modelo con los datos limpios más recientes y guarda las métricas.
+### 7. Reportes
 
-### 5. Predecir riesgo de un paciente
+- **Exportar CSV:** Descarga todos los pacientes en formato CSV con UTF-8 BOM y quoting (compatible con Excel)
+- **Exportar PDF/Imprimir:** Vista optimizada para impresión (oculta sidebar, botones y elementos no esenciales)
 
-```
-POST /api/ml/predict/
-Authorization: Bearer <token>
+### 8. Gestión de Usuarios (Admin)
 
-{
-  "edad": 45,
-  "IMC": 28.5,
-  "glucosa": 180.0,
-  "colesterol": 220.0,
-  "presión_sistólica": 150,
-  "frecuencia_cardiaca": 88
-}
-```
+- Listado de todos los usuarios del sistema
+- Crear nuevos usuarios con selección de rol
+- Cambiar rol de usuarios existes desde la misma tabla
 
-### 6. Ver analítica estadística
+### 9. Logout
 
-```
-GET /api/analytics/estadisticas/   → Media, mediana, moda, desv. estándar
-GET /api/analytics/kpis/           → Hipertensos, diabéticos, fumadores
-GET /api/analytics/segmentacion/   → Por edad, sexo, IMC, diagnóstico
-GET /api/analytics/criticos/       → Pacientes en estado crítico
-```
-
-### 7. Logout
-
-Clic en el botón **Logout** en la esquina superior derecha del dashboard.
+Clic en el botón **Cerrar sesión** en la parte inferior de la barra lateral.
 
 ---
 

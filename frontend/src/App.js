@@ -18,7 +18,7 @@ import {
 } from "react-icons/fi";
 import "./App.css";
 
-const API      = "http://127.0.0.1:8000/api";
+const API      = process.env.REACT_APP_API_URL || "http://127.0.0.1:8000/api";
 const PAGE_SIZE = 10;
 
 const RISK_COLORS = { "Crítico":"#ef4444","Alto":"#f59e0b","Medio":"#3b82f6","Bajo":"#10b77f" };
@@ -108,7 +108,7 @@ function Sidebar({ active, setActive, user, onLogout }) {
     { key:"pacientes", label:"Pacientes",        icon:<FiUsers />,     roles:["administrador","medico","analista"] },
     { key:"etl",       label:"ETL",              icon:<FiDatabase />,  roles:["administrador","analista"] },
     { key:"analytics", label:"Analytics",        icon:<FiBarChart2 />, roles:["administrador","medico","analista"] },
-    { key:"ml",        label:"Machine Learning", icon:<FiCpu />,       roles:["administrador","medico","analista"] },
+    { key:"ml",        label:"Machine Learning", icon:<FiCpu />,       roles:["administrador","analista"] },
     { key:"reportes",  label:"Reportes",         icon:<FiFileText />,  roles:["administrador","medico","analista"] },
     { key:"usuarios",  label:"Usuarios",         icon:<FiShield />,    roles:["administrador"] },
   ];
@@ -168,7 +168,11 @@ function SectionDashboard() {
     finally { setLoading(false); }
   }, []);
 
-  useEffect(() => { fetch(); }, [fetch]);
+  useEffect(() => {
+    fetch();
+    const interval = setInterval(fetch, 30000);
+    return () => clearInterval(interval);
+  }, [fetch]);
 
   const chartData = useMemo(() => kpis ? [
     { name:"Crítico", value: kpis.critical_patients },
@@ -307,7 +311,11 @@ function SectionPacientes({ user }) {
     finally { setLoading(false); }
   }, []);
 
-  useEffect(() => { fetchPatients(); }, [fetchPatients]);
+  useEffect(() => {
+    fetchPatients();
+    const interval = setInterval(fetchPatients, 30000);
+    return () => clearInterval(interval);
+  }, [fetchPatients]);
 
   const filtered = useMemo(() => {
     const q = search.toLowerCase();
@@ -457,12 +465,13 @@ function SectionETL() {
             </div>
             <div className="etl-stats-grid">
               {[
-                {label:"Extraídos",      val:result.registros_extraidos,   color:"#3b82f6"},
-                {label:"Duplicados",     val:result.registros_duplicados,  color:"#f59e0b"},
-                {label:"Nulos tratados", val:result.registros_nulos,       color:"#8b5cf6"},
-                {label:"Fuera de rango", val:result.registros_fuera_rango, color:"#ef4444"},
-                {label:"Cargados en BD", val:result.registros_cargados,    color:"#10b77f"},
-              ].map((s,i) => (
+                  {label:"Extraídos",      val:result.registros_extraidos,   color:"#3b82f6"},
+                  {label:"Duplicados",     val:result.registros_duplicados,  color:"#f59e0b"},
+                  {label:"Nulos tratados", val:result.registros_nulos,       color:"#8b5cf6"},
+                  {label:"Fuera de rango", val:result.registros_fuera_rango, color:"#ef4444"},
+                  {label:"Géneros correg.",val:result.generos_corregidos,    color:"#06b6d4"},
+                  {label:"Cargados en BD", val:result.registros_cargados,    color:"#10b77f"},
+                ].map((s,i) => (
                 <div key={i} className="etl-stat">
                   <div className="etl-stat-val" style={{color:s.color}}>{s.val?.toLocaleString()}</div>
                   <div className="etl-stat-lbl">{s.label}</div>
@@ -518,30 +527,57 @@ function SectionAnalytics() {
   const [seg, setSeg]           = useState(null);
   const [criticos, setCriticos] = useState(null);
   const [loading, setLoading]   = useState(true);
+  const [filtroActivo, setFiltroActivo] = useState(null);
+  const [filtroPacientes, setFiltroPacientes] = useState([]);
+  const [filtroCargando, setFiltroCargando] = useState(false);
+  const [filtroError, setFiltroError] = useState("");
+  const [filtroSearch, setFiltroSearch] = useState("");
 
   useEffect(() => {
     const h = authHeaders();
-    Promise.all([
+    Promise.allSettled([
       axios.get(`${API}/analytics/kpis/`, { headers:h }),
       axios.get(`${API}/analytics/estadisticas/`, { headers:h }),
       axios.get(`${API}/analytics/segmentacion/`, { headers:h }),
       axios.get(`${API}/analytics/criticos/`, { headers:h }),
     ]).then(([k,s,sg,c]) => {
-      setKpis(k.data); setStats(s.data); setSeg(sg.data); setCriticos(c.data);
-    }).catch(() => {}).finally(() => setLoading(false));
+      if (k.status === 'fulfilled') setKpis(k.value.data);
+      if (s.status === 'fulfilled') setStats(s.value.data);
+      if (sg.status === 'fulfilled') setSeg(sg.value.data);
+      if (c.status === 'fulfilled') setCriticos(c.value.data);
+    }).finally(() => setLoading(false));
   }, []);
+
+  const abrirFiltro = async (filtro) => {
+    setFiltroActivo(filtro); setFiltroCargando(true); setFiltroError(""); setFiltroSearch("");
+    try {
+      const { data } = await axios.get(`${API}/analytics/pacientes-por-filtro/?filtro=${filtro}`, { headers: authHeaders() });
+      setFiltroPacientes(data.pacientes || []);
+    } catch {
+      setFiltroError("Error al cargar pacientes.");
+      setFiltroPacientes([]);
+    } finally { setFiltroCargando(false); }
+  };
+
+  const cerrarFiltro = () => { setFiltroActivo(null); setFiltroPacientes([]); setFiltroSearch(""); };
 
   if (loading) return <div style={{color:"#4a607e",padding:24}}>Cargando analítica…</div>;
 
   const kpiMed = [
-    {label:"Hipertensos",     cant:kpis?.hipertensos?.cantidad,    pct:kpis?.hipertensos?.porcentaje,    c:"c1"},
-    {label:"Diabéticos",      cant:kpis?.diabeticos?.cantidad,     pct:kpis?.diabeticos?.porcentaje,     c:"c2"},
-    {label:"Fumadores",       cant:kpis?.fumadores?.cantidad,      pct:kpis?.fumadores?.porcentaje,      c:"c3"},
-    {label:"Con antecedentes",cant:kpis?.con_antecedentes?.cantidad,pct:kpis?.con_antecedentes?.porcentaje,c:"c4"},
-    {label:"Alcoholismo",     cant:kpis?.alcoholismo?.cantidad,    pct:kpis?.alcoholismo?.porcentaje,    c:"c5"},
-    {label:"Obesidad",        cant:kpis?.obesidad?.cantidad,       pct:kpis?.obesidad?.porcentaje,       c:"c6"},
-    {label:"Saturación baja", cant:kpis?.saturacion_baja?.cantidad,pct:kpis?.saturacion_baja?.porcentaje,c:"c7"},
+    {label:"Hipertensos",     filtro:"hipertensos",      cant:kpis?.hipertensos?.cantidad,    pct:kpis?.hipertensos?.porcentaje,    c:"c1"},
+    {label:"Diabéticos",      filtro:"diabeticos",       cant:kpis?.diabeticos?.cantidad,     pct:kpis?.diabeticos?.porcentaje,     c:"c2"},
+    {label:"Fumadores",       filtro:"fumadores",        cant:kpis?.fumadores?.cantidad,      pct:kpis?.fumadores?.porcentaje,      c:"c3"},
+    {label:"Con antecedentes",filtro:"con_antecedentes", cant:kpis?.con_antecedentes?.cantidad,pct:kpis?.con_antecedentes?.porcentaje,c:"c4"},
+    {label:"Alcoholismo",     filtro:"alcoholismo",      cant:kpis?.alcoholismo?.cantidad,    pct:kpis?.alcoholismo?.porcentaje,    c:"c5"},
+    {label:"Obesidad",        filtro:"obesidad",         cant:kpis?.obesidad?.cantidad,       pct:kpis?.obesidad?.porcentaje,       c:"c6"},
+    {label:"Saturación baja", filtro:"saturacion_baja",  cant:kpis?.saturacion_baja?.cantidad,pct:kpis?.saturacion_baja?.porcentaje,c:"c7"},
   ];
+
+  const filtroFiltrados = filtroPacientes.filter(p => {
+    const q = filtroSearch.toLowerCase();
+    return !q || `${p.first_name} ${p.last_name}`.toLowerCase().includes(q) ||
+      p.disease_risk?.toLowerCase().includes(q) || String(p.id).includes(q);
+  });
 
   const statsKeys = ["glucosa","imc","edad","presion_sistolica","frecuencia_cardiaca"];
 
@@ -554,7 +590,7 @@ function SectionAnalytics() {
         <p className="sec-label">KPIs médicos — {kpis?.total_pacientes?.toLocaleString()} pacientes</p>
         <div className="kpi-med-grid">
           {kpiMed.map((k,i) => (
-            <div key={i} className={`kpi-med-card ${k.c}`}>
+            <div key={i} className={`kpi-med-card ${k.c}`} style={{cursor:"pointer"}} onClick={() => abrirFiltro(k.filtro)} title="Ver pacientes">
               <div className="kpi-med-val">{k.cant?.toLocaleString() ?? "—"}</div>
               <div className="kpi-med-pct">{k.pct}% del total</div>
               <div className="kpi-med-lbl">{k.label}</div>
@@ -562,6 +598,55 @@ function SectionAnalytics() {
           ))}
         </div>
       </div>
+
+      {/* Modal de pacientes por filtro */}
+      {filtroActivo && (
+        <div className="modal-overlay" onClick={cerrarFiltro}>
+          <div className="modal modal-filtro" onClick={e => e.stopPropagation()}>
+            <div className="modal-header">
+              <div className="modal-title">
+                Pacientes: {kpiMed.find(k => k.filtro === filtroActivo)?.label || filtroActivo}
+                <span style={{fontSize:12,color:"#8596b3",fontWeight:400,marginLeft:8}}>
+                  ({filtroPacientes.length} registros)
+                </span>
+              </div>
+              <button className="btn btn-ghost" onClick={cerrarFiltro} style={{padding:"4px 10px",fontSize:14}}>✕</button>
+            </div>
+            <div className="tbl-actions" style={{marginBottom:10}}>
+              <input className="table-search" type="text" placeholder="Buscar por nombre, riesgo o ID..."
+                value={filtroSearch} onChange={e => setFiltroSearch(e.target.value)} />
+            </div>
+            <div className="table-wrap" style={{maxHeight:360,overflowY:"auto"}}>
+              {filtroCargando ? (
+                <div style={{textAlign:"center",padding:24,color:"#4a607e"}}>Cargando pacientes…</div>
+              ) : filtroFiltrados.length === 0 ? (
+                <div style={{textAlign:"center",padding:24,color:"#4a607e"}}>No se encontraron pacientes.</div>
+              ) : (
+                <table>
+                  <thead>
+                    <tr>
+                      <th>ID</th><th>Paciente</th><th>Edad</th><th>Sexo</th><th>Glucosa</th><th>IMC</th><th>Riesgo</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {filtroFiltrados.map(p => (
+                      <tr key={p.id}>
+                        <td className="cell-id">#{String(p.id).padStart(4,"0")}</td>
+                        <td className="cell-name">{p.first_name} {p.last_name}</td>
+                        <td>{p.age} años</td>
+                        <td><span className="b-sex">{p.sex==="M"?"Masc":"Fem"}</span></td>
+                        <td>{p.glucose ?? "—"}</td>
+                        <td>{p.bmi ?? "—"}</td>
+                        <td><span className={RISK_BADGE[p.disease_risk]||"badge"}>{p.disease_risk}</span></td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Estadística descriptiva */}
       <div>
@@ -832,6 +917,8 @@ function SectionML({ user }) {
 function SectionReportes() {
   const [reporte, setReporte] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [csvError, setCsvError] = useState("");
+  const [csvLoading, setCsvLoading] = useState(false);
 
   useEffect(() => {
     axios.get(`${API}/reportes/`, { headers: authHeaders() })
@@ -841,16 +928,18 @@ function SectionReportes() {
   }, []);
 
   const exportCSV = async () => {
+    setCsvError(""); setCsvLoading(true);
     try {
-      const { data } = await axios.get(`${API}/patients/?page_size=5000`, { headers: authHeaders() });
-      const patients = Array.isArray(data) ? data : data.results || [];
-      const headers  = ["id","first_name","last_name","age","sex","glucose","bmi","systolic_pressure","disease_risk"];
-      const rows     = patients.map(p => headers.map(h => p[h] ?? "").join(","));
-      const csv      = [headers.join(","), ...rows].join("\n");
-      const blob     = new Blob([csv], { type:"text/csv" });
-      const url      = URL.createObjectURL(blob);
-      const a        = document.createElement("a"); a.href = url; a.download = "pacientes.csv"; a.click();
-    } catch {}
+      const response = await axios.get(`${API}/patients/export/csv/`, {
+        headers: authHeaders(),
+        responseType: 'blob',
+      });
+      const url = window.URL.createObjectURL(new Blob([response.data], { type: 'text/csv;charset=utf-8-sig' }));
+      const link = document.createElement('a'); link.href = url; link.download = 'pacientes.csv'; link.click();
+      window.URL.revokeObjectURL(url);
+    } catch {
+      setCsvError("Error al exportar CSV. Intenta de nuevo.");
+    } finally { setCsvLoading(false); }
   };
 
   const exportPDF = () => {
@@ -886,9 +975,10 @@ function SectionReportes() {
           <p style={{fontSize:12,color:"#8596b3"}}>
             Descarga los datos del sistema en los formatos disponibles.
           </p>
+          {csvError && <div className="alert alert-error" style={{fontSize:12}}>{csvError}</div>}
           <div style={{display:"flex",gap:10,flexWrap:"wrap"}}>
-            <button className="btn btn-ghost" onClick={exportCSV}>
-              <FiDownload size={13}/> Exportar CSV
+            <button className="btn btn-ghost" onClick={exportCSV} disabled={csvLoading}>
+              <FiDownload size={13}/> {csvLoading ? "Exportando…" : "Exportar CSV"}
             </button>
             <button className="btn btn-primary" onClick={exportPDF}>
               <FiFileText size={13}/> Exportar Reporte PDF / Imprimir

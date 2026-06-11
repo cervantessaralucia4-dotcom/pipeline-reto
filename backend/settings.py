@@ -15,7 +15,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # ── Seguridad ─────────────────────────────────────────────────
 SECRET_KEY = os.getenv('SECRET_KEY', 'cambia-esta-clave-en-produccion')
 DEBUG      = os.getenv('DEBUG', 'True') == 'True'
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '*').split(',')
+CSRF_TRUSTED_ORIGINS = os.getenv('CSRF_TRUSTED_ORIGINS', '').split(',') if os.getenv('CSRF_TRUSTED_ORIGINS') else []
 
 # ── Aplicaciones ──────────────────────────────────────────────
 INSTALLED_APPS = [
@@ -73,17 +74,48 @@ TEMPLATES = [
 WSGI_APPLICATION = 'backend.wsgi.application'
 
 # ── Base de datos ─────────────────────────────────────────────
-DATABASES = {
-    'default': {
-        'ENGINE':   'django.db.backends.postgresql',
-        'NAME':     os.getenv('DB_NAME',     'neondb'),
-        'USER':     os.getenv('DB_USER',     'neondb_owner'),
-        'PASSWORD': os.getenv('DB_PASSWORD', ''),
-        'HOST':     os.getenv('DB_HOST',     'localhost'),
-        'PORT':     os.getenv('DB_PORT',     '5432'),
-        'OPTIONS':  {'sslmode': 'require'},
+import re
+
+_DATABASE_URL = os.getenv('DATABASE_URL', '')
+if _DATABASE_URL:
+    # Parse Render/Neon DATABASE_URL → psql dict
+    m = re.match(r'postgres://(.+?):(.+?)@(.+?):(\d+)/(.+?)(\?.*)?$', _DATABASE_URL)
+    if m:
+        DATABASES = {
+            'default': {
+                'ENGINE':   'django.db.backends.postgresql',
+                'NAME':     m.group(5),
+                'USER':     m.group(1),
+                'PASSWORD': m.group(2),
+                'HOST':     m.group(3),
+                'PORT':     m.group(4),
+                'OPTIONS':  {'sslmode': 'require'},
+            }
+        }
+    else:
+        DATABASES = {
+            'default': {
+                'ENGINE':   'django.db.backends.postgresql',
+                'NAME':     os.getenv('DB_NAME',     'neondb'),
+                'USER':     os.getenv('DB_USER',     'neondb_owner'),
+                'PASSWORD': os.getenv('DB_PASSWORD', ''),
+                'HOST':     os.getenv('DB_HOST',     'localhost'),
+                'PORT':     os.getenv('DB_PORT',     '5432'),
+                'OPTIONS':  {'sslmode': 'require'},
+            }
+        }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE':   'django.db.backends.postgresql',
+            'NAME':     os.getenv('DB_NAME',     'neondb'),
+            'USER':     os.getenv('DB_USER',     'neondb_owner'),
+            'PASSWORD': os.getenv('DB_PASSWORD', ''),
+            'HOST':     os.getenv('DB_HOST',     'localhost'),
+            'PORT':     os.getenv('DB_PORT',     '5432'),
+            'OPTIONS':  {'sslmode': 'require'},
+        }
     }
-}
 
 # ── Validación de contraseñas ─────────────────────────────────
 AUTH_PASSWORD_VALIDATORS = [
@@ -101,9 +133,11 @@ USE_TZ        = True
 
 # ── Archivos estáticos ────────────────────────────────────────
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # ── CORS ──────────────────────────────────────────────────────
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = os.getenv('CORS_ALLOW_ALL_ORIGINS', 'True') == 'True'
+CORS_ALLOWED_ORIGINS = os.getenv('CORS_ALLOWED_ORIGINS', '').split(',') if os.getenv('CORS_ALLOWED_ORIGINS') else []
 
 # ── Django REST Framework ─────────────────────────────────────
 REST_FRAMEWORK = {

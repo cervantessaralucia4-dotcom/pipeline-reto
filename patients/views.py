@@ -7,6 +7,8 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from django.db.models import Avg, Count, Q
+from django.http import HttpResponse
+import csv
 
 from authentication.permissions import IsAdministrador, IsMedicoOrAnalista
 from .models import Patient
@@ -117,17 +119,56 @@ def dashboard_charts(request):
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def reports_view(request):
-    avg_gluc = Patient.objects.aggregate(Avg('glucose'))['glucose__avg'] or 0
-    avg_bmi  = Patient.objects.aggregate(Avg('bmi'))['bmi__avg'] or 0
+    stats = Patient.objects.aggregate(
+        total=Count('id'),
+        critico=Count('id', filter=Q(disease_risk='Crítico')),
+        alto=Count('id', filter=Q(disease_risk='Alto')),
+        medio=Count('id', filter=Q(disease_risk='Medio')),
+        bajo=Count('id', filter=Q(disease_risk='Bajo')),
+        avg_gluc=Avg('glucose'),
+        avg_bmi=Avg('bmi'),
+    )
     return Response({
-        'total_patients':    Patient.objects.count(),
-        'critical_patients': Patient.objects.filter(disease_risk='Crítico').count(),
-        'average_glucose':   round(avg_gluc, 2),
-        'average_bmi':       round(avg_bmi, 2),
+        'total_patients':    stats['total'] or 0,
+        'critical_patients': stats['critico'] or 0,
+        'average_glucose':   round(stats['avg_gluc'] or 0, 2),
+        'average_bmi':       round(stats['avg_bmi'] or 0, 2),
         'risk_distribution': {
-            'Crítico': Patient.objects.filter(disease_risk='Crítico').count(),
-            'Alto':    Patient.objects.filter(disease_risk='Alto').count(),
-            'Medio':   Patient.objects.filter(disease_risk='Medio').count(),
-            'Bajo':    Patient.objects.filter(disease_risk='Bajo').count(),
+            'Crítico': stats['critico'] or 0,
+            'Alto':    stats['alto'] or 0,
+            'Medio':   stats['medio'] or 0,
+            'Bajo':    stats['bajo'] or 0,
         },
     })
+
+
+# ── EXPORTAR CSV ──────────────────────────────────────────────
+@extend_schema(
+    tags=['Reportes'],
+    summary='Exportar pacientes a CSV',
+    description='Descarga un archivo CSV con todos los pacientes. Acceso: Médico, Analista y Administrador.',
+)
+@api_view(['GET'])
+@permission_classes([IsMedicoOrAnalista])
+def export_csv_view(request):
+    campos = [
+        'id', 'first_name', 'last_name', 'age', 'sex', 'weight', 'height', 'bmi',
+        'systolic_pressure', 'diastolic_pressure', 'heart_rate', 'glucose',
+        'cholesterol', 'oxygen_saturation', 'temperature', 'family_history',
+        'smoker', 'alcohol_consumption', 'physical_activity',
+        'preliminary_diagnosis', 'disease_risk', 'consultation_date',
+    ]
+    response = HttpResponse(content_type='text/csv; charset=utf-8-sig')
+    response['Content-Disposition'] = 'attachment; filename="pacientes.csv"'
+    response.write('\ufeff')
+    writer = csv.writer(response)
+    encabezados = ['ID', 'Nombre', 'Apellido', 'Edad', 'Sexo', 'Peso', 'Altura',
+                   'IMC', 'Presión Sistólica', 'Presión Diastólica',
+                   'Frecuencia Cardíaca', 'Glucosa', 'Colesterol',
+                   'Saturación O₂', 'Temperatura', 'Antecedentes Familiares',
+                   'Fumador', 'Consumo Alcohol', 'Actividad Física',
+                   'Diagnóstico Preliminar', 'Riesgo', 'Fecha Consulta']
+    writer.writerow(encabezados)
+    for p in Patient.objects.all().values_list(*campos):
+        writer.writerow(p)
+    return response

@@ -6,12 +6,13 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 from authentication.permissions import IsAnalista, IsMedicoOrAnalista
 from patients.models import Patient
+from patients.serializers import PatientSerializer
 
 
 @extend_schema(tags=['Analytics'], summary='Estadística descriptiva',
-               description='Media, mediana, moda, desv. estándar de 9 variables. Acceso: Analista y Administrador.')
+               description='Media, mediana, moda, desv. estándar de 9 variables. Acceso: Médico, Analista y Administrador.')
 @api_view(['GET'])
-@permission_classes([IsAnalista])
+@permission_classes([IsMedicoOrAnalista])
 def estadisticas_descriptivas(request):
     pacientes = list(Patient.objects.all().values(
         'glucose', 'bmi', 'age', 'systolic_pressure', 'diastolic_pressure',
@@ -144,4 +145,45 @@ def pacientes_criticos(request):
             'saturacion_lt_85':         Patient.objects.filter(oxygen_saturation__lt=85).count(),
         },
         'pacientes': list(criticos),
+    })
+
+
+FILTROS_CONDICION = {
+    'hipertensos':      Q(systolic_pressure__gt=140),
+    'diabeticos':       Q(glucose__gt=126),
+    'fumadores':        Q(smoker=True),
+    'con_antecedentes': Q(family_history=True),
+    'alcoholismo':      Q(alcohol_consumption=True),
+    'obesidad':         Q(bmi__gte=30),
+    'saturacion_baja':  Q(oxygen_saturation__lt=90),
+}
+
+FILTROS_ETIQUETA = {
+    'hipertensos':      'Hipertensos',
+    'diabeticos':       'Diabéticos',
+    'fumadores':        'Fumadores',
+    'con_antecedentes': 'Con antecedentes',
+    'alcoholismo':      'Alcoholismo',
+    'obesidad':         'Obesidad',
+    'saturacion_baja':  'Saturación baja',
+}
+
+
+@extend_schema(tags=['Analytics'], summary='Pacientes por filtro médico',
+               description='Retorna pacientes que cumplen una condición: hipertensos, diabeticos, fumadores, etc.')
+@api_view(['GET'])
+@permission_classes([IsMedicoOrAnalista])
+def pacientes_por_filtro(request):
+    filtro = request.query_params.get('filtro', '')
+    condicion = FILTROS_CONDICION.get(filtro)
+    if not condicion:
+        return Response({'error': f'Filtro inválido. Opciones: {", ".join(FILTROS_CONDICION.keys())}'},
+                        status=400)
+    pacientes = Patient.objects.filter(condicion).order_by('id')
+    serializer = PatientSerializer(pacientes, many=True)
+    return Response({
+        'filtro': filtro,
+        'etiqueta': FILTROS_ETIQUETA.get(filtro, filtro),
+        'total': pacientes.count(),
+        'pacientes': serializer.data,
     })

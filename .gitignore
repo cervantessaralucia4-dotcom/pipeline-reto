@@ -4,3 +4,6 @@ __pycache__/
 db.sqlite3
 .env
 datasets/*.xlsx
+node_modules/
+frontend/build/
+staticfiles/

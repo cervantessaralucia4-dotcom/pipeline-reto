@@ -6,4 +6,5 @@ urlpatterns = [
     path('analytics/kpis/',         views.kpis_medicos,              name='analytics-kpis'),
     path('analytics/segmentacion/', views.segmentacion,              name='analytics-segmentacion'),
     path('analytics/criticos/',     views.pacientes_criticos,        name='analytics-criticos'),
+    path('analytics/pacientes-por-filtro/', views.pacientes_por_filtro, name='analytics-pacientes-filtro'),
 ]

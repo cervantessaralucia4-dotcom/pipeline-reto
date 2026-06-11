@@ -1,32 +1,32 @@
 id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,presión_diastólica,frecuencia_cardiaca,glucosa,colesterol,saturación_oxígeno,temperatura,antecedentes_familiares,fumador,consumo_alcohol,actividad_física,diagnóstico_preliminar,riesgo_enfermedad,fecha_consulta,riesgo_calculado
 1,Patricio,Cobos,32.0,M,46.88,1.59,18.54,118.0,77,104,276.21,275.64,75.79,35.5,True,True,True,Baja,Cardiopatía,Bajo,2025-04-16,Crítico
 2,América,Espejo,75.0,F,89.19,1.85,26.06,90.0,80,93,265.48,198.26,77.56,36.9,False,False,False,Alta,Paciente sano,Medio,2024-07-24,Crítico
-3,Dulce,Ibarra,86.0,M,54.36,1.91,14.9,100.0,130,74,152.09,264.59,92.61,35.2,True,False,True,Media,Hipertensión,Alto,2026-03-19,Medio
+3,Dulce,Ibarra,86.0,F,54.36,1.91,14.9,100.0,130,74,152.09,264.59,92.61,35.2,True,False,True,Media,Hipertensión,Alto,2026-03-19,Medio
 4,Vicenta,Gomis,66.0,F,65.85,1.77,21.02,136.0,80,137,173.65,168.19,91.2,38.0,True,True,True,Baja,Hipertensión,Alto,2024-08-23,Medio
-5,Bartolomé,Perelló,52.0,F,119.21,1.77,38.05,143.5,88,54,261.69,313.86,95.13,37.0,True,True,False,Media,Paciente sano,Bajo,2025-12-05,Alto
+5,Bartolomé,Perelló,52.0,M,119.21,1.77,38.05,143.5,88,54,261.69,313.86,95.13,37.0,True,True,False,Media,Paciente sano,Bajo,2025-12-05,Alto
 6,Mireia,Jordán,68.0,F,111.35,1.77,35.54,108.0,93,124,109.1,291.35,85.71,37.5,False,True,True,Baja,Hipertensión,Alto,2025-02-15,Bajo
-7,Susanita,Manso,24.0,M,109.58,1.53,46.81,110.0,114,82,236.99,208.5,99.28,39.3,True,True,False,Baja,Hipertensión,Crítico,2025-11-19,Alto
+7,Susanita,Manso,24.0,F,109.58,1.53,46.81,110.0,114,82,236.99,208.5,99.28,39.3,True,True,False,Baja,Hipertensión,Crítico,2025-11-19,Alto
 8,Lourdes,Arranz,55.0,F,77.61,1.68,27.5,182.0,93,88,342.13,295.25,96.04,37.5,True,True,False,Media,Riesgo cardiovascular,Bajo,2026-04-08,Crítico
-9,Toño,Llorente,85.0,F,113.89,1.75,37.19,152.0,62,57,101.32,203.49,81.02,37.8,True,True,False,Alta,Riesgo cardiovascular,Alto,2025-01-30,Crítico
+9,Toño,Llorente,85.0,M,113.89,1.75,37.19,152.0,62,57,101.32,203.49,81.02,37.8,True,True,False,Alta,Riesgo cardiovascular,Alto,2025-01-30,Crítico
 10,Teodora,Vilar,34.0,F,54.63,1.69,19.13,160.0,81,119,144.22,320.66,93.88,38.4,False,False,False,Baja,Riesgo cardiovascular,Crítico,2025-10-07,Medio
-11,Lara,Montaña,75.0,M,54.08,1.56,22.22,133.0,62,59,234.73,172.93,92.7,35.3,True,True,False,Alta,Riesgo cardiovascular,Medio,2025-04-12,Alto
+11,Lara,Montaña,75.0,F,54.08,1.56,22.22,133.0,62,59,234.73,172.93,92.7,35.3,True,True,False,Alta,Riesgo cardiovascular,Medio,2025-04-12,Alto
 12,Carla,Simó,48.0,F,65.89,1.69,23.07,159.0,76,110,272.54,322.95,95.19,36.0,True,False,False,Baja,Hipertensión,Crítico,2024-08-05,Alto
 13,Adela,Murillo,77.0,F,109.79,1.48,50.12,173.0,72,74,86.97,287.49,79.76,37.2,False,True,False,Baja,Cardiopatía,Bajo,2026-03-13,Crítico
 14,Begoña,Valls,27.0,M,78.23,1.88,22.13,160.0,72,80,84.16,349.83,79.16,37.4,True,False,True,Media,Hipertensión,Bajo,2025-03-02,Crítico
-15,Ariel,Casanovas,18.0,F,118.9,1.58,47.63,190.0,118,74,149.87,280.22,82.42,39.8,True,False,True,Alta,Paciente sano,Crítico,2025-01-15,Crítico
-16,Haroldo,Saura,82.0,F,113.95,1.72,38.52,143.5,125,80,92.43,162.74,85.09,39.7,True,True,True,Baja,Riesgo cardiovascular,Bajo,2024-10-04,Medio
-17,Bernabé,Tejera,58.0,F,115.1,1.55,47.91,181.0,100,90,136.83,211.03,98.23,39.7,True,False,True,Alta,Riesgo cardiovascular,Alto,2024-11-17,Crítico
+15,Ariel,Casanovas,18.0,M,118.9,1.58,47.63,190.0,118,74,149.87,280.22,82.42,39.8,True,False,True,Alta,Paciente sano,Crítico,2025-01-15,Crítico
+16,Haroldo,Saura,82.0,M,113.95,1.72,38.52,143.5,125,80,92.43,162.74,85.09,39.7,True,True,True,Baja,Riesgo cardiovascular,Bajo,2024-10-04,Medio
+17,Bernabé,Tejera,58.0,M,115.1,1.55,47.91,181.0,100,90,136.83,211.03,98.23,39.7,True,False,True,Alta,Riesgo cardiovascular,Alto,2024-11-17,Crítico
 18,Claudia,Solera,45.0,F,82.94,1.52,35.9,134.0,68,119,316.2,204.99,92.59,38.1,True,False,True,Media,Prehipertensión,Medio,2025-10-04,Crítico
 19,Leire,Canet,32.0,F,111.73,1.82,33.73,109.0,94,137,148.89,168.44,90.86,36.3,False,False,True,Alta,Hipertensión,Alto,2025-12-20,Medio
-20,Maristela,Pagès,53.0,M,48.31,1.62,18.41,106.0,93,51,115.24,221.62,77.8,39.7,True,True,False,Media,Hipertensión,Crítico,2026-05-08,Crítico
-21,Plinio,Marqués,34.0,F,48.14,1.63,18.12,191.0,65,63,321.7,168.32,83.84,37.8,False,True,True,Media,Diabetes Tipo 2,Medio,2025-05-05,Crítico
+20,Maristela,Pagès,53.0,F,48.31,1.62,18.41,106.0,93,51,115.24,221.62,77.8,39.7,True,True,False,Media,Hipertensión,Crítico,2026-05-08,Crítico
+21,Plinio,Marqués,34.0,M,48.14,1.63,18.12,191.0,65,63,321.7,168.32,83.84,37.8,False,True,True,Media,Diabetes Tipo 2,Medio,2025-05-05,Crítico
 22,Ariel,Llano,70.0,M,46.86,1.82,14.15,132.0,112,70,294.63,318.73,94.68,35.5,True,False,True,Media,Paciente sano,Medio,2025-05-17,Alto
-23,Ruperta,Llabrés,62.0,M,67.89,1.85,19.84,119.0,88,58,76.63,164.42,99.17,36.4,False,False,True,Alta,Prehipertensión,Alto,2024-12-02,Bajo
-24,Rico,Jaén,40.0,F,88.54,1.94,23.53,94.0,73,127,237.04,199.51,99.61,35.6,True,False,True,Baja,Hipertensión,Alto,2024-12-29,Alto
-25,Esther,Cordero,84.0,M,114.42,1.72,38.68,182.0,85,90,171.98,136.09,91.58,35.6,False,False,False,Baja,Hipertensión,Alto,2026-04-06,Crítico
+23,Ruperta,Llabrés,62.0,F,67.89,1.85,19.84,119.0,88,58,76.63,164.42,99.17,36.4,False,False,True,Alta,Prehipertensión,Alto,2024-12-02,Bajo
+24,Rico,Jaén,40.0,M,88.54,1.94,23.53,94.0,73,127,237.04,199.51,99.61,35.6,True,False,True,Baja,Hipertensión,Alto,2024-12-29,Alto
+25,Esther,Cordero,84.0,F,114.42,1.72,38.68,182.0,85,90,171.98,136.09,91.58,35.6,False,False,False,Baja,Hipertensión,Alto,2026-04-06,Crítico
 26,Isidora,Girona,55.0,F,86.58,1.55,36.04,175.0,108,120,259.65,327.65,95.84,36.5,True,False,False,Baja,Paciente sano,Alto,2025-09-01,Alto
 27,Roque,Sanabria,74.0,M,95.67,1.71,32.72,191.0,81,80,207.5121282633371,185.27,91.82,36.1,True,True,True,Alta,Cardiopatía,Alto,2024-09-20,Crítico
-28,Nilo,Poza,78.0,F,90.85,1.83,27.13,148.0,113,101,318.12,252.4,81.1,38.3,True,True,False,Media,Diabetes Tipo 2,Crítico,2024-08-01,Crítico
+28,Nilo,Poza,78.0,M,90.85,1.83,27.13,148.0,113,101,318.12,252.4,81.1,38.3,True,True,False,Media,Diabetes Tipo 2,Crítico,2024-08-01,Crítico
 29,Eugenia,Alcaraz,84.0,F,79.84,1.73,26.68,198.0,75,128,197.81,304.33,95.38,39.5,False,False,True,Baja,Paciente sano,Alto,2024-10-31,Crítico
 30,Edmundo,Pacheco,51.0,M,101.38,1.87,28.99,125.0,126,86,205.69,175.03,80.86,36.7,True,True,True,Media,Hipertensión,Crítico,2026-01-27,Crítico
 31,Cloe,Moliner,37.0,F,97.98,1.48,44.73,142.0,102,99,221.93,215.63,97.62,37.9,True,False,False,Alta,Obesidad,Medio,2026-01-16,Alto
@@ -59,8 +59,8 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 58,Loreto,Orozco,54.0,F,95.82,1.53,40.93,146.0,104,82,346.54,188.81,86.42,36.5,False,False,True,Media,Hipertensión,Crítico,2026-01-01,Crítico
 59,Toño,Flores,63.0,M,88.11,1.95,23.17,127.0,62,122,343.82,271.39,96.63,38.9,True,False,False,Media,Obesidad,Alto,2025-09-01,Crítico
 60,Felipe,Escudero,46.0,M,92.75,1.76,29.94,176.0,77,106,245.91,327.78,75.83,36.8,True,True,False,Baja,Hipertensión,Bajo,2026-05-09,Crítico
-61,Rosa María,León,40.0,M,60.06,1.84,17.74,136.0,127,111,210.5,182.68,99.18,36.5,False,True,False,Alta,Diabetes Tipo 2,Medio,2026-01-31,Alto
-62,Ana Belén,Cobo,46.0,M,109.51,1.81,33.43,140.0,106,65,95.28,210.75,86.37,37.5,False,False,False,Alta,Cardiopatía,Alto,2025-10-21,Bajo
+61,Rosa María,León,40.0,F,60.06,1.84,17.74,136.0,127,111,210.5,182.68,99.18,36.5,False,True,False,Alta,Diabetes Tipo 2,Medio,2026-01-31,Alto
+62,Ana Belén,Cobo,46.0,F,109.51,1.81,33.43,140.0,106,65,95.28,210.75,86.37,37.5,False,False,False,Alta,Cardiopatía,Alto,2025-10-21,Bajo
 63,Úrsula,Fiol,78.0,F,46.88,1.89,13.12,161.0,101,109,326.27,170.91,97.73,36.5,False,True,True,Alta,Hipertensión,Bajo,2025-07-27,Crítico
 64,Sarita,Cabañas,56.0,M,119.69,1.51,52.49,120.0,128,69,107.99,224.34,97.14,38.3,False,False,False,Alta,Obesidad,Crítico,2025-12-18,Bajo
 65,Daniela,Gilabert,45.0,M,78.25,1.93,21.01,199.0,106,100,97.82,277.71,81.9,39.8,False,True,True,Alta,Hipertensión,Alto,2025-07-04,Crítico
@@ -68,14 +68,14 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 67,Jesusa,Nebot,87.0,M,63.8,1.54,26.9,174.0,63,91,106.9,202.4,75.39,36.3,True,False,True,Alta,Paciente sano,Medio,2026-04-24,Crítico
 68,Efraín,Molina,75.0,F,103.35,1.71,35.34,103.0,117,134,211.07,337.45,88.04,37.3,True,True,False,Baja,Hipertensión,Bajo,2024-12-14,Alto
 69,Benita,Cases,31.0,M,81.77,1.9,22.65,99.0,70,129,160.19,154.12,90.83,37.7,False,False,False,Baja,Riesgo cardiovascular,Medio,2024-11-07,Medio
-70,Raúl,Carranza,73.0,F,52.44,1.8,16.19,199.0,130,102,271.84,169.46,83.47,37.3,False,True,False,Baja,Obesidad,Crítico,2025-03-09,Crítico
-71,Gloria,Molins,50.0,M,82.49000000000001,1.53,35.24,150.0,68,97,95.54,139.63,95.29,37.8,False,True,False,Baja,Hipertensión,Crítico,2024-07-12,Medio
-72,Ricardo,Vidal,24.0,F,117.63,1.75,38.41,135.0,73,63,231.82,168.93,83.75,37.8,True,False,True,Baja,Riesgo cardiovascular,Crítico,2026-01-23,Crítico
-73,Paula,Soria,89.0,M,46.97,1.91,12.88,196.0,94,94,78.11,182.85,75.15,39.3,False,True,True,Alta,Hipertensión,Alto,2024-09-13,Crítico
+70,Raúl,Carranza,73.0,M,52.44,1.8,16.19,199.0,130,102,271.84,169.46,83.47,37.3,False,True,False,Baja,Obesidad,Crítico,2025-03-09,Crítico
+71,Gloria,Molins,50.0,F,82.49000000000001,1.53,35.24,150.0,68,97,95.54,139.63,95.29,37.8,False,True,False,Baja,Hipertensión,Crítico,2024-07-12,Medio
+72,Ricardo,Vidal,24.0,M,117.63,1.75,38.41,135.0,73,63,231.82,168.93,83.75,37.8,True,False,True,Baja,Riesgo cardiovascular,Crítico,2026-01-23,Crítico
+73,Paula,Soria,89.0,F,46.97,1.91,12.88,196.0,94,94,78.11,182.85,75.15,39.3,False,True,True,Alta,Hipertensión,Alto,2024-09-13,Crítico
 74,Trinidad,Mateu,85.0,M,61.13,1.66,22.18,133.0,80,69,173.61,285.97,78.94,38.1,True,False,False,Baja,Paciente sano,Bajo,2026-03-08,Crítico
 75,Régulo,Bou,74.0,M,76.06,1.56,31.25,155.0,74,135,166.65,145.5,82.71,36.1,True,True,True,Baja,Cardiopatía,Crítico,2026-03-24,Crítico
 76,María Del Carmen,Bermejo,35.0,F,102.31,1.59,40.47,105.0,60,118,209.27,219.05,92.59,37.5,False,True,False,Alta,Hipertensión,Medio,2024-08-01,Alto
-77,Mónica,Múñiz,20.0,M,79.48,1.49,35.8,130.0,114,64,230.55,283.18,85.13,39.8,True,False,False,Alta,Hipertensión,Crítico,2025-04-25,Alto
+77,Mónica,Múñiz,20.0,F,79.48,1.49,35.8,130.0,114,64,230.55,283.18,85.13,39.8,True,False,False,Alta,Hipertensión,Crítico,2025-04-25,Alto
 78,Danilo,Matas,31.0,F,63.25,1.74,20.89,157.0,70,92,180.81,191.36,94.48,35.4,True,True,False,Baja,Diabetes Tipo 2,Alto,2025-11-27,Medio
 79,Reyna,Salvador,48.0,F,52.71,1.58,21.11,112.0,79,113,600.0,270.77,86.6,37.8,False,False,False,Media,Paciente sano,Medio,2025-12-02,Crítico
 80,Visitación,Muñoz,26.0,M,80.17,1.77,25.59,191.0,95,109,235.6,234.7000283768445,86.3,35.3,False,True,True,Baja,Paciente sano,Bajo,2025-07-15,Crítico
@@ -92,7 +92,7 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 91,Débora,Rosales,20.0,F,92.4,1.74,30.52,181.0,78,123,151.56,120.36,85.41,37.5,True,False,True,Alta,Hipertensión,Alto,2025-04-21,Crítico
 92,Martin,Salvador,78.0,M,48.27,1.64,17.95,137.0,92,80,279.25,202.13,93.32,38.1,False,True,True,Baja,Riesgo cardiovascular,Bajo,2025-02-24,Alto
 93,Isidora,Flores,61.0,F,106.01,1.54,44.7,189.0,119,58,344.63,230.06,92.9,39.7,True,False,True,Alta,Cardiopatía,Medio,2024-10-09,Crítico
-94,Rosa María,Hernando,23.0,M,68.67,1.61,26.49,140.0,129,95,202.55,128.42,96.55,35.2,False,False,True,Baja,Hipertensión,Medio,2026-02-24,Alto
+94,Rosa María,Hernando,23.0,F,68.67,1.61,26.49,140.0,129,95,202.55,128.42,96.55,35.2,False,False,True,Baja,Hipertensión,Medio,2026-02-24,Alto
 95,Elisabet,Pablo,69.0,M,100.75,1.9,27.91,139.0,103,116,342.64,234.13,81.67,35.4,False,True,False,Media,Riesgo cardiovascular,Crítico,2024-06-08,Crítico
 96,Viviana,Puente,55.0,F,69.09,1.49,31.12,174.0,97,138,155.82,258.6,86.1,37.2,False,False,False,Alta,Hipertensión,Crítico,2024-09-12,Alto
 97,Teobaldo,Chico,69.0,M,72.25,1.85,21.11,176.0,80,66,336.78,152.84,76.68,38.9,False,False,False,Alta,Diabetes Tipo 2,Crítico,2026-05-10,Crítico
@@ -101,8 +101,8 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 100,Abilio,Castilla,26.0,M,86.25,1.6,33.69,128.0,80,115,269.31,333.28,80.61,39.9,True,True,False,Alta,Obesidad,Medio,2025-09-11,Crítico
 101,Calista,Ariza,88.0,F,87.92,1.68,31.15,160.0,76,111,241.35,139.83,88.14,38.8,True,True,False,Alta,Paciente sano,Alto,2025-02-10,Alto
 102,Vinicio,Navarro,77.0,F,96.01,1.62,36.58,196.0,130,114,249.14,161.85,97.77,37.5,True,True,False,Media,Diabetes Tipo 2,Medio,2025-06-03,Crítico
-103,José Ángel,Bosch,59.0,F,115.11,1.56,47.3,156.0,96,130,306.86,177.64,82.57,37.7,True,True,True,Baja,Hipertensión,Alto,2024-09-11,Crítico
-104,Esther,Palmer,21.0,M,51.09,1.92,13.86,188.0,93,131,252.32,296.4,75.76,39.4,False,False,False,Media,Hipertensión,Crítico,2025-11-18,Crítico
+103,José Ángel,Bosch,59.0,M,115.11,1.56,47.3,156.0,96,130,306.86,177.64,82.57,37.7,True,True,True,Baja,Hipertensión,Alto,2024-09-11,Crítico
+104,Esther,Palmer,21.0,F,51.09,1.92,13.86,188.0,93,131,252.32,296.4,75.76,39.4,False,False,False,Media,Hipertensión,Crítico,2025-11-18,Crítico
 105,Ernesto,Fábregas,56.0,M,79.02,1.79,24.66,110.0,116,68,186.37,226.82,82.81,38.6,False,False,True,Baja,Riesgo cardiovascular,Alto,2024-11-29,Crítico
 106,Nazario,Lucena,89.0,M,52.96,1.57,21.49,105.0,94,99,195.89,152.4,96.6,37.1,True,False,False,Media,Diabetes Tipo 2,Bajo,2025-03-07,Medio
 107,Amador,Arcos,81.0,F,119.7,1.68,42.41,129.0,123,77,76.49,337.4,89.58,35.2,False,False,False,Baja,Riesgo cardiovascular,Crítico,2026-02-12,Bajo
@@ -119,7 +119,7 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 118,Susana,Múgica,55.0,F,110.76,1.45,52.68,162.0,73,119,329.97,197.06,88.11,39.4,True,False,False,Media,Hipertensión,Crítico,2026-05-05,Crítico
 119,Pili,Pozuelo,60.0,M,57.19,1.68,20.26,122.0,83,136,73.94,197.54,93.93,35.9,False,False,False,Alta,Hipertensión,Alto,2025-10-22,Bajo
 120,Obdulia,Oliver,30.0,M,58.86,1.52,25.48,131.0,91,92,71.91,208.22,82.55,38.6,True,False,False,Media,Hipertensión,Crítico,2024-06-17,Crítico
-121,Ariel,Manrique,33.0,F,79.9,1.53,34.13,177.0,124,65,207.5121282633371,324.19,90.97,39.7,False,True,True,Media,Paciente sano,Alto,2025-01-11,Alto
+121,Ariel,Manrique,33.0,M,79.9,1.53,34.13,177.0,124,65,207.5121282633371,324.19,90.97,39.7,False,True,True,Media,Paciente sano,Alto,2025-01-11,Alto
 122,María Ángeles,Hernández,37.0,F,79.12,1.94,21.02,137.0,113,137,266.54,329.94,93.87,39.4,True,False,False,Alta,Hipertensión,Medio,2025-05-22,Alto
 123,Goyo,Márquez,25.0,M,107.16,1.9,29.68,115.0,128,137,111.96,195.47,80.14,37.9,True,False,True,Baja,Diabetes Tipo 2,Crítico,2024-06-08,Crítico
 124,María Ángeles,Vera,83.0,F,76.16,1.73,25.45,161.0,119,82,258.37,190.88,95.41,38.7,True,True,False,Baja,Hipertensión,Bajo,2025-09-27,Alto
@@ -128,11 +128,11 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 127,Jonatan,Valera,49.0,F,79.55,1.53,33.98,114.0,74,76,79.02,271.85,76.68,38.0,False,True,True,Alta,Hipertensión,Bajo,2025-08-10,Crítico
 128,Violeta,Plaza,74.0,F,62.58,1.56,25.71,200.0,67,123,109.24,348.5,82.97,38.0,False,True,False,Media,Riesgo cardiovascular,Medio,2026-01-11,Crítico
 129,Jose,Botella,46.0,M,76.02,1.59,30.07,161.0,82,94,245.28,218.26,98.54,38.4,False,False,False,Media,Prehipertensión,Crítico,2025-06-17,Alto
-130,Angelina,Albero,66.0,M,58.79,1.72,19.87,120.0,88,121,154.21,282.74,85.32,37.1,True,False,True,Baja,Cardiopatía,Crítico,2024-09-20,Medio
+130,Angelina,Albero,66.0,F,58.79,1.72,19.87,120.0,88,121,154.21,282.74,85.32,37.1,True,False,True,Baja,Cardiopatía,Crítico,2024-09-20,Medio
 131,Cecilia,Mascaró,60.0,M,93.5,1.91,25.63,198.0,107,84,95.89,286.65,84.43,38.0,True,True,True,Media,Paciente sano,Medio,2026-04-08,Crítico
 132,Florencio,Abril,44.0,F,110.21,1.62,41.99,91.0,87,111,332.4,341.28,97.86,38.5,True,False,True,Baja,Prehipertensión,Bajo,2025-06-01,Crítico
 133,Fidel,Méndez,66.0,M,79.97,1.77,25.53,129.0,93,110,170.7,323.05,94.04,36.6,True,False,False,Baja,Hipertensión,Crítico,2024-11-28,Medio
-134,Sara,Morán,90.0,M,109.81,1.82,33.15,92.0,93,69,224.93,254.33,79.9,36.2,True,False,False,Baja,Paciente sano,Crítico,2025-01-25,Crítico
+134,Sara,Morán,90.0,F,109.81,1.82,33.15,92.0,93,69,224.93,254.33,79.9,36.2,True,False,False,Baja,Paciente sano,Crítico,2025-01-25,Crítico
 135,Jonatan,Robles,80.0,M,79.56,1.82,24.02,135.0,81,132,109.19,245.71,98.93,37.6,True,True,True,Baja,Diabetes Tipo 2,Medio,2025-04-07,Bajo
 136,Arturo,Peinado,47.0,F,50.1,1.53,21.4,117.0,124,112,197.68,133.9,75.39,37.7,False,True,True,Baja,Riesgo cardiovascular,Crítico,2025-12-23,Crítico
 137,Jordán,Santiago,54.0,M,46.29,1.86,13.38,176.0,115,117,295.73,329.25,78.72,36.0,False,False,False,Baja,Hipertensión,Bajo,2025-01-12,Crítico
@@ -179,12 +179,12 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 178,Evelia,Montes,62.0,M,92.7,1.8,28.61,91.0,102,76,70.41,271.18,88.25,36.2,False,True,True,Baja,Hipertensión,Alto,2024-10-06,Bajo
 179,Aarón,Albero,23.0,M,114.1,1.9,31.61,156.0,112,62,266.24,205.67,87.64,38.2,False,True,True,Baja,Diabetes Tipo 2,Bajo,2025-11-02,Alto
 180,Primitiva,Burgos,48.0,F,66.88,1.88,18.92,192.0,110,84,207.5121282633371,289.13,80.84,39.7,True,True,True,Alta,Diabetes Tipo 2,Alto,2026-04-09,Crítico
-181,Bartolomé,Oliva,75.0,F,79.95,1.65,29.37,158.0,105,83,340.1,167.76,96.31,35.5,False,True,True,Baja,Diabetes Tipo 2,Alto,2025-12-27,Crítico
+181,Bartolomé,Oliva,75.0,M,79.95,1.65,29.37,158.0,105,83,340.1,167.76,96.31,35.5,False,True,True,Baja,Diabetes Tipo 2,Alto,2025-12-27,Crítico
 182,Cristóbal,Guillen,29.0,M,98.34,1.93,26.4,140.0,125,101,83.71,188.73,96.37,37.8,True,True,False,Alta,Diabetes Tipo 2,Medio,2025-03-05,Bajo
 183,Mauricio,Blasco,33.0,M,45.9,1.87,13.13,118.0,76,125,125.48,212.13,81.47,39.1,True,True,True,Baja,Diabetes Tipo 2,Bajo,2025-01-29,Crítico
 184,Adelia,Medina,29.0,M,112.88,1.86,32.63,132.0,75,105,81.95,226.03,95.54,37.0,True,False,False,Media,Obesidad,Medio,2024-11-22,Bajo
 185,Chus,Sainz,45.0,F,113.12,1.59,44.75,147.0,79,87,207.5121282633371,262.41,87.47,39.4,False,True,True,Baja,Hipertensión,Medio,2025-01-21,Alto
-186,Felix,Barco,35.0,F,76.44,1.77,24.4,192.0,127,95,139.76,348.64,86.99,38.9,False,False,False,Baja,Diabetes Tipo 2,Bajo,2024-08-20,Crítico
+186,Felix,Barco,35.0,M,76.44,1.77,24.4,192.0,127,95,139.76,348.64,86.99,38.9,False,False,False,Baja,Diabetes Tipo 2,Bajo,2024-08-20,Crítico
 187,Antonio,Blasco,21.0,M,68.92,1.56,28.32,193.0,95,79,86.41,348.05,99.35,35.5,True,False,True,Media,Hipertensión,Alto,2024-12-26,Crítico
 188,Albano,Raya,63.0,M,115.14,1.95,30.28,112.0,82,53,136.23,193.14,92.59,36.8,True,True,False,Baja,Diabetes Tipo 2,Alto,2025-03-07,Bajo
 189,Maite,Reyes,80.0,M,47.85,1.48,21.85,167.0,88,75,75.58,229.94,95.16,36.7,True,False,True,Alta,Diabetes Tipo 2,Alto,2025-09-23,Alto
@@ -197,12 +197,12 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 197,Edgardo,Rios,72.0,F,51.57,1.86,14.91,170.0,121,87,125.91,125.92,99.43,37.4,True,False,False,Baja,Paciente sano,Medio,2026-04-13,Alto
 198,Nuria,Criado,51.0,M,51.84,1.72,17.52,113.0,107,83,317.94,204.96,85.99,36.3,False,True,True,Alta,Hipertensión,Crítico,2024-12-12,Crítico
 199,Alberto,Grande,62.0,M,105.61,1.66,38.33,186.0,89,137,225.01,313.38,96.67,37.4,True,False,False,Alta,Hipertensión,Crítico,2025-08-31,Crítico
-200,José Ángel,Arco,22.0,F,82.66,1.9,22.9,192.0,78,77,103.68,294.15,95.21,35.6,False,True,False,Media,Diabetes Tipo 2,Medio,2025-04-28,Crítico
-201,Rosa,Saez,51.0,M,68.98,1.81,21.06,193.0,68,116,94.37,247.96,86.45,39.4,False,True,False,Media,Diabetes Tipo 2,Alto,2025-05-19,Crítico
+200,José Ángel,Arco,22.0,M,82.66,1.9,22.9,192.0,78,77,103.68,294.15,95.21,35.6,False,True,False,Media,Diabetes Tipo 2,Medio,2025-04-28,Crítico
+201,Rosa,Saez,51.0,F,68.98,1.81,21.06,193.0,68,116,94.37,247.96,86.45,39.4,False,True,False,Media,Diabetes Tipo 2,Alto,2025-05-19,Crítico
 202,Isidro,Peñas,90.0,M,89.1,1.83,26.61,102.0,73,94,227.55,143.23,96.95,37.5,False,False,True,Media,Prehipertensión,Alto,2024-10-16,Alto
 203,María Manuela,Pozo,69.0,F,55.79,1.75,18.22,143.5,111,80,80.86,324.6,76.23,37.4,False,False,True,Baja,Prehipertensión,Alto,2025-08-11,Crítico
 204,Encarnacion,Bermudez,57.0,F,66.03,1.7,22.85,179.0,72,106,342.3,172.43,94.35,36.6,False,True,True,Baja,Cardiopatía,Alto,2025-10-11,Crítico
-205,Rubén,Heredia,70.0,F,100.57,1.83,30.03,137.0,67,114,214.28,156.56,85.08,38.9,True,True,True,Media,Hipertensión,Alto,2025-02-04,Alto
+205,Rubén,Heredia,70.0,M,100.57,1.83,30.03,137.0,67,114,214.28,156.56,85.08,38.9,True,True,True,Media,Hipertensión,Alto,2025-02-04,Alto
 206,Petrona,Pellicer,49.0,F,47.48,1.48,21.68,136.0,85,65,146.71,309.41,92.03,36.2,False,False,True,Baja,Riesgo cardiovascular,Crítico,2025-08-16,Medio
 207,Rafael,Bermejo,62.0,M,70.82,1.87,20.25,123.0,71,77,149.82,208.91,96.43,38.2,True,False,False,Alta,Hipertensión,Medio,2025-10-10,Medio
 208,Guiomar,Salgado,78.0,F,113.36,1.77,36.18,166.0,61,140,132.66,259.92,91.07,37.1,False,False,False,Baja,Cardiopatía,Alto,2026-03-27,Alto
@@ -210,25 +210,25 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 210,Marcelo,Blanch,59.0,M,109.61,1.58,43.91,181.0,98,126,122.74,238.98,85.1,36.6,True,True,False,Baja,Prehipertensión,Medio,2026-02-12,Crítico
 211,Delfina,Cerezo,71.0,F,75.34,1.82,22.74,164.0,84,95,166.09,284.07,87.68,39.2,True,False,True,Baja,Diabetes Tipo 2,Crítico,2024-08-04,Alto
 212,Hortensia,Canet,51.0,F,99.39,1.73,33.21,113.0,102,89,253.24,171.12,85.51,39.4,False,False,False,Baja,Hipertensión,Medio,2026-04-29,Alto
-213,Juan Luis,Grande,78.0,F,49.03,1.77,15.65,164.0,69,98,202.22,164.75,88.25,37.1,True,True,True,Baja,Hipertensión,Bajo,2024-12-06,Alto
+213,Juan Luis,Grande,78.0,M,49.03,1.77,15.65,164.0,69,98,202.22,164.75,88.25,37.1,True,True,True,Baja,Hipertensión,Bajo,2024-12-06,Alto
 214,Danilo,Hernando,90.0,F,111.96,1.94,29.75,108.0,100,92,311.47,161.48,90.78,35.9,True,True,False,Baja,Cardiopatía,Bajo,2025-05-08,Crítico
 215,Teodoro,Valdés,39.0,F,88.22,1.53,37.69,190.0,71,104,106.23,219.75,99.13,36.9,True,True,False,Alta,Obesidad,Crítico,2025-01-15,Crítico
 216,Cándido,Manuel,85.0,F,59.29,1.79,18.5,170.0,91,63,133.35,321.71,84.59,37.9,True,True,True,Baja,Prehipertensión,Alto,2025-06-07,Crítico
 217,Severiano,Ortiz,76.0,F,99.59,1.75,32.52,133.0,115,95,318.63,348.96,93.75,35.8,False,True,True,Media,Diabetes Tipo 2,Alto,2024-11-04,Crítico
 218,Gabriel,Páez,45.0,F,100.06,1.74,33.05,111.0,75,131,172.65,269.62,81.39,37.7,True,True,True,Alta,Hipertensión,Bajo,2025-08-24,Crítico
-219,Sofía,Recio,32.0,M,76.26,1.64,28.35,160.0,92,103,202.83,155.22,91.54,38.3,False,True,False,Alta,Riesgo cardiovascular,Bajo,2025-09-06,Alto
-220,Mónica,Corral,33.0,M,66.2,1.84,19.55,153.0,85,140,240.52,298.93,85.24,35.8,False,True,False,Baja,Cardiopatía,Medio,2025-04-17,Alto
+219,Sofía,Recio,32.0,F,76.26,1.64,28.35,160.0,92,103,202.83,155.22,91.54,38.3,False,True,False,Alta,Riesgo cardiovascular,Bajo,2025-09-06,Alto
+220,Mónica,Corral,33.0,F,66.2,1.84,19.55,153.0,85,140,240.52,298.93,85.24,35.8,False,True,False,Baja,Cardiopatía,Medio,2025-04-17,Alto
 221,Olga,Cánovas,18.0,F,45.96,1.49,20.7,104.0,123,62,111.76,140.72,97.62,38.2,False,False,False,Baja,Hipertensión,Bajo,2026-02-19,Bajo
 223,Olalla,Caro,63.0,F,112.09,1.93,30.09,124.0,71,101,174.33,198.83,99.06,36.4,False,False,False,Media,Hipertensión,Bajo,2025-01-06,Medio
-224,Laura,Beltran,34.0,M,97.21,1.48,44.38,198.0,80,136,99.04,329.58,85.95,38.1,False,True,True,Baja,Paciente sano,Crítico,2024-05-25,Crítico
+224,Laura,Beltran,34.0,F,97.21,1.48,44.38,198.0,80,136,99.04,329.58,85.95,38.1,False,True,True,Baja,Paciente sano,Crítico,2024-05-25,Crítico
 225,Noemí,Vallés,32.0,F,111.57,1.67,40.01,98.0,93,93,253.39,122.84,87.98,38.4,True,False,True,Baja,Obesidad,Medio,2024-08-05,Alto
-226,David,Matas,67.0,F,56.15,1.86,16.23,168.0,66,71,73.26,334.91,76.87,37.5,True,False,False,Alta,Riesgo cardiovascular,Crítico,2025-08-09,Crítico
+226,David,Matas,67.0,M,56.15,1.86,16.23,168.0,66,71,73.26,334.91,76.87,37.5,True,False,False,Alta,Riesgo cardiovascular,Crítico,2025-08-09,Crítico
 227,Concha,Ferrández,46.0,M,86.29,1.64,32.08,194.0,90,113,92.07,222.16,86.18,37.5,False,True,True,Baja,Hipertensión,Crítico,2025-03-14,Crítico
 228,Américo,Aguado,22.0,M,86.78,1.45,41.27,101.0,98,96,319.23,249.34,95.63,39.1,False,False,False,Baja,Paciente sano,Crítico,2024-10-28,Crítico
 229,Toni,Aller,32.0,M,52.31,1.78,16.51,90.0,103,116,169.44,265.74,84.35,35.5,True,False,True,Baja,Hipertensión,Alto,2024-11-17,Crítico
 230,Jenaro,Lasa,50.0,F,90.81,1.54,38.29,199.0,110,93,130.37,309.65,77.69,37.1,True,False,False,Media,Paciente sano,Medio,2026-02-09,Crítico
 231,Nazaret,Mas,18.0,F,84.78,1.47,39.23,145.0,121,124,328.82,299.65,79.34,39.1,True,False,False,Baja,Hipertensión,Medio,2024-12-18,Crítico
-232,José Mari,Pino,49.0,F,65.52,1.93,17.59,127.0,117,120,295.34,151.78,96.52,38.6,True,True,True,Baja,Obesidad,Alto,2026-04-17,Alto
+232,José Mari,Pino,49.0,M,65.52,1.93,17.59,127.0,117,120,295.34,151.78,96.52,38.6,True,True,True,Baja,Obesidad,Alto,2026-04-17,Alto
 233,Alonso,Azorin,34.0,M,118.6,1.78,37.43,112.0,124,121,221.9,266.48,87.01,37.9,False,False,False,Alta,Riesgo cardiovascular,Bajo,2026-02-10,Alto
 234,Marisela,Machado,31.0,M,46.9,1.52,20.3,175.0,67,137,125.97,292.54,81.26,39.2,False,True,True,Baja,Paciente sano,Medio,2025-12-11,Crítico
 235,Gervasio,Manso,31.0,M,91.21,1.79,28.47,161.0,88,139,277.88,249.09,82.19,38.3,False,False,False,Baja,Riesgo cardiovascular,Medio,2025-10-16,Crítico
@@ -248,13 +248,13 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 249,Otilia,Solano,45.0,F,112.97,1.73,37.75,159.0,129,78,202.19,298.3,97.29,37.9,False,True,False,Alta,Hipertensión,Alto,2026-03-14,Alto
 250,Nereida,Segura,64.0,F,82.66,1.78,26.09,198.0,81,122,600.0,152.29,98.72,38.3,True,False,False,Alta,Cardiopatía,Medio,2025-02-07,Crítico
 251,Gil,Robledo,80.0,F,62.38,1.58,24.99,119.0,65,110,257.2,239.11,97.95,39.4,True,False,True,Baja,Prehipertensión,Alto,2025-10-28,Alto
-252,Rosa,Quesada,87.0,M,87.76,1.64,32.63,138.0,106,82,234.55,326.59,84.41,39.5,False,False,False,Baja,Paciente sano,Bajo,2026-01-20,Crítico
+252,Rosa,Quesada,87.0,F,87.76,1.64,32.63,138.0,106,82,234.55,326.59,84.41,39.5,False,False,False,Baja,Paciente sano,Bajo,2026-01-20,Crítico
 253,Lucas,Cabrero,18.0,F,82.64,1.52,35.77,111.0,89,73,91.58,268.0,78.93,38.0,True,True,False,Baja,Hipertensión,Medio,2025-07-02,Crítico
 254,Óscar,Quiroga,79.0,M,95.64,1.69,33.49,165.0,80,66,251.23,214.51,89.34,35.8,True,True,True,Media,Prehipertensión,Medio,2025-11-07,Alto
 255,Yago,Estévez,41.0,M,83.75,1.65,30.76,162.0,62,77,315.98,287.43,86.23,40.0,False,True,True,Baja,Diabetes Tipo 2,Alto,2025-08-13,Crítico
 256,Dora,Burgos,41.0,F,91.74,1.71,31.37,111.0,103,98,328.26,257.2,84.64,35.5,True,False,True,Alta,Diabetes Tipo 2,Bajo,2024-09-11,Crítico
 257,Anunciación,Mateu,78.0,F,112.62,1.75,36.77,190.0,128,66,210.93,147.03,97.55,37.7,True,False,False,Baja,Hipertensión,Crítico,2026-02-16,Crítico
-258,José Manuel,Isern,85.0,F,77.17,1.92,20.93,151.0,108,67,168.14,305.06,81.36,38.8,True,False,False,Baja,Cardiopatía,Bajo,2025-11-05,Crítico
+258,José Manuel,Isern,85.0,M,77.17,1.92,20.93,151.0,108,67,168.14,305.06,81.36,38.8,True,False,False,Baja,Cardiopatía,Bajo,2025-11-05,Crítico
 259,Marita,Jimenez,18.0,F,98.19,1.84,29.0,163.0,126,90,102.99,121.65,85.22,35.5,False,False,False,Baja,Obesidad,Medio,2026-01-07,Alto
 260,Visitación,Carpio,53.0,M,119.38,1.65,43.85,116.0,112,121,224.59,248.24,88.87,36.3,False,False,False,Media,Hipertensión,Medio,2024-08-11,Alto
 261,Nuria,Palma,47.0,M,78.49,1.8,24.23,110.0,72,128,130.05,212.13,92.43,38.5,True,False,True,Alta,Diabetes Tipo 2,Alto,2025-01-18,Bajo
@@ -277,10 +277,10 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 278,Dora,Tamarit,74.0,F,91.99,1.52,39.82,197.0,81,109,78.0,272.62,99.37,37.7,False,False,True,Media,Paciente sano,Alto,2025-11-17,Crítico
 279,Paz,Hoyos,90.0,M,77.62,1.77,24.78,158.0,99,106,324.5,230.78,82.7,37.1,True,False,True,Alta,Riesgo cardiovascular,Medio,2026-01-31,Crítico
 280,Lina,Figueras,35.0,F,70.79,1.68,25.08,91.0,122,87,335.15,229.73,89.93,39.0,False,True,False,Baja,Hipertensión,Bajo,2026-02-17,Crítico
-281,Fátima,Aller,49.0,M,57.25,1.82,17.28,139.0,108,128,131.77,138.22,95.19,38.4,False,False,False,Media,Hipertensión,Medio,2024-10-28,Bajo
+281,Fátima,Aller,49.0,F,57.25,1.82,17.28,139.0,108,128,131.77,138.22,95.19,38.4,False,False,False,Media,Hipertensión,Medio,2024-10-28,Bajo
 282,Esteban,Vilalta,41.0,M,55.25,1.51,24.23,148.0,117,52,146.2,263.23,78.8,39.8,True,True,True,Baja,Prehipertensión,Medio,2024-08-11,Crítico
 283,Santos,Milla,34.0,F,98.64,1.81,30.11,119.0,71,89,112.19,233.52,94.64,37.5,False,False,True,Baja,Hipertensión,Alto,2026-02-08,Bajo
-284,Hector,Zapata,36.0,F,49.2,1.84,14.53,99.0,129,51,201.64,164.2,78.05,38.8,True,False,False,Media,Hipertensión,Alto,2026-05-14,Crítico
+284,Hector,Zapata,36.0,M,49.2,1.84,14.53,99.0,129,51,201.64,164.2,78.05,38.8,True,False,False,Media,Hipertensión,Alto,2026-05-14,Crítico
 285,Emelina,Lago,43.0,M,79.56,1.84,23.5,156.0,86,70,202.39,276.73,90.73,35.2,True,False,False,Baja,Cardiopatía,Alto,2024-11-17,Alto
 286,Berta,Juárez,64.0,F,111.56,1.88,31.56,117.0,74,85,136.07,219.86,89.62,37.0,True,True,True,Baja,Diabetes Tipo 2,Bajo,2026-05-10,Bajo
 287,Lina,Aguirre,65.0,M,102.81,1.57,41.71,153.0,71,95,262.06,197.84,91.11,38.5,True,True,False,Media,Obesidad,Bajo,2026-01-29,Alto
@@ -297,19 +297,19 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 298,Angelita,Castro,30.0,M,89.64,1.6,35.02,183.0,108,105,91.97,132.86,85.41,39.3,True,True,False,Alta,Prehipertensión,Alto,2024-06-10,Crítico
 299,Virgilio,Hervia,85.0,F,48.09,1.72,16.26,109.0,101,100,210.67,170.78,99.28,38.8,True,True,False,Baja,Hipertensión,Bajo,2025-07-26,Alto
 300,Albert,Durán,36.0,M,54.91,1.49,24.73,163.0,66,105,223.48,180.39,94.35,35.7,True,False,True,Baja,Hipertensión,Crítico,2025-03-25,Alto
-301,Gloria,Conesa,43.0,M,87.09,1.95,22.9,157.0,91,137,137.85,181.24,98.1,35.4,False,False,False,Baja,Cardiopatía,Crítico,2024-06-22,Medio
+301,Gloria,Conesa,43.0,F,87.09,1.95,22.9,157.0,91,137,137.85,181.24,98.1,35.4,False,False,False,Baja,Cardiopatía,Crítico,2024-06-22,Medio
 302,Crescencia,Alvarez,59.0,M,70.84,1.78,22.36,188.0,99,68,117.39,200.43,86.01,39.6,True,True,False,Media,Hipertensión,Crítico,2025-02-20,Crítico
 303,Lilia,Camacho,32.0,M,100.47,1.57,40.76,169.0,78,138,313.25,308.63,95.11,36.5,False,True,False,Media,Riesgo cardiovascular,Bajo,2025-07-03,Crítico
 304,Eloy,Contreras,45.0,F,60.29,1.71,20.62,123.0,130,139,205.25,287.88,91.71,36.9,True,False,True,Alta,Prehipertensión,Medio,2025-11-03,Alto
-306,Luís,Mancebo,47.0,F,118.48,1.7,41.0,180.0,72,75,207.5121282633371,231.47,87.52,37.3,True,True,True,Baja,Obesidad,Bajo,2025-07-19,Alto
+306,Luís,Mancebo,47.0,M,118.48,1.7,41.0,180.0,72,75,207.5121282633371,231.47,87.52,37.3,True,True,True,Baja,Obesidad,Bajo,2025-07-19,Alto
 307,Felicidad,Sabater,80.0,M,74.5,1.53,31.83,134.0,105,130,169.51,189.54,81.44,37.5,True,False,True,Media,Obesidad,Alto,2025-08-11,Crítico
-308,Alberto,Mir,68.0,F,94.27,1.49,42.46,138.0,126,80,338.97,260.86,89.32,37.1,False,False,False,Media,Cardiopatía,Medio,2024-08-01,Crítico
+308,Alberto,Mir,68.0,M,94.27,1.49,42.46,138.0,126,80,338.97,260.86,89.32,37.1,False,False,False,Media,Cardiopatía,Medio,2024-08-01,Crítico
 309,Rafael,Bonet,35.0,F,88.58,1.79,27.65,115.0,77,68,156.52,282.18,91.41,37.5,True,False,True,Alta,Diabetes Tipo 2,Medio,2025-06-11,Medio
 310,Jacobo,Torralba,58.0,M,107.96,1.52,46.73,93.0,100,106,316.44,215.23,93.64,39.1,False,True,True,Alta,Diabetes Tipo 2,Crítico,2024-11-11,Crítico
 311,Mónica,Hervás,41.0,F,46.96,1.94,12.48,168.0,94,137,239.57,260.84,75.65,37.5,False,True,False,Baja,Diabetes Tipo 2,Medio,2025-07-07,Crítico
 312,Guiomar,Méndez,67.0,M,81.86,1.52,35.43,114.0,88,102,79.02,295.84,80.56,38.4,True,True,True,Media,Paciente sano,Bajo,2024-10-29,Crítico
 313,Chus,Abad,80.0,F,96.59,1.88,27.33,121.0,114,90,183.36,129.62,84.85,39.7,True,True,False,Baja,Hipertensión,Crítico,2026-04-11,Crítico
-314,Salvador,Dávila,49.0,F,83.9,1.65,30.82,184.0,65,87,226.16,238.71,85.99,39.4,False,False,True,Baja,Prehipertensión,Bajo,2025-07-13,Crítico
+314,Salvador,Dávila,49.0,M,83.9,1.65,30.82,184.0,65,87,226.16,238.71,85.99,39.4,False,False,True,Baja,Prehipertensión,Bajo,2025-07-13,Crítico
 315,Itziar,Ibarra,24.0,M,96.75,1.9,26.8,149.0,117,139,95.32,235.15,88.66,37.0,False,False,True,Media,Paciente sano,Medio,2025-12-20,Medio
 316,Mar,Cortina,43.0,F,111.19,1.5,49.42,131.0,80,107,271.14,148.42,90.85,35.4,False,True,False,Baja,Hipertensión,Bajo,2024-11-26,Alto
 317,África,Viana,39.0,F,113.42,1.73,37.9,174.0,79,89,115.39,153.26,82.74,38.8,False,False,True,Alta,Diabetes Tipo 2,Bajo,2025-01-15,Crítico
@@ -330,7 +330,7 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 332,Rómulo,Nicolau,57.0,M,69.92,1.55,29.1,187.0,128,66,91.99,332.24,77.32,39.0,False,True,False,Baja,Paciente sano,Crítico,2025-06-18,Crítico
 333,Emma,Heras,78.0,M,62.38,1.56,25.63,200.0,93,108,325.6,210.18,87.19,35.3,True,False,False,Baja,Diabetes Tipo 2,Alto,2026-02-04,Crítico
 334,Osvaldo,Viana,54.0,M,102.6,1.75,33.5,106.0,125,121,98.82,308.04,91.24,39.0,False,False,False,Media,Cardiopatía,Bajo,2025-11-20,Bajo
-335,Felipe,Donoso,88.0,F,56.93,1.69,19.93,98.0,103,122,128.31,279.63,94.68,37.7,True,True,True,Baja,Hipertensión,Crítico,2026-01-31,Bajo
+335,Felipe,Donoso,88.0,M,56.93,1.69,19.93,98.0,103,122,128.31,279.63,94.68,37.7,True,True,True,Baja,Hipertensión,Crítico,2026-01-31,Bajo
 336,Luna,Ripoll,77.0,F,69.4,1.5,30.84,146.0,82,126,156.25,213.33,94.28,36.9,False,True,True,Media,Diabetes Tipo 2,Bajo,2026-04-30,Medio
 337,Florinda,Flores,18.0,F,101.78,1.78,32.12,147.0,128,76,151.62,261.58,92.04,36.6,False,False,False,Alta,Hipertensión,Crítico,2026-04-17,Medio
 338,Paulina,Salamanca,83.0,M,75.31,1.51,33.03,127.0,67,140,173.38,246.24,89.0,39.9,True,False,True,Media,Hipertensión,Bajo,2025-02-04,Medio
@@ -346,12 +346,12 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 349,Máximo,Pozuelo,68.0,M,79.58,1.79,24.84,120.0,84,120,215.59,275.88,75.26,35.0,True,True,False,Alta,Riesgo cardiovascular,Medio,2024-08-26,Crítico
 350,Rogelio,Rodriguez,31.0,M,96.41,1.63,36.29,182.0,96,126,140.53,127.83,91.42,39.2,True,True,True,Media,Hipertensión,Bajo,2025-01-29,Crítico
 351,Sigfrido,Alcolea,90.0,F,105.24,1.54,44.38,104.0,83,108,140.93,227.4,98.07,36.4,False,False,False,Media,Hipertensión,Bajo,2025-07-05,Medio
-352,Victor,Castañeda,53.0,F,103.28,1.64,38.4,132.0,67,58,142.31,306.94,87.29,39.6,False,True,False,Alta,Diabetes Tipo 2,Medio,2025-11-05,Medio
+352,Victor,Castañeda,53.0,M,103.28,1.64,38.4,132.0,67,58,142.31,306.94,87.29,39.6,False,True,False,Alta,Diabetes Tipo 2,Medio,2025-11-05,Medio
 353,Artemio,Mayoral,87.0,M,102.65,1.56,42.18,172.0,73,59,325.53,284.54,76.76,38.6,False,True,False,Media,Hipertensión,Bajo,2026-02-21,Crítico
 354,Olimpia,Moll,22.0,F,94.85,1.58,37.99,179.0,102,105,323.29,252.17,85.1,38.6,True,True,True,Baja,Paciente sano,Crítico,2025-08-10,Crítico
 355,Fanny,Roura,33.0,M,87.54,1.92,23.75,135.0,102,118,260.91,212.14,96.33,36.7,False,False,True,Media,Riesgo cardiovascular,Bajo,2025-03-15,Alto
 356,Nerea,Serra,23.0,F,117.56,1.78,37.1,128.0,109,60,321.01,265.04,97.13,37.2,True,True,True,Media,Hipertensión,Alto,2024-09-08,Crítico
-357,Sonia,Gual,48.0,M,81.69,1.48,37.29,159.0,99,54,209.91,341.94,83.48,36.7,True,False,True,Media,Riesgo cardiovascular,Crítico,2026-05-16,Crítico
+357,Sonia,Gual,48.0,F,81.69,1.48,37.29,159.0,99,54,209.91,341.94,83.48,36.7,True,False,True,Media,Riesgo cardiovascular,Crítico,2026-05-16,Crítico
 358,Saturnino,Ferrera,76.0,M,115.51,1.89,32.34,158.0,79,68,277.49,173.59,87.22,35.1,True,True,True,Alta,Diabetes Tipo 2,Bajo,2025-11-19,Alto
 359,Atilio,Jáuregui,24.0,M,112.85,1.86,32.62,102.0,118,64,241.14,234.7000283768445,87.43,39.0,True,True,True,Baja,Obesidad,Bajo,2025-03-10,Alto
 360,Vilma,Baquero,69.0,M,69.32,1.94,18.42,163.0,129,125,108.45,312.38,79.34,37.5,False,True,False,Media,Obesidad,Medio,2024-06-27,Crítico
@@ -401,13 +401,13 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 405,Valeria,Simó,43.0,M,82.27,1.87,23.53,190.0,69,56,305.31,243.24,82.43,37.9,True,True,True,Baja,Prehipertensión,Alto,2025-10-24,Crítico
 406,Alexandra,Aranda,26.0,M,87.48,1.72,29.57,144.0,86,88,167.25,137.63,85.82,37.7,True,False,False,Baja,Riesgo cardiovascular,Alto,2026-02-19,Medio
 407,Teodoro,Bas,76.0,F,95.37,1.72,32.24,92.0,126,109,311.56,252.67,81.7,38.2,False,True,True,Baja,Paciente sano,Medio,2025-01-09,Crítico
-408,José Mari,Abella,36.0,F,63.03,1.82,19.03,187.0,98,76,306.35,214.36,96.15,36.3,False,True,False,Media,Hipertensión,Bajo,2024-11-19,Crítico
+408,José Mari,Abella,36.0,M,63.03,1.82,19.03,187.0,98,76,306.35,214.36,96.15,36.3,False,True,False,Media,Hipertensión,Bajo,2024-11-19,Crítico
 409,Natividad,Vilanova,48.0,F,53.52,1.55,22.28,121.0,99,132,199.96,248.76,97.64,36.0,False,True,True,Baja,Prehipertensión,Crítico,2025-07-25,Medio
 410,Úrsula,Gordillo,88.0,M,58.2,1.88,16.47,182.0,122,127,289.03,132.73,82.45,35.3,False,False,True,Baja,Diabetes Tipo 2,Bajo,2024-09-29,Crítico
 411,Maura,Vélez,48.0,F,53.39,1.82,16.12,105.0,126,61,255.98,253.5,80.95,35.6,False,False,False,Media,Hipertensión,Alto,2024-05-22,Crítico
 412,Aureliano,Fuster,45.0,F,55.82,1.54,23.54,125.0,116,118,184.35,318.47,84.37,39.7,False,False,False,Media,Prehipertensión,Bajo,2024-07-19,Crítico
 413,Adela,Anguita,36.0,F,72.22,1.81,22.04,195.0,99,134,75.9,342.37,94.97,35.3,True,False,False,Baja,Obesidad,Bajo,2025-03-11,Crítico
-414,Julia,Solera,33.0,M,85.12,1.57,34.53,146.0,109,61,72.2,340.97,98.41,37.5,False,True,True,Baja,Obesidad,Alto,2025-11-07,Medio
+414,Julia,Solera,33.0,F,85.12,1.57,34.53,146.0,109,61,72.2,340.97,98.41,37.5,False,True,True,Baja,Obesidad,Alto,2025-11-07,Medio
 415,Ezequiel,Paredes,70.0,F,104.2,1.59,41.22,100.0,122,104,201.91,214.98,96.92,39.1,True,False,True,Baja,Hipertensión,Alto,2025-06-19,Alto
 416,Bonifacio,Escudero,88.0,F,100.33,1.68,35.55,93.0,66,67,249.58,162.26,75.08,36.0,False,False,True,Alta,Diabetes Tipo 2,Crítico,2024-07-19,Crítico
 417,Roberta,Batlle,49.0,F,83.73,1.93,22.48,196.0,76,111,307.15,277.72,96.84,35.7,True,False,False,Media,Hipertensión,Alto,2025-06-20,Crítico
@@ -435,7 +435,7 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 439,Patricia,Lara,58.0,F,86.49,1.58,34.65,172.0,113,139,318.96,146.9,85.91,35.8,True,False,False,Baja,Cardiopatía,Alto,2024-10-25,Crítico
 440,Manola,Figueras,82.0,F,61.48,1.9,17.03,133.0,119,136,106.72,187.48,91.31,36.8,False,True,True,Baja,Hipertensión,Crítico,2024-11-09,Bajo
 441,Juanito,Falcó,79.0,M,54.68,1.55,22.76,167.0,122,80,98.25,215.68,80.24,35.2,True,False,False,Baja,Diabetes Tipo 2,Crítico,2026-04-03,Crítico
-442,María Teresa,Mendizábal,40.0,M,107.1,1.9,29.67,94.0,68,121,164.57,146.21,80.6,36.3,False,False,True,Baja,Diabetes Tipo 2,Medio,2026-03-24,Crítico
+442,María Teresa,Mendizábal,40.0,F,107.1,1.9,29.67,94.0,68,121,164.57,146.21,80.6,36.3,False,False,True,Baja,Diabetes Tipo 2,Medio,2026-03-24,Crítico
 443,Isaura,Urrutia,83.0,M,90.32,1.5,40.14,96.0,116,128,293.72,341.41,90.24,39.3,True,True,True,Media,Hipertensión,Bajo,2025-10-10,Alto
 444,Bonifacio,Fuente,44.0,F,113.32,1.53,48.41,127.0,116,132,283.35,234.63,84.09,39.1,True,True,False,Baja,Hipertensión,Bajo,2025-09-09,Crítico
 445,Amor,Tur,49.0,M,107.61,1.69,37.68,126.0,124,130,117.95,181.18,91.62,35.8,False,True,True,Baja,Hipertensión,Crítico,2025-04-09,Bajo
@@ -449,7 +449,7 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 453,Bruno,Badía,85.0,F,75.21,1.73,25.13,189.0,110,138,314.16,254.39,98.28,37.4,False,True,True,Media,Paciente sano,Crítico,2025-08-15,Crítico
 454,Candelas,Escolano,76.0,M,54.7,1.8,16.88,200.0,127,70,103.06,168.91,98.6,36.8,True,False,True,Alta,Obesidad,Crítico,2025-06-04,Crítico
 455,Plinio,Sanz,55.0,M,48.02,1.53,20.51,137.0,99,68,347.49,189.75,78.55,37.9,True,False,False,Media,Diabetes Tipo 2,Crítico,2025-11-02,Crítico
-456,María Ángeles,Tudela,80.0,M,45.16,1.72,15.27,98.0,65,98,186.92,251.8,86.88,38.6,True,True,False,Baja,Paciente sano,Crítico,2024-08-29,Medio
+456,María Ángeles,Tudela,80.0,F,45.16,1.72,15.27,98.0,65,98,186.92,251.8,86.88,38.6,True,True,False,Baja,Paciente sano,Crítico,2024-08-29,Medio
 457,Eulalia,Reig,37.0,M,109.98,1.61,42.43,192.0,112,55,178.43,327.06,98.95,39.5,False,True,True,Alta,Prehipertensión,Alto,2024-06-11,Crítico
 458,Emilio,Sevillano,89.0,M,93.39,1.77,29.81,100.0,84,116,337.45,244.62,79.73,37.4,True,True,True,Alta,Prehipertensión,Bajo,2024-10-07,Crítico
 459,Griselda,Sanchez,44.0,F,63.4,1.8,19.57,164.0,116,125,93.7,242.72,76.12,39.3,True,False,False,Media,Hipertensión,Alto,2024-11-09,Crítico
@@ -463,7 +463,7 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 467,Osvaldo,Ariño,21.0,F,111.94,1.86,32.36,146.0,75,72,168.84,234.7000283768445,95.98,39.1,True,True,False,Baja,Cardiopatía,Alto,2025-01-20,Medio
 468,Zaira,Real,74.0,M,45.7,1.82,13.8,187.0,95,128,260.56,283.12,90.63,39.0,True,True,False,Baja,Hipertensión,Medio,2024-07-26,Crítico
 469,Anabel,Alcalde,53.0,M,81.96,1.8,25.3,167.0,86,85,72.0,346.38,89.23,37.5,True,True,True,Media,Hipertensión,Crítico,2024-10-31,Alto
-470,Ricardo,Castell,34.0,F,64.47,1.73,21.54,119.0,126,136,274.09,183.1,88.32,36.3,False,True,False,Alta,Obesidad,Bajo,2024-11-06,Alto
+470,Ricardo,Castell,34.0,M,64.47,1.73,21.54,119.0,126,136,274.09,183.1,88.32,36.3,False,True,False,Alta,Obesidad,Bajo,2024-11-06,Alto
 471,Narcisa,Carretero,73.0,F,108.33,1.65,39.79,105.0,126,78,200.64,203.14,76.17,39.6,False,False,True,Baja,Cardiopatía,Bajo,2026-03-26,Crítico
 472,Leoncio,Barbero,60.0,F,82.49000000000001,1.74,27.25,93.0,88,75,343.87,234.7000283768445,79.11,36.6,True,True,False,Baja,Hipertensión,Bajo,2026-02-07,Crítico
 473,Berto,Baró,60.0,M,108.04,1.57,43.83,150.0,90,80,338.46,311.48,98.59,38.9,False,True,False,Alta,Hipertensión,Alto,2025-06-15,Crítico
@@ -486,7 +486,7 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 490,Gabino,Poza,28.0,M,68.48,1.54,28.88,188.0,113,67,128.68,223.49,89.44,35.6,True,False,False,Baja,Cardiopatía,Bajo,2025-08-04,Crítico
 491,Ileana,Domingo,71.0,F,76.93,1.83,22.97,187.0,128,69,153.9,255.0,99.43,40.0,False,False,True,Baja,Hipertensión,Bajo,2025-03-27,Crítico
 492,Clementina,Arias,86.0,M,73.98,1.69,25.9,132.0,117,136,248.92,190.07,88.82,35.2,False,True,True,Media,Hipertensión,Medio,2025-06-27,Alto
-493,Javier,Español,67.0,F,66.29,1.57,26.89,174.0,127,91,89.59,133.21,96.49,37.1,True,True,True,Baja,Paciente sano,Bajo,2025-09-14,Alto
+493,Javier,Español,67.0,M,66.29,1.57,26.89,174.0,127,91,89.59,133.21,96.49,37.1,True,True,True,Baja,Paciente sano,Bajo,2025-09-14,Alto
 494,Adora,Carrasco,26.0,F,74.17,1.9,20.55,116.0,76,127,313.73,191.24,89.38,36.6,True,False,False,Media,Hipertensión,Crítico,2025-11-05,Crítico
 495,Aníbal,Rosell,36.0,F,78.43,1.86,22.67,167.0,91,109,217.24,329.37,89.4,38.7,False,False,False,Baja,Hipertensión,Crítico,2025-02-23,Alto
 496,Loreto,Rico,40.0,F,82.49000000000001,1.54,34.78,169.0,115,122,198.19,329.49,77.39,38.5,True,True,True,Baja,Riesgo cardiovascular,Medio,2025-05-16,Crítico
@@ -514,40 +514,40 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 518,Haydée,Galvez,33.0,M,65.76,1.62,25.06,164.0,90,57,203.81,274.75,81.65,39.8,True,True,True,Alta,Hipertensión,Bajo,2025-07-17,Crítico
 519,Reinaldo,Coca,84.0,M,119.02,1.83,35.54,152.0,120,137,281.94,259.01,97.25,40.0,True,False,False,Baja,Hipertensión,Alto,2025-10-04,Alto
 520,Febe,Bautista,63.0,M,110.48,1.85,32.28,90.0,118,127,313.75,212.42,78.07,37.7,True,False,False,Baja,Riesgo cardiovascular,Medio,2024-11-19,Crítico
-521,Diego,Escribano,70.0,F,94.52,1.45,44.96,171.0,101,91,74.66,202.85,91.95,36.2,False,False,True,Baja,Hipertensión,Bajo,2026-03-06,Alto
+521,Diego,Escribano,70.0,M,94.52,1.45,44.96,171.0,101,91,74.66,202.85,91.95,36.2,False,False,True,Baja,Hipertensión,Bajo,2026-03-06,Alto
 522,Ángeles,Cid,78.0,M,119.02,1.88,33.67,102.0,109,123,152.28,164.87,94.62,38.6,True,True,False,Alta,Prehipertensión,Medio,2026-03-27,Medio
 523,Selena,Santamaría,88.0,F,119.04,1.68,42.18,147.0,74,71,205.01,244.35,93.83,38.3,True,True,False,Alta,Diabetes Tipo 2,Medio,2025-05-21,Alto
 524,Josefina,Quintanilla,59.0,F,112.7,1.83,33.65,118.0,92,67,256.46,338.85,98.07,38.2,False,True,False,Media,Hipertensión,Bajo,2025-11-03,Alto
 525,Lino,Garmendia,61.0,F,73.28,1.81,22.37,184.0,108,78,253.1,300.57,81.48,36.5,True,True,False,Media,Hipertensión,Crítico,2026-04-11,Crítico
 526,Isabel,Berenguer,65.0,F,54.56,1.61,21.05,138.0,60,104,157.02,255.71,82.99,36.8,True,True,True,Baja,Hipertensión,Medio,2026-04-27,Crítico
 527,Ainoa,Mármol,86.0,F,108.93,1.61,42.02,194.0,97,126,207.5121282633371,234.96,82.08,38.7,True,False,False,Alta,Prehipertensión,Crítico,2025-10-21,Crítico
-528,Manuel,Juliá,79.0,F,92.33,1.56,37.94,127.0,108,76,86.47,306.35,96.2,39.7,True,True,True,Baja,Hipertensión,Medio,2024-06-24,Bajo
+528,Manuel,Juliá,79.0,M,92.33,1.56,37.94,127.0,108,76,86.47,306.35,96.2,39.7,True,True,True,Baja,Hipertensión,Medio,2024-06-24,Bajo
 529,Dani,Martí,56.0,F,118.83,1.78,37.5,198.0,80,136,347.5,246.03,86.84,36.7,False,False,True,Baja,Prehipertensión,Alto,2025-01-10,Crítico
 530,Samuel,Carbó,42.0,F,82.49000000000001,1.72,27.88,102.0,76,88,160.56,301.99,86.44,35.8,True,False,False,Baja,Diabetes Tipo 2,Bajo,2025-05-23,Medio
 531,Ricarda,Macías,44.0,F,82.49000000000001,1.82,24.9,184.0,61,68,171.42,316.91,84.41,39.9,True,True,True,Baja,Paciente sano,Bajo,2024-12-28,Crítico
 532,Azucena,Luna,40.0,F,115.88,1.51,50.82,155.0,103,54,236.15,343.04,77.97,37.0,False,True,False,Alta,Paciente sano,Crítico,2026-05-01,Crítico
 533,Hipólito,Águila,66.0,F,65.64,1.78,20.72,137.0,61,135,103.6,139.01,97.71,36.1,False,False,True,Media,Hipertensión,Crítico,2025-02-15,Bajo
-534,Bernabé,Teruel,79.0,F,120.0,1.8,37.04,128.0,76,139,97.84,134.6,75.49,37.8,False,True,True,Media,Hipertensión,Medio,2024-10-19,Crítico
+534,Bernabé,Teruel,79.0,M,120.0,1.8,37.04,128.0,76,139,97.84,134.6,75.49,37.8,False,True,True,Media,Hipertensión,Medio,2024-10-19,Crítico
 535,Marianela,Arnal,41.0,M,109.65,1.8,33.84,90.0,117,76,294.14,148.3,91.32,35.4,False,True,True,Alta,Riesgo cardiovascular,Medio,2025-07-09,Alto
-536,Luis,Pinilla,56.0,F,72.27,1.72,24.43,144.0,60,118,139.53,130.62,86.12,37.9,False,False,True,Alta,Hipertensión,Alto,2024-06-04,Medio
+536,Luis,Pinilla,56.0,M,72.27,1.72,24.43,144.0,60,118,139.53,130.62,86.12,37.9,False,False,True,Alta,Hipertensión,Alto,2024-06-04,Medio
 537,Estela,Colomer,48.0,M,47.76,1.52,20.67,199.0,87,95,338.08,258.49,81.93,38.6,False,True,False,Baja,Hipertensión,Medio,2026-02-09,Crítico
 538,Mario,Palomares,38.0,M,75.0,1.49,33.78,122.0,114,130,333.26,152.95,93.32,40.0,True,False,True,Baja,Diabetes Tipo 2,Medio,2024-11-09,Crítico
 539,Hernán,Malo,58.0,F,82.49000000000001,1.67,29.58,93.0,91,120,91.71,148.66,85.17,36.6,True,False,False,Baja,Diabetes Tipo 2,Bajo,2026-04-15,Bajo
 540,Anunciación,Serra,46.0,F,65.52,1.5,29.12,118.0,108,117,336.5,300.03,93.21,36.5,False,True,False,Baja,Riesgo cardiovascular,Bajo,2025-01-09,Crítico
-541,Haroldo,Barco,52.0,F,90.56,1.9,25.09,111.0,100,136,335.02,209.6,99.2,37.7,False,False,True,Baja,Hipertensión,Alto,2025-01-26,Crítico
+541,Haroldo,Barco,52.0,M,90.56,1.9,25.09,111.0,100,136,335.02,209.6,99.2,37.7,False,False,True,Baja,Hipertensión,Alto,2025-01-26,Crítico
 542,Zacarías,Reina,83.0,F,98.49,1.78,31.09,108.0,108,81,228.92,181.5,91.96,37.1,False,True,False,Baja,Paciente sano,Alto,2024-07-06,Alto
 543,Amor,Casal,82.0,F,66.51,1.93,17.86,156.0,89,90,155.45,317.32,96.13,38.2,True,True,True,Media,Hipertensión,Alto,2025-10-12,Medio
 544,Azeneth,Fortuny,28.0,F,100.76,1.73,33.67,153.0,61,113,339.41,217.52,87.88,40.0,True,False,True,Media,Hipertensión,Medio,2024-06-27,Crítico
 545,Carla,Asensio,55.0,F,97.69,1.82,29.49,121.0,127,136,261.54,129.74,98.25,37.5,True,True,True,Baja,Diabetes Tipo 2,Crítico,2025-11-22,Alto
-546,Rubén,Hernando,83.0,F,71.5,1.48,32.64,153.0,108,81,117.74,343.04,95.79,39.3,True,False,False,Baja,Prehipertensión,Alto,2026-05-05,Medio
+546,Rubén,Hernando,83.0,M,71.5,1.48,32.64,153.0,108,81,117.74,343.04,95.79,39.3,True,False,False,Baja,Prehipertensión,Alto,2026-05-05,Medio
 547,Galo,Girón,51.0,F,60.98,1.82,18.41,162.0,110,129,130.89,190.11,96.21,35.3,True,False,False,Baja,Obesidad,Bajo,2024-10-07,Alto
-548,Gustavo,Barral,31.0,F,45.39,1.9,12.57,113.0,111,60,169.27,143.31,88.23,39.5,False,True,False,Alta,Diabetes Tipo 2,Crítico,2025-10-12,Medio
+548,Gustavo,Barral,31.0,M,45.39,1.9,12.57,113.0,111,60,169.27,143.31,88.23,39.5,False,True,False,Alta,Diabetes Tipo 2,Crítico,2025-10-12,Medio
 549,Pánfilo,Albero,50.0,M,61.96,1.65,22.76,128.0,106,106,189.94,161.9,91.41,37.2,True,False,False,Alta,Obesidad,Alto,2026-01-03,Medio
 550,Mamen,Almazán,43.0,F,53.3,1.59,21.08,107.0,110,135,187.9,196.18,79.97,37.4,False,True,False,Baja,Riesgo cardiovascular,Bajo,2025-08-07,Crítico
 551,María Belén,Ríos,81.0,F,104.99,1.81,32.05,131.0,111,64,210.52,332.42,98.94,39.0,True,True,False,Alta,Cardiopatía,Crítico,2024-06-04,Alto
-552,María Fernanda,Aragón,24.0,M,95.87,1.62,36.53,166.0,61,104,191.61,186.58,81.19,35.8,True,True,False,Alta,Prehipertensión,Crítico,2025-03-20,Crítico
+552,María Fernanda,Aragón,24.0,F,95.87,1.62,36.53,166.0,61,104,191.61,186.58,81.19,35.8,True,True,False,Alta,Prehipertensión,Crítico,2025-03-20,Crítico
 553,Jesusa,Pereira,49.0,F,94.97,1.66,34.46,150.0,73,125,266.32,235.54,90.72,35.7,True,True,False,Alta,Prehipertensión,Medio,2024-11-14,Alto
-554,María,Amo,42.0,M,114.68,1.66,41.62,168.0,85,89,95.46,131.72,92.5,39.9,True,False,False,Baja,Hipertensión,Crítico,2024-09-17,Alto
+554,María,Amo,42.0,F,114.68,1.66,41.62,168.0,85,89,95.46,131.72,92.5,39.9,True,False,False,Baja,Hipertensión,Crítico,2024-09-17,Alto
 555,Prudencio,Reguera,83.0,F,82.49000000000001,1.48,37.66,104.0,94,90,171.8,336.89,97.38,35.9,True,True,False,Media,Prehipertensión,Crítico,2025-01-28,Medio
 556,Adelardo,Sancho,78.0,M,66.01,1.75,21.55,145.0,83,64,140.63,233.0,77.42,35.1,True,False,False,Baja,Riesgo cardiovascular,Alto,2025-04-17,Crítico
 557,Julio César,Cal,65.0,M,62.87,1.59,24.87,164.0,109,125,94.42,144.46,99.21,39.4,True,True,False,Alta,Hipertensión,Bajo,2025-08-02,Alto
@@ -570,18 +570,18 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 574,Seve,Pol,71.0,F,63.19,1.86,18.27,97.0,77,53,102.83,280.03,92.4,37.1,True,True,True,Baja,Diabetes Tipo 2,Medio,2026-03-29,Bajo
 575,Íngrid,Sala,21.0,F,56.02,1.52,24.25,121.0,69,73,73.49,311.15,86.74,35.7,False,False,False,Baja,Paciente sano,Crítico,2026-03-08,Bajo
 576,Javier,Puga,19.0,M,66.51,1.53,28.41,172.0,64,100,239.17,159.92,95.82,38.4,False,False,False,Media,Hipertensión,Medio,2025-08-05,Alto
-577,José Manuel,Morcillo,38.0,F,65.39,1.5,29.06,138.0,76,100,278.08,212.09,79.59,38.7,True,False,False,Baja,Hipertensión,Bajo,2025-12-23,Crítico
+577,José Manuel,Morcillo,38.0,M,65.39,1.5,29.06,138.0,76,100,278.08,212.09,79.59,38.7,True,False,False,Baja,Hipertensión,Bajo,2025-12-23,Crítico
 578,Aurelia,Torrijos,66.0,M,57.36,1.85,16.76,172.0,114,127,124.52,144.93,94.47,36.7,True,False,True,Alta,Hipertensión,Bajo,2025-04-08,Alto
 579,Heriberto,Zabaleta,45.0,F,89.78,1.83,26.81,129.0,84,84,224.47,266.83,77.13,37.9,True,False,True,Alta,Obesidad,Bajo,2025-07-17,Crítico
 580,Aristides,Téllez,29.0,F,115.76,1.45,55.06,135.0,96,95,338.45,235.05,99.35,38.5,True,False,False,Alta,Riesgo cardiovascular,Alto,2024-10-27,Crítico
 581,Epifanio,Cerro,37.0,M,46.78,1.85,13.67,151.0,64,130,151.23,154.85,77.33,38.6,True,True,True,Baja,Paciente sano,Crítico,2024-10-30,Crítico
 582,Eli,Zurita,34.0,F,70.43,1.63,26.51,199.0,115,76,81.2,283.94,99.93,38.0,True,False,True,Alta,Diabetes Tipo 2,Crítico,2025-01-03,Crítico
-583,Ana Belén,Machado,57.0,M,86.04,1.93,23.1,190.0,71,70,209.7,224.61,76.7,37.9,False,True,True,Media,Paciente sano,Medio,2025-06-11,Crítico
+583,Ana Belén,Machado,57.0,F,86.04,1.93,23.1,190.0,71,70,209.7,224.61,76.7,37.9,False,True,True,Media,Paciente sano,Medio,2025-06-11,Crítico
 584,Angelita,Mayol,51.0,M,118.96,1.94,31.61,187.0,116,112,252.08,152.3,75.99,39.3,False,False,True,Baja,Obesidad,Bajo,2024-06-19,Crítico
 585,Angélica,Atienza,83.0,F,108.36,1.93,29.09,137.0,70,55,261.02,236.37,90.52,38.2,True,True,True,Alta,Prehipertensión,Alto,2024-08-31,Alto
 586,Eligia,Cerdán,66.0,M,56.87,1.65,20.89,99.0,88,109,178.7,226.32,86.71,37.7,False,True,True,Media,Hipertensión,Bajo,2024-11-13,Medio
 587,Sandalio,Escribano,68.0,F,102.62,1.55,42.71,132.0,68,139,158.84,349.18,93.53,35.6,False,True,True,Baja,Diabetes Tipo 2,Crítico,2024-07-29,Medio
-588,Luís,Robles,45.0,F,69.01,1.47,31.94,166.0,108,77,87.47,305.96,76.35,39.3,False,False,False,Media,Hipertensión,Crítico,2025-12-29,Crítico
+588,Luís,Robles,45.0,M,69.01,1.47,31.94,166.0,108,77,87.47,305.96,76.35,39.3,False,False,False,Media,Hipertensión,Crítico,2025-12-29,Crítico
 589,Espiridión,Barros,36.0,F,50.19,1.65,18.44,128.0,117,56,313.96,240.7,77.31,39.5,False,False,True,Media,Obesidad,Alto,2025-07-08,Crítico
 590,Flavio,Vilaplana,71.0,M,81.12,1.72,27.42,190.0,80,121,340.37,234.7000283768445,94.58,38.0,True,True,False,Baja,Hipertensión,Crítico,2025-07-28,Crítico
 591,Aristides,Patiño,37.0,M,112.24,1.92,30.45,153.0,100,116,101.81,343.09,93.06,39.9,True,False,True,Alta,Cardiopatía,Crítico,2025-06-20,Medio
@@ -589,16 +589,16 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 593,Hernando,Carreras,33.0,M,97.45,1.77,31.11,148.0,112,92,184.91,201.01,77.83,35.9,False,False,True,Media,Riesgo cardiovascular,Crítico,2024-08-13,Crítico
 594,Ernesto,Gimenez,73.0,M,73.62,1.87,21.05,178.0,115,63,247.55,281.48,77.24,35.1,False,True,False,Alta,Paciente sano,Bajo,2024-06-04,Crítico
 595,Hipólito,Vall,82.0,M,88.59,1.47,41.0,127.0,113,75,129.32,298.68,96.41,39.8,False,False,False,Baja,Hipertensión,Crítico,2025-02-04,Bajo
-596,Víctor,Cueto,65.0,F,103.66,1.7,35.87,124.0,93,80,156.07,327.61,75.1,39.5,True,True,True,Media,Obesidad,Crítico,2026-03-07,Crítico
+596,Víctor,Cueto,65.0,M,103.66,1.7,35.87,124.0,93,80,156.07,327.61,75.1,39.5,True,True,True,Media,Obesidad,Crítico,2026-03-07,Crítico
 597,Nando,Coronado,84.0,M,106.5,1.75,34.78,132.0,81,100,338.56,348.35,79.82,38.2,True,False,True,Baja,Diabetes Tipo 2,Medio,2025-03-22,Crítico
 598,Esperanza,Figuerola,69.0,F,112.81,1.71,38.58,145.0,89,123,97.88,304.27,94.61,39.2,False,True,False,Media,Hipertensión,Bajo,2025-03-13,Medio
 599,Candela,Agustí,29.0,M,46.92,1.46,22.01,188.0,79,98,77.79,282.74,75.63,38.7,False,False,True,Media,Cardiopatía,Bajo,2026-03-16,Crítico
 600,Bibiana,Sobrino,56.0,M,59.54,1.87,17.03,182.0,108,68,285.71,271.63,90.69,38.2,True,True,False,Alta,Hipertensión,Alto,2025-06-04,Crítico
 601,Florentina,Rueda,36.0,F,66.18,1.9,18.33,101.0,69,62,208.39,203.12,87.28,35.1,True,False,True,Media,Hipertensión,Medio,2024-06-12,Alto
-602,Antonio,Gordillo,66.0,F,111.73,1.77,35.66,147.0,80,122,120.35,234.7000283768445,90.78,39.3,True,False,False,Baja,Riesgo cardiovascular,Medio,2024-07-10,Medio
+602,Antonio,Gordillo,66.0,M,111.73,1.77,35.66,147.0,80,122,120.35,234.7000283768445,90.78,39.3,True,False,False,Baja,Riesgo cardiovascular,Medio,2024-07-10,Medio
 603,Yésica,Robles,18.0,F,56.88,1.82,17.17,105.0,84,96,207.5121282633371,243.27,77.87,36.1,False,True,True,Alta,Diabetes Tipo 2,Medio,2024-11-27,Crítico
 604,Lorenzo,Castillo,52.0,F,65.52,1.55,27.27,101.0,104,113,268.26,269.94,85.9,39.7,True,False,True,Media,Prehipertensión,Crítico,2025-10-02,Alto
-605,Gonzalo,Catalán,68.0,F,52.72,1.85,15.4,165.0,99,107,116.38,167.34,85.59,38.7,False,True,False,Baja,Cardiopatía,Crítico,2024-09-29,Alto
+605,Gonzalo,Catalán,68.0,M,52.72,1.85,15.4,165.0,99,107,116.38,167.34,85.59,38.7,False,True,False,Baja,Cardiopatía,Crítico,2024-09-29,Alto
 606,Enrique,Camps,90.0,M,71.47,1.9,19.8,194.0,68,102,195.83,324.57,82.34,39.1,False,False,True,Alta,Diabetes Tipo 2,Alto,2025-02-28,Crítico
 607,Celestino,Barrios,59.0,M,77.2,1.54,32.55,121.0,69,65,130.25,205.48,75.24,38.4,False,True,False,Baja,Cardiopatía,Medio,2025-06-07,Crítico
 608,Gervasio,Múñiz,89.0,M,49.97,1.59,19.77,117.0,127,132,130.89,249.02,85.54,38.8,False,False,True,Media,Hipertensión,Bajo,2024-10-11,Bajo
@@ -617,7 +617,7 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 621,Adriana,Manzanares,26.0,M,57.5,1.62,21.91,148.0,78,52,339.43,273.19,79.44,36.3,True,True,True,Baja,Paciente sano,Crítico,2024-07-24,Crítico
 622,Perlita,Salas,18.0,F,81.62,1.57,33.11,104.0,65,117,299.3,250.47,87.58,38.8,True,True,False,Baja,Paciente sano,Alto,2025-01-09,Alto
 623,Jose,Sanjuan,80.0,M,100.11,1.94,26.6,122.0,122,140,140.99,225.51,83.34,37.6,False,True,False,Alta,Diabetes Tipo 2,Alto,2025-01-02,Crítico
-624,Belén,Barceló,70.0,M,109.22,1.78,34.47,108.0,105,76,209.39,176.2,93.61,36.0,False,True,False,Baja,Riesgo cardiovascular,Crítico,2025-10-05,Alto
+624,Belén,Barceló,70.0,F,109.22,1.78,34.47,108.0,105,76,209.39,176.2,93.61,36.0,False,True,False,Baja,Riesgo cardiovascular,Crítico,2025-10-05,Alto
 625,Toribio,Arias,40.0,M,64.9,1.79,20.26,132.0,110,74,234.96,234.7000283768445,76.03,37.6,False,True,False,Baja,Obesidad,Alto,2025-06-04,Crítico
 626,Ildefonso,Uriarte,54.0,M,53.26,1.45,25.33,177.0,78,121,200.57,154.55,91.61,36.5,False,True,False,Alta,Paciente sano,Alto,2025-09-24,Alto
 627,Macario,Avilés,23.0,F,61.3,1.86,17.72,105.0,66,50,206.74,121.17,76.25,35.7,False,True,True,Baja,Diabetes Tipo 2,Alto,2025-03-19,Crítico
@@ -625,7 +625,7 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 629,León,Díez,90.0,F,77.69,1.89,21.75,192.0,77,120,261.33,165.89,79.99,36.5,False,False,True,Baja,Hipertensión,Medio,2026-01-09,Crítico
 630,Reyes,Quintanilla,30.0,M,55.4,1.67,19.86,130.0,124,104,331.77,283.9,86.66,39.8,False,True,True,Baja,Hipertensión,Crítico,2026-05-18,Crítico
 631,Florencio,Hierro,35.0,M,91.14,1.6,35.6,121.0,125,100,174.47,262.8,78.15,38.4,False,False,True,Alta,Hipertensión,Alto,2024-06-07,Crítico
-632,Beatriz,Montenegro,52.0,M,107.24,1.77,34.23,132.0,72,65,300.14,250.05,93.51,38.4,True,True,True,Baja,Diabetes Tipo 2,Alto,2025-09-01,Crítico
+632,Beatriz,Montenegro,52.0,F,107.24,1.77,34.23,132.0,72,65,300.14,250.05,93.51,38.4,True,True,True,Baja,Diabetes Tipo 2,Alto,2025-09-01,Crítico
 633,Rosalía,Comas,46.0,F,112.13,1.77,35.79,109.0,98,129,245.91,285.4,92.19,35.6,True,True,True,Alta,Cardiopatía,Bajo,2026-03-10,Alto
 634,Rosario,Bou,44.0,F,52.77,1.46,24.76,154.0,116,111,179.4,332.99,99.57,39.1,False,False,True,Baja,Diabetes Tipo 2,Alto,2025-01-20,Medio
 635,Dolores,Estevez,20.0,F,58.86,1.86,17.01,174.0,90,111,117.82,290.58,82.25,38.3,False,False,False,Baja,Hipertensión,Medio,2025-12-07,Crítico
@@ -633,15 +633,15 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 637,Marciano,Molins,76.0,F,65.77,1.94,17.48,135.0,124,117,309.64,235.74,84.77,35.3,True,False,False,Baja,Diabetes Tipo 2,Alto,2024-09-24,Crítico
 638,Graciela,Riera,53.0,F,103.87,1.78,32.78,140.0,68,127,326.52,268.38,91.47,37.9,False,True,False,Baja,Hipertensión,Crítico,2024-08-08,Crítico
 639,Alberto,Duque,26.0,M,48.37,1.88,13.69,110.0,89,79,97.03,144.43,99.53,39.0,True,True,True,Baja,Hipertensión,Crítico,2025-12-21,Bajo
-640,Bernabé,Calleja,26.0,F,49.64,1.58,19.88,94.0,69,91,193.63,206.09,77.69,37.2,True,True,True,Baja,Paciente sano,Bajo,2026-01-20,Crítico
+640,Bernabé,Calleja,26.0,M,49.64,1.58,19.88,94.0,69,91,193.63,206.09,77.69,37.2,True,True,True,Baja,Paciente sano,Bajo,2026-01-20,Crítico
 641,Adelina,Lluch,74.0,M,95.91,1.56,39.41,184.0,80,124,191.54,241.56,75.61,39.8,True,True,True,Media,Hipertensión,Medio,2024-12-06,Crítico
-642,Álvaro,Arroyo,64.0,F,103.08,1.73,34.44,200.0,69,76,165.4,276.94,89.26,37.4,False,False,True,Alta,Paciente sano,Crítico,2026-01-16,Crítico
+642,Álvaro,Arroyo,64.0,M,103.08,1.73,34.44,200.0,69,76,165.4,276.94,89.26,37.4,False,False,True,Alta,Paciente sano,Crítico,2026-01-16,Crítico
 643,Ale,Carrión,72.0,M,91.91,1.89,25.73,162.0,70,113,105.61,238.97,80.76,38.0,False,True,True,Baja,Prehipertensión,Bajo,2025-06-29,Crítico
 644,Sabas,Batalla,67.0,F,97.75,1.48,44.63,110.0,96,129,90.94,252.33,76.42,38.5,True,False,False,Alta,Hipertensión,Alto,2025-11-21,Crítico
 645,Jeremías,Ramón,61.0,F,76.61,1.55,31.89,187.0,67,57,109.0,245.83,80.89,35.4,True,False,True,Baja,Hipertensión,Alto,2025-05-10,Crítico
 646,Mariano,Marqués,88.0,F,80.91,1.51,35.49,182.0,65,94,99.14,234.22,85.79,36.5,True,True,True,Alta,Cardiopatía,Medio,2026-05-14,Crítico
 647,Néstor,Catalá,86.0,F,90.61,1.64,33.69,177.0,62,66,224.7,131.99,85.74,37.1,True,True,False,Alta,Obesidad,Crítico,2026-04-01,Alto
-648,Bartolomé,Girona,63.0,F,59.52,1.67,21.34,97.0,90,118,134.97,255.38,89.2,40.0,True,True,True,Alta,Hipertensión,Medio,2024-06-07,Bajo
+648,Bartolomé,Girona,63.0,M,59.52,1.67,21.34,97.0,90,118,134.97,255.38,89.2,40.0,True,True,True,Alta,Hipertensión,Medio,2024-06-07,Bajo
 649,Benjamín,Blanca,34.0,F,77.89,1.59,30.81,130.0,104,127,207.5121282633371,324.8,84.95,38.3,True,True,False,Media,Paciente sano,Alto,2026-03-01,Crítico
 650,Montserrat,Conde,63.0,F,112.32,1.88,31.78,146.0,98,81,333.6,299.45,88.17,36.3,True,True,False,Baja,Paciente sano,Alto,2025-09-17,Crítico
 651,Carlota,Calderón,53.0,M,82.49000000000001,1.91,22.61,197.0,126,97,134.55,290.64,93.12,38.9,True,True,False,Baja,Hipertensión,Medio,2024-10-18,Crítico
@@ -659,26 +659,26 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 663,Guadalupe,Estévez,63.0,F,87.03,1.49,39.2,136.0,121,122,239.46,234.7000283768445,95.7,39.9,True,False,True,Baja,Prehipertensión,Crítico,2025-08-31,Alto
 664,Maribel,Torrijos,61.0,F,68.54,1.49,30.87,143.0,124,108,345.31,252.48,75.39,35.6,False,False,True,Media,Hipertensión,Medio,2024-11-25,Crítico
 665,Emigdio,Luna,73.0,F,46.79,1.53,19.99,99.0,76,95,214.17,241.74,78.19,38.5,True,False,True,Baja,Obesidad,Crítico,2025-01-22,Crítico
-666,Federico,Grau,31.0,F,119.56,1.47,55.33,184.0,105,105,335.98,329.46,82.23,37.4,True,True,True,Media,Hipertensión,Crítico,2024-12-01,Crítico
+666,Federico,Grau,31.0,M,119.56,1.47,55.33,184.0,105,105,335.98,329.46,82.23,37.4,True,True,True,Media,Hipertensión,Crítico,2024-12-01,Crítico
 667,Jafet,Sans,65.0,M,95.54,1.68,33.85,131.0,116,79,119.48,286.18,82.43,36.7,False,False,False,Baja,Obesidad,Alto,2024-06-10,Crítico
 668,Rosalinda,Lluch,40.0,M,116.51,1.47,53.92,184.0,86,94,207.5121282633371,184.0,82.12,35.6,False,False,False,Media,Diabetes Tipo 2,Alto,2024-07-28,Crítico
-669,Eugenia,Torrijos,54.0,M,115.44,1.58,46.24,167.0,73,76,328.86,273.28,88.8,37.5,True,True,True,Media,Hipertensión,Medio,2024-12-05,Crítico
-670,Gloria,Lago,80.0,M,107.44,1.46,50.4,116.0,96,66,333.71,251.37,95.78,36.5,True,True,False,Baja,Paciente sano,Crítico,2025-07-21,Crítico
+669,Eugenia,Torrijos,54.0,F,115.44,1.58,46.24,167.0,73,76,328.86,273.28,88.8,37.5,True,True,True,Media,Hipertensión,Medio,2024-12-05,Crítico
+670,Gloria,Lago,80.0,F,107.44,1.46,50.4,116.0,96,66,333.71,251.37,95.78,36.5,True,True,False,Baja,Paciente sano,Crítico,2025-07-21,Crítico
 671,Encarnacion,Cortina,51.0,F,51.51,1.52,22.29,125.0,74,59,341.16,304.84,83.18,37.5,False,False,True,Baja,Hipertensión,Medio,2024-07-04,Crítico
 672,Amanda,Zorrilla,73.0,F,52.53,1.8,16.21,156.0,100,130,123.31,248.38,75.2,35.7,False,True,True,Baja,Paciente sano,Bajo,2025-09-01,Crítico
-673,Rosa,Jordán,37.0,M,81.34,1.54,34.3,153.0,96,77,106.9,266.0,75.08,35.3,True,True,True,Baja,Prehipertensión,Bajo,2026-05-05,Crítico
+673,Rosa,Jordán,37.0,F,81.34,1.54,34.3,153.0,96,77,106.9,266.0,75.08,35.3,True,True,True,Baja,Prehipertensión,Bajo,2026-05-05,Crítico
 674,Felicia,Amador,66.0,F,92.33,1.57,37.46,134.0,121,87,218.53,339.5,91.7,37.5,False,False,False,Baja,Hipertensión,Alto,2026-05-14,Alto
 675,Elías,Tolosa,46.0,F,53.43,1.89,14.96,186.0,96,104,187.49,222.85,77.9,37.3,False,True,False,Baja,Diabetes Tipo 2,Medio,2024-10-27,Crítico
 676,Amor,Gelabert,79.0,M,108.01,1.88,30.56,166.0,112,77,207.5121282633371,126.66,97.25,38.9,True,False,False,Baja,Hipertensión,Alto,2024-11-10,Alto
 677,Reyes,Gracia,68.0,F,105.68,1.66,38.35,123.0,66,55,145.13,287.48,82.71,37.0,True,True,True,Baja,Diabetes Tipo 2,Alto,2025-05-05,Crítico
 678,Imelda,Huerta,87.0,M,46.49,1.81,14.19,192.0,108,58,95.27,282.09,91.37,37.6,False,True,True,Baja,Cardiopatía,Alto,2024-09-10,Crítico
-679,Pablo,Viña,55.0,M,105.1,1.91,28.81,132.0,112,52,130.37,288.67,93.88,37.6,False,False,True,Media,Prehipertensión,Bajo,2026-01-31,Bajo
+679,Pablo,Viña,55.0,F,105.1,1.91,28.81,132.0,112,52,130.37,288.67,93.88,37.6,False,False,True,Media,Prehipertensión,Bajo,2026-01-31,Bajo
 680,Otilia,Mercader,56.0,F,46.82,1.77,14.94,178.0,91,101,79.46,292.48,78.28,38.7,False,True,True,Alta,Riesgo cardiovascular,Crítico,2026-01-12,Crítico
-681,Enrique,Infante,71.0,F,46.51,1.82,14.04,159.0,79,127,96.76,255.29,96.48,38.9,False,True,False,Baja,Paciente sano,Crítico,2026-02-08,Medio
+681,Enrique,Infante,71.0,M,46.51,1.82,14.04,159.0,79,127,96.76,255.29,96.48,38.9,False,True,False,Baja,Paciente sano,Crítico,2026-02-08,Medio
 682,Cleto,Lloret,43.0,F,52.48,1.93,14.09,163.0,120,121,175.44,218.79,81.96,36.4,True,False,True,Baja,Hipertensión,Medio,2025-05-12,Crítico
 683,Darío,Guardia,65.0,F,102.2,1.81,31.2,147.0,88,97,231.81,125.73,86.92,35.5,False,False,True,Alta,Hipertensión,Medio,2025-10-05,Alto
 684,Jacinta,Pazos,89.0,M,57.69,1.88,16.32,152.0,91,122,93.49,212.73,94.01,35.3,False,False,False,Baja,Obesidad,Crítico,2025-08-08,Medio
-685,María Teresa,Losada,37.0,M,47.74,1.79,14.9,166.0,112,112,314.0,181.67,88.64,36.6,True,False,False,Baja,Riesgo cardiovascular,Medio,2025-08-04,Crítico
+685,María Teresa,Losada,37.0,F,47.74,1.79,14.9,166.0,112,112,314.0,181.67,88.64,36.6,True,False,False,Baja,Riesgo cardiovascular,Medio,2025-08-04,Crítico
 686,Eric,González,89.0,M,109.4,1.95,28.77,100.0,73,70,189.2,137.83,88.0,35.6,True,False,True,Alta,Hipertensión,Medio,2026-02-02,Medio
 687,Asdrubal,Borja,81.0,M,57.8,1.85,16.89,152.0,77,87,279.72,245.83,77.94,40.0,False,False,False,Media,Diabetes Tipo 2,Crítico,2024-05-25,Crítico
 688,Pascuala,Guzmán,55.0,F,84.24,1.55,35.06,168.0,107,92,215.43,177.79,98.18,38.6,True,True,False,Alta,Obesidad,Crítico,2024-09-21,Alto
@@ -696,11 +696,11 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 700,Édgar,Arribas,29.0,F,58.69,1.49,26.44,130.0,62,97,284.68,301.41,86.51,39.4,True,False,True,Media,Prehipertensión,Medio,2026-03-14,Alto
 701,Eric,Vendrell,24.0,M,73.45,1.59,29.05,125.0,77,75,228.21,215.22,79.43,36.5,False,False,True,Baja,Obesidad,Medio,2024-10-12,Crítico
 702,Jeremías,Gallart,64.0,F,71.16,1.77,22.71,147.0,81,118,80.28,311.99,89.22,40.0,False,False,False,Media,Obesidad,Crítico,2026-05-10,Medio
-703,Francisco Javier,Chamorro,82.0,F,86.37,1.82,26.07,124.0,71,83,213.72,168.47,75.79,35.6,True,False,True,Baja,Obesidad,Medio,2024-09-27,Crítico
+703,Francisco Javier,Chamorro,82.0,M,86.37,1.82,26.07,124.0,71,83,213.72,168.47,75.79,35.6,True,False,True,Baja,Obesidad,Medio,2024-09-27,Crítico
 704,Genoveva,Tamarit,65.0,F,87.28,1.78,27.55,94.0,101,103,266.36,264.78,86.89,36.7,True,True,False,Baja,Diabetes Tipo 2,Bajo,2026-04-14,Alto
 705,Amada,Rosales,77.0,F,86.01,1.83,25.68,146.0,118,81,207.5121282633371,279.73,81.31,36.9,False,False,False,Baja,Hipertensión,Crítico,2025-11-14,Crítico
 706,Serafina,Dávila,47.0,M,102.24,1.9,28.32,154.0,73,53,187.88,298.04,79.1,35.8,False,True,True,Media,Obesidad,Crítico,2025-06-13,Crítico
-707,Narciso,Bautista,24.0,F,117.77,1.6,46.0,188.0,78,50,294.42,225.5,91.47,36.0,True,False,False,Alta,Diabetes Tipo 2,Medio,2024-08-13,Crítico
+707,Narciso,Bautista,24.0,M,117.77,1.6,46.0,188.0,78,50,294.42,225.5,91.47,36.0,True,False,False,Alta,Diabetes Tipo 2,Medio,2024-08-13,Crítico
 708,Lorenza,Bárcena,48.0,M,109.33,1.67,39.2,182.0,91,111,113.16,247.73,78.98,35.5,False,True,False,Baja,Paciente sano,Alto,2026-03-13,Crítico
 709,Dorita,Bilbao,49.0,M,102.23,1.5,45.44,106.0,100,136,283.65,150.71,93.26,37.1,False,True,False,Baja,Hipertensión,Alto,2025-02-07,Alto
 710,Eduardo,Zurita,46.0,M,111.42,1.54,46.98,120.0,107,126,171.44,235.33,93.79,39.6,True,True,False,Media,Hipertensión,Bajo,2025-06-14,Medio
@@ -711,7 +711,7 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 715,Ámbar,Carnero,23.0,F,54.12,1.69,18.95,136.0,66,93,318.97,277.87,91.87,38.8,True,False,True,Baja,Obesidad,Alto,2024-10-08,Crítico
 716,Alejo,Villaverde,71.0,M,82.49000000000001,1.61,31.82,171.0,64,100,236.82,202.17,81.22,35.4,True,True,True,Baja,Hipertensión,Bajo,2024-12-28,Crítico
 717,Jacinta,Riera,53.0,M,70.9,1.68,25.12,169.0,91,59,327.26,327.82,83.16,35.2,True,False,True,Baja,Prehipertensión,Crítico,2025-04-20,Crítico
-718,Jose,Gargallo,72.0,F,75.06,1.54,31.65,185.0,92,64,272.05,290.82,94.84,37.9,False,True,True,Baja,Paciente sano,Bajo,2025-10-30,Crítico
+718,Jose,Gargallo,72.0,M,75.06,1.54,31.65,185.0,92,64,272.05,290.82,94.84,37.9,False,True,True,Baja,Paciente sano,Bajo,2025-10-30,Crítico
 719,Simón,Aliaga,45.0,F,102.05,1.67,36.59,185.0,83,136,147.52,274.43,82.12,37.5,True,True,False,Media,Prehipertensión,Crítico,2026-02-16,Crítico
 720,Florina,Larrea,52.0,F,79.68,1.85,23.28,171.0,100,58,97.2,171.71,90.28,38.6,False,False,False,Baja,Paciente sano,Alto,2025-07-03,Alto
 721,África,Corral,89.0,F,45.94,1.62,17.5,134.0,116,118,112.5,316.5,92.44,38.4,False,False,True,Alta,Paciente sano,Crítico,2025-08-05,Bajo
@@ -725,7 +725,7 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 729,Virginia,Lastra,27.0,F,103.73,1.93,27.85,181.0,128,111,103.87,298.62,95.69,35.3,False,True,False,Baja,Riesgo cardiovascular,Bajo,2025-11-28,Crítico
 730,Nazaret,Linares,74.0,F,77.14,1.51,33.83,108.0,93,71,282.22,253.36,84.16,38.3,True,True,False,Media,Prehipertensión,Bajo,2024-06-20,Crítico
 731,Macaria,Manzanares,30.0,M,69.75,1.8,21.53,148.0,122,138,280.7,294.11,86.12,38.9,False,False,True,Media,Diabetes Tipo 2,Alto,2024-09-29,Alto
-732,Dulce,Vallés,84.0,M,66.63,1.56,27.38,137.0,106,131,269.86,190.53,82.62,38.6,False,True,True,Media,Prehipertensión,Medio,2024-11-04,Crítico
+732,Dulce,Vallés,84.0,F,66.63,1.56,27.38,137.0,106,131,269.86,190.53,82.62,38.6,False,True,True,Media,Prehipertensión,Medio,2024-11-04,Crítico
 733,Cirino,Gargallo,67.0,M,64.3,1.56,26.42,198.0,87,96,233.3,154.12,93.03,38.7,False,False,True,Baja,Diabetes Tipo 2,Bajo,2025-09-07,Crítico
 734,Anunciación,Villalonga,82.0,F,68.57,1.64,25.49,200.0,122,111,251.55,320.28,97.43,35.1,True,False,True,Baja,Cardiopatía,Crítico,2025-04-30,Crítico
 735,Rolando,Otero,46.0,M,56.26,1.75,18.37,183.0,75,131,252.0,202.0,97.66,39.2,True,True,False,Alta,Hipertensión,Crítico,2025-11-29,Crítico
@@ -737,7 +737,7 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 741,Rosario,Coloma,73.0,F,95.47,1.5,42.43,200.0,116,63,165.88,278.0,94.07,36.1,False,False,False,Alta,Prehipertensión,Medio,2024-06-28,Crítico
 742,Aitor,Roldan,44.0,M,87.83,1.53,37.52,110.0,84,134,284.59,300.74,78.93,39.8,False,False,False,Media,Prehipertensión,Medio,2024-12-31,Crítico
 743,Florinda,Vallejo,78.0,F,115.07,1.87,32.91,137.0,78,89,155.75,287.14,85.63,37.0,False,True,False,Alta,Hipertensión,Alto,2024-07-13,Medio
-744,Jaime,Galan,63.0,F,93.43,1.52,40.44,148.0,95,82,75.45,282.0,82.37,36.9,False,False,False,Baja,Riesgo cardiovascular,Medio,2025-05-03,Crítico
+744,Jaime,Galan,63.0,M,93.43,1.52,40.44,148.0,95,82,75.45,282.0,82.37,36.9,False,False,False,Baja,Riesgo cardiovascular,Medio,2025-05-03,Crítico
 745,Benigna,Ferreras,89.0,F,100.43,1.85,29.34,169.0,124,70,193.23,183.01,83.14,37.4,False,True,False,Baja,Cardiopatía,Bajo,2025-11-07,Crítico
 746,Azeneth,Arribas,53.0,F,119.02,1.74,39.31,97.0,72,86,85.71,198.82,77.78,35.7,True,False,False,Media,Diabetes Tipo 2,Alto,2026-03-17,Crítico
 747,Judith,Salvà,56.0,M,88.06,1.73,29.42,146.0,91,117,161.8,245.71,95.43,38.4,True,True,False,Baja,Paciente sano,Alto,2025-04-24,Medio
@@ -757,7 +757,7 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 761,Marisol,Ariza,50.0,F,54.61,1.78,17.24,136.0,72,78,203.78,292.21,87.87,39.0,True,True,True,Alta,Hipertensión,Medio,2025-07-12,Alto
 762,Amaya,Salazar,54.0,F,111.52,1.5,49.56,118.0,92,109,121.7,271.65,91.71,37.6,False,True,False,Baja,Obesidad,Alto,2024-11-04,Bajo
 763,Atilio,Domingo,36.0,M,88.45,1.92,23.99,94.0,109,68,246.93,302.66,90.87,39.2,True,True,False,Baja,Hipertensión,Medio,2025-11-28,Alto
-764,Mireia,Manzano,79.0,M,81.29,1.62,30.97,170.0,111,106,196.59,169.41,77.95,36.4,False,False,True,Baja,Obesidad,Alto,2024-07-11,Crítico
+764,Mireia,Manzano,79.0,F,81.29,1.62,30.97,170.0,111,106,196.59,169.41,77.95,36.4,False,False,True,Baja,Obesidad,Alto,2024-07-11,Crítico
 765,Julián,Hierro,80.0,F,102.9,1.68,36.46,102.0,103,132,283.72,180.46,75.64,37.7,True,True,False,Alta,Hipertensión,Alto,2025-03-13,Crítico
 766,Micaela,Medina,88.0,M,98.45,1.51,43.18,134.0,99,73,196.72,247.26,84.94,39.7,True,True,True,Alta,Cardiopatía,Bajo,2025-01-08,Crítico
 767,Amaro,Carrera,63.0,M,84.42,1.84,24.94,162.0,127,79,217.01,304.06,92.34,40.0,True,False,True,Alta,Diabetes Tipo 2,Alto,2025-08-11,Alto
@@ -766,9 +766,9 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 770,César,Cárdenas,49.0,M,74.34,1.53,31.76,143.0,110,78,235.6,177.17,99.08,36.4,False,True,True,Media,Paciente sano,Alto,2024-11-04,Alto
 771,Ibán,Diaz,36.0,F,95.42,1.83,28.49,91.0,75,134,215.77,240.58,85.96,39.1,False,True,True,Baja,Prehipertensión,Crítico,2025-07-11,Alto
 772,Olegario,Briones,23.0,M,73.61,1.9,20.39,104.0,119,78,189.25,158.74,88.07,35.4,False,True,False,Baja,Hipertensión,Crítico,2026-05-19,Medio
-773,Abel,Izquierdo,25.0,F,92.85,1.88,26.27,125.0,95,135,323.32,267.26,95.91,39.9,True,True,True,Baja,Cardiopatía,Alto,2025-09-08,Crítico
+773,Abel,Izquierdo,25.0,M,92.85,1.88,26.27,125.0,95,135,323.32,267.26,95.91,39.9,True,True,True,Baja,Cardiopatía,Alto,2025-09-08,Crítico
 774,Nidia,Antúnez,81.0,M,61.6,1.67,22.09,124.0,73,127,349.24,310.04,95.94,36.9,False,True,True,Alta,Hipertensión,Crítico,2025-11-19,Crítico
-775,Paloma,Valls,33.0,M,117.5,1.57,47.67,164.0,113,132,298.28,285.21,94.7,39.3,True,False,False,Alta,Cardiopatía,Bajo,2025-01-23,Alto
+775,Paloma,Valls,33.0,F,117.5,1.57,47.67,164.0,113,132,298.28,285.21,94.7,39.3,True,False,False,Alta,Cardiopatía,Bajo,2025-01-23,Alto
 776,Anselma,Barrena,90.0,F,58.56,1.77,18.69,132.0,72,108,151.84,214.79,96.24,36.3,False,False,True,Baja,Paciente sano,Bajo,2026-04-09,Medio
 777,Noelia,Arregui,24.0,F,69.34,1.8,21.4,171.0,93,101,285.21,156.94,93.83,38.9,True,False,True,Baja,Obesidad,Alto,2024-12-13,Alto
 778,Julie,Belda,86.0,F,100.49,1.87,28.74,119.0,100,101,302.03,143.3,82.82,37.5,True,False,True,Baja,Paciente sano,Bajo,2024-07-28,Crítico
@@ -783,7 +783,7 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 787,Xavier,León,26.0,F,84.73,1.82,25.58,183.0,84,53,139.66,258.35,91.24,37.5,True,False,True,Alta,Hipertensión,Medio,2024-07-28,Crítico
 788,Leocadia,Haro,67.0,M,105.37,1.64,39.18,150.0,77,72,307.23,162.09,92.68,39.4,False,True,True,Baja,Hipertensión,Alto,2025-06-28,Crítico
 789,Eufemia,Lumbreras,43.0,M,62.0,1.94,16.47,171.0,70,127,165.12,292.92,76.52,37.8,False,True,True,Alta,Riesgo cardiovascular,Alto,2025-11-07,Crítico
-790,Juan Luis,Oliva,19.0,F,45.35,1.64,16.86,93.0,107,129,310.62,339.81,87.46,37.5,False,True,True,Baja,Diabetes Tipo 2,Medio,2025-03-29,Crítico
+790,Juan Luis,Oliva,19.0,M,45.35,1.64,16.86,93.0,107,129,310.62,339.81,87.46,37.5,False,True,True,Baja,Diabetes Tipo 2,Medio,2025-03-29,Crítico
 791,Oriana,Losada,74.0,M,97.98,1.89,27.43,112.0,124,54,111.68,308.37,98.38,39.4,True,False,False,Alta,Obesidad,Bajo,2024-10-19,Bajo
 792,Lupe,Barragán,41.0,F,89.26,1.53,38.13,102.0,123,134,124.08,155.71,88.7,36.9,False,True,True,Baja,Cardiopatía,Alto,2026-01-08,Bajo
 793,Mireia,Rocha,64.0,F,55.6,1.93,14.93,152.0,84,134,292.34,129.57,92.69,39.2,True,True,False,Baja,Riesgo cardiovascular,Bajo,2024-06-16,Alto
@@ -809,7 +809,7 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 813,Julieta,Iriarte,33.0,F,84.92,1.76,27.41,110.0,130,81,246.03,280.97,99.4,38.3,True,False,True,Alta,Diabetes Tipo 2,Alto,2025-11-10,Alto
 814,Ciriaco,Requena,66.0,F,80.46,1.69,28.17,188.0,62,124,234.13,347.19,89.3,37.2,True,False,False,Baja,Hipertensión,Alto,2025-04-04,Crítico
 815,Florina,Sierra,65.0,F,50.17,1.52,21.71,128.0,110,91,326.69,145.52,82.31,39.0,True,False,False,Alta,Hipertensión,Medio,2026-01-21,Crítico
-816,Victor Manuel,Echevarría,39.0,F,72.39,1.58,29.0,155.0,95,90,344.97,327.98,97.65,35.3,True,False,False,Baja,Hipertensión,Bajo,2024-10-28,Crítico
+816,Victor Manuel,Echevarría,39.0,M,72.39,1.58,29.0,155.0,95,90,344.97,327.98,97.65,35.3,True,False,False,Baja,Hipertensión,Bajo,2024-10-28,Crítico
 817,Lucas,Gámez,61.0,F,48.03,1.82,14.5,187.0,118,129,254.63,196.57,75.27,37.9,False,False,True,Baja,Hipertensión,Bajo,2024-10-01,Crítico
 818,Balduino,Angulo,67.0,F,47.7,1.79,14.89,179.0,108,140,163.98,304.72,83.55,39.7,False,True,False,Baja,Prehipertensión,Crítico,2025-06-11,Crítico
 819,Bárbara,Morera,28.0,F,113.5,1.91,31.11,100.0,100,63,311.21,326.04,81.07,35.9,True,True,True,Alta,Hipertensión,Bajo,2025-12-23,Crítico
@@ -824,7 +824,7 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 828,Fito,Figueroa,81.0,M,77.46,1.92,21.01,110.0,122,91,341.35,133.74,92.65,38.0,True,True,False,Media,Hipertensión,Bajo,2026-03-11,Crítico
 829,Eugenio,Ramirez,80.0,M,45.97,1.6,17.96,110.0,103,65,246.53,277.33,89.98,37.6,False,False,True,Baja,Paciente sano,Crítico,2024-11-12,Alto
 830,Cintia,Balaguer,26.0,F,46.33,1.64,17.23,121.0,86,110,334.48,234.7000283768445,94.67,37.8,False,True,True,Baja,Cardiopatía,Alto,2024-07-23,Crítico
-831,Jose Antonio,Fajardo,48.0,F,106.0,1.57,43.0,162.0,120,68,319.36,192.1,90.59,35.4,False,False,False,Alta,Paciente sano,Bajo,2025-02-13,Crítico
+831,Jose Antonio,Fajardo,48.0,M,106.0,1.57,43.0,162.0,120,68,319.36,192.1,90.59,35.4,False,False,False,Alta,Paciente sano,Bajo,2025-02-13,Crítico
 832,Valentín,Amat,67.0,F,103.31,1.85,30.19,125.0,78,78,171.86,298.88,90.83,36.6,False,True,False,Baja,Paciente sano,Crítico,2024-08-28,Medio
 833,Guillermo,Losada,58.0,M,90.36,1.72,30.54,195.0,84,57,338.16,257.45,93.39,36.0,False,True,False,Baja,Hipertensión,Bajo,2025-10-31,Crítico
 834,Paulino,Cortes,56.0,M,64.57,1.52,27.95,93.0,63,109,252.46,295.35,94.39,40.0,False,False,True,Baja,Obesidad,Bajo,2024-12-24,Alto
@@ -846,7 +846,7 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 850,Gabriela,Tenorio,77.0,M,118.76,1.83,35.46,108.0,123,127,259.2,213.8,81.33,35.7,False,False,False,Media,Hipertensión,Crítico,2025-02-23,Crítico
 851,Prudencia,Guerrero,61.0,M,82.98,1.88,23.48,170.0,78,67,237.66,244.25,99.43,39.0,False,True,False,Alta,Riesgo cardiovascular,Medio,2025-03-22,Alto
 852,Graciano,Tomas,87.0,F,48.15,1.5,21.4,90.0,92,79,207.5121282633371,272.87,92.1,38.9,False,True,False,Baja,Riesgo cardiovascular,Medio,2024-11-05,Alto
-853,Ignacio,Cortés,68.0,F,84.23,1.86,24.35,118.0,104,131,279.95,278.19,91.1,35.8,True,True,True,Baja,Diabetes Tipo 2,Bajo,2025-03-19,Alto
+853,Ignacio,Cortés,68.0,M,84.23,1.86,24.35,118.0,104,131,279.95,278.19,91.1,35.8,True,True,True,Baja,Diabetes Tipo 2,Bajo,2025-03-19,Alto
 854,Lina,Tena,27.0,F,97.12,1.6,37.94,186.0,111,53,154.8,168.13,75.41,36.5,True,True,True,Alta,Prehipertensión,Bajo,2025-09-20,Crítico
 855,Sabas,Solís,75.0,F,116.33,1.66,42.22,135.0,111,97,72.96,257.44,80.21,37.1,False,True,False,Alta,Paciente sano,Alto,2026-04-21,Crítico
 856,Guadalupe,Coronado,58.0,F,71.36,1.58,28.59,150.0,109,125,280.82,297.05,90.51,37.5,False,True,False,Alta,Paciente sano,Crítico,2024-08-04,Alto
@@ -860,23 +860,23 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 864,Armando,Amigó,19.0,M,72.89,1.71,24.93,91.0,74,67,216.88,181.15,82.99,36.2,False,True,True,Baja,Paciente sano,Bajo,2025-08-28,Crítico
 865,Encarna,Iñiguez,79.0,M,61.06,1.54,25.75,160.0,129,68,207.5121282633371,136.31,96.53,35.3,True,True,True,Baja,Obesidad,Medio,2025-11-15,Alto
 866,Nicolasa,Molins,46.0,M,107.1,1.65,39.34,186.0,115,74,82.01,193.71,91.79,39.7,False,False,True,Media,Paciente sano,Crítico,2025-12-03,Crítico
-867,María Pilar,Gómez,83.0,M,111.66,1.77,35.64,186.0,80,105,137.58,239.89,90.0,37.1,True,True,True,Baja,Prehipertensión,Crítico,2025-02-21,Crítico
+867,María Pilar,Gómez,83.0,F,111.66,1.77,35.64,186.0,80,105,137.58,239.89,90.0,37.1,True,True,True,Baja,Prehipertensión,Crítico,2025-02-21,Crítico
 868,Abilio,Planas,68.0,F,66.06,1.78,20.85,133.0,98,115,304.17,259.22,87.19,38.8,True,False,False,Alta,Paciente sano,Alto,2025-03-23,Crítico
 869,Hipólito,Luján,61.0,M,84.96,1.76,27.43,98.0,92,115,246.15,334.86,80.7,39.6,False,True,True,Baja,Prehipertensión,Alto,2024-12-13,Crítico
 870,Emma,Luna,42.0,M,82.49000000000001,1.71,28.21,142.0,95,67,143.89,217.49,95.06,38.4,True,False,False,Media,Paciente sano,Medio,2025-05-11,Medio
 871,Custodio,Múñiz,84.0,F,58.01,1.81,17.71,127.0,91,132,127.61,301.69,95.24,36.9,False,False,False,Baja,Riesgo cardiovascular,Alto,2025-10-29,Bajo
 872,Ramiro,Calzada,61.0,M,55.98,1.75,18.28,122.0,75,58,340.62,307.02,79.72,39.7,False,False,False,Baja,Cardiopatía,Crítico,2026-01-14,Crítico
 873,Abigaíl,Alberola,52.0,F,48.82,1.66,17.72,152.0,73,73,203.38,208.98,78.07,38.8,True,True,True,Baja,Hipertensión,Bajo,2025-02-09,Crítico
-874,Sandra,Gaya,88.0,M,85.14,1.51,37.34,102.0,114,64,127.37,325.0,83.44,38.1,False,False,False,Media,Cardiopatía,Bajo,2026-02-03,Crítico
+874,Sandra,Gaya,88.0,F,85.14,1.51,37.34,102.0,114,64,127.37,325.0,83.44,38.1,False,False,False,Media,Cardiopatía,Bajo,2026-02-03,Crítico
 875,Horacio,Ángel,46.0,M,91.37,1.74,30.18,124.0,130,124,168.99,174.36,82.92,36.1,False,True,True,Media,Hipertensión,Bajo,2026-03-12,Crítico
 876,Marina,Garrido,52.0,F,105.72,1.51,46.37,121.0,112,78,131.87,225.69,81.99,35.0,False,False,False,Baja,Cardiopatía,Medio,2024-09-11,Crítico
 877,Adolfo,Leal,47.0,M,52.53,1.49,23.66,181.0,116,98,193.91,290.01,75.58,38.8,True,False,False,Baja,Obesidad,Crítico,2025-03-13,Crítico
-878,María Manuela,Dalmau,20.0,M,82.43,1.76,26.61,197.0,116,139,239.84,205.78,92.08,35.8,False,True,True,Baja,Obesidad,Bajo,2025-03-03,Crítico
+878,María Manuela,Dalmau,20.0,F,82.43,1.76,26.61,197.0,116,139,239.84,205.78,92.08,35.8,False,True,True,Baja,Obesidad,Bajo,2025-03-03,Crítico
 879,Valero,Egea,69.0,F,65.56,1.81,20.01,119.0,108,122,238.12,228.03,81.1,38.5,False,True,False,Baja,Obesidad,Bajo,2025-08-30,Crítico
 880,Manu,Baños,66.0,M,46.54,1.67,16.69,147.0,114,96,95.05,178.63,97.79,36.3,True,True,True,Media,Hipertensión,Medio,2024-05-24,Medio
 881,Rogelio,Urrutia,66.0,M,72.34,1.83,21.6,101.0,80,60,95.87,279.92,88.13,36.3,True,False,True,Baja,Prehipertensión,Bajo,2025-07-07,Bajo
 882,Cintia,Vicens,41.0,M,62.18,1.61,23.99,156.0,68,133,134.91,141.22,94.58,39.4,True,False,False,Baja,Diabetes Tipo 2,Bajo,2025-06-30,Medio
-883,Cristina,Roselló,48.0,M,46.29,1.93,12.43,167.0,69,65,88.87,143.35,94.48,37.8,False,True,True,Media,Cardiopatía,Medio,2025-07-06,Alto
+883,Cristina,Roselló,48.0,F,46.29,1.93,12.43,167.0,69,65,88.87,143.35,94.48,37.8,False,True,True,Media,Cardiopatía,Medio,2025-07-06,Alto
 884,Mauricio,Giralt,19.0,F,69.41,1.54,29.27,124.0,125,67,297.73,235.21,79.18,37.3,True,True,False,Baja,Paciente sano,Bajo,2025-04-22,Crítico
 885,Germán,Vélez,49.0,M,79.12,1.81,24.15,181.0,91,98,207.5121282633371,259.38,78.4,36.4,False,False,False,Baja,Riesgo cardiovascular,Bajo,2025-01-08,Crítico
 886,Nicolás,Alcalde,63.0,F,103.98,1.74,34.34,197.0,111,114,280.46,240.4,96.45,35.6,True,True,True,Baja,Prehipertensión,Crítico,2026-01-28,Crítico
@@ -886,8 +886,8 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 890,Noé,Múñiz,89.0,M,65.22,1.46,30.6,117.0,126,108,173.95,223.12,83.67,36.6,False,True,True,Baja,Paciente sano,Alto,2025-04-02,Crítico
 891,Rocío,Lucena,73.0,F,102.27,1.47,47.33,189.0,130,98,274.03,250.26,83.25,38.6,False,True,True,Media,Hipertensión,Bajo,2025-05-16,Crítico
 892,Zacarías,Merino,67.0,M,65.68,1.56,26.99,95.0,98,74,73.39,150.58,85.44,39.1,True,False,False,Media,Hipertensión,Crítico,2026-05-01,Bajo
-893,Ernesto,Trillo,26.0,F,57.25,1.47,26.49,183.0,121,113,290.36,170.39,77.86,38.3,False,False,False,Baja,Riesgo cardiovascular,Medio,2024-09-14,Crítico
-894,María Manuela,Fiol,88.0,M,111.69,1.86,32.28,132.0,101,81,217.48,234.7000283768445,80.65,35.1,False,False,False,Baja,Paciente sano,Alto,2026-03-25,Crítico
+893,Ernesto,Trillo,26.0,M,57.25,1.47,26.49,183.0,121,113,290.36,170.39,77.86,38.3,False,False,False,Baja,Riesgo cardiovascular,Medio,2024-09-14,Crítico
+894,María Manuela,Fiol,88.0,F,111.69,1.86,32.28,132.0,101,81,217.48,234.7000283768445,80.65,35.1,False,False,False,Baja,Paciente sano,Alto,2026-03-25,Crítico
 895,Marcia,Arroyo,69.0,F,48.85,1.75,15.95,192.0,92,81,99.82,154.03,86.61,35.8,True,False,False,Baja,Hipertensión,Medio,2026-01-16,Crítico
 896,Teófilo,Guitart,90.0,M,69.84,1.49,31.46,110.0,121,105,335.58,272.46,85.15,37.2,False,False,True,Baja,Obesidad,Alto,2026-03-03,Crítico
 897,Remigio,Velasco,33.0,M,68.1,1.69,23.84,152.0,110,81,207.5121282633371,213.22,90.26,35.8,True,False,False,Alta,Hipertensión,Medio,2024-12-21,Alto
@@ -895,9 +895,9 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 899,Eufemia,Saura,39.0,F,111.97,1.62,42.66,94.0,70,100,346.69,261.3,95.6,37.5,False,False,True,Baja,Diabetes Tipo 2,Medio,2024-11-23,Crítico
 900,Ariel,Almagro,26.0,M,79.68,1.88,22.54,110.0,125,100,96.91,259.49,96.3,38.3,False,False,False,Baja,Prehipertensión,Alto,2026-03-03,Bajo
 901,Carina,Pacheco,69.0,F,76.35,1.92,20.71,191.0,99,140,256.55,168.43,78.88,35.4,True,True,True,Baja,Diabetes Tipo 2,Crítico,2025-07-01,Crítico
-902,Juan Luis,Escudero,37.0,F,82.49000000000001,1.59,32.63,132.0,100,65,232.2,285.29,98.25,38.3,False,True,False,Alta,Obesidad,Crítico,2024-08-19,Alto
+902,Juan Luis,Escudero,37.0,M,82.49000000000001,1.59,32.63,132.0,100,65,232.2,285.29,98.25,38.3,False,True,False,Alta,Obesidad,Crítico,2024-08-19,Alto
 903,Jordana,Bautista,38.0,F,74.31,1.62,28.32,96.0,64,113,305.51,304.83,86.59,39.8,False,False,True,Baja,Hipertensión,Crítico,2024-11-04,Crítico
-904,Jose Francisco,Iniesta,58.0,F,116.85,1.83,34.89,179.0,83,61,72.08,300.14,87.17,39.9,True,True,True,Media,Riesgo cardiovascular,Alto,2026-03-02,Alto
+904,Jose Francisco,Iniesta,58.0,M,116.85,1.83,34.89,179.0,83,61,72.08,300.14,87.17,39.9,True,True,True,Media,Riesgo cardiovascular,Alto,2026-03-02,Alto
 905,Lorenza,Marco,81.0,F,116.78,1.9,32.35,182.0,83,93,187.0,297.3,95.01,36.9,True,True,False,Media,Cardiopatía,Alto,2024-09-09,Crítico
 906,Paloma,Vendrell,36.0,F,69.94,1.78,22.07,184.0,124,55,146.56,209.86,86.37,38.6,False,False,True,Baja,Obesidad,Medio,2024-08-30,Crítico
 907,Alexandra,Carbonell,20.0,M,75.55,1.76,24.39,191.0,68,123,202.86,321.99,80.77,36.6,True,False,False,Baja,Hipertensión,Crítico,2025-03-17,Crítico
@@ -912,7 +912,7 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 916,Jafet,Diez,88.0,M,99.44,1.62,37.89,169.0,64,118,290.12,266.76,95.55,36.5,True,True,False,Media,Prehipertensión,Medio,2026-03-13,Alto
 917,Ester,Gomis,66.0,M,119.95,1.59,47.45,198.0,112,113,344.77,344.28,82.71,36.5,True,True,False,Baja,Diabetes Tipo 2,Alto,2025-04-09,Crítico
 918,Juanita,Cazorla,29.0,M,110.21,1.92,29.9,167.0,72,90,171.51,141.89,97.21,35.9,True,True,True,Alta,Prehipertensión,Alto,2025-11-14,Alto
-919,Ana Belén,Blanco,57.0,M,108.11,1.73,36.12,159.0,70,134,297.24,246.26,82.44,39.5,True,False,False,Alta,Obesidad,Alto,2026-03-11,Crítico
+919,Ana Belén,Blanco,57.0,F,108.11,1.73,36.12,159.0,70,134,297.24,246.26,82.44,39.5,True,False,False,Alta,Obesidad,Alto,2026-03-11,Crítico
 920,Abril,Rocha,52.0,M,100.58,1.52,43.53,102.0,60,101,99.91,229.7,88.55,36.3,True,True,False,Media,Diabetes Tipo 2,Crítico,2025-10-01,Bajo
 921,Maite,Higueras,90.0,F,97.55,1.5,43.36,193.0,62,137,201.69,287.61,87.74,39.9,True,False,True,Baja,Riesgo cardiovascular,Medio,2024-06-16,Crítico
 922,Marco,Gallardo,48.0,F,49.45,1.56,20.32,175.0,109,101,123.89,241.39,99.34,37.1,False,False,True,Alta,Hipertensión,Alto,2026-04-21,Alto
@@ -929,7 +929,7 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 933,Baldomero,Ferrero,30.0,F,47.75,1.46,22.4,165.0,112,61,103.68,184.49,83.52,36.2,True,True,False,Media,Hipertensión,Crítico,2025-12-15,Crítico
 934,Agustina,Fábregas,78.0,F,96.67,1.72,32.68,174.0,60,92,329.34,232.6,77.5,37.5,True,False,True,Baja,Obesidad,Medio,2025-10-17,Crítico
 935,Octavia,Godoy,63.0,F,101.5,1.73,33.91,111.0,63,85,276.89,345.56,79.81,39.1,True,True,True,Media,Cardiopatía,Bajo,2025-05-09,Crítico
-936,Alfredo,Alfonso,43.0,F,54.95,1.68,19.47,174.0,117,76,133.18,150.94,84.17,38.8,False,False,True,Alta,Diabetes Tipo 2,Bajo,2026-04-30,Crítico
+936,Alfredo,Alfonso,43.0,M,54.95,1.68,19.47,174.0,117,76,133.18,150.94,84.17,38.8,False,False,True,Alta,Diabetes Tipo 2,Bajo,2026-04-30,Crítico
 937,Rolando,Sanz,78.0,M,73.36,1.54,30.93,94.0,128,60,119.03,313.87,94.11,36.1,True,False,True,Baja,Cardiopatía,Crítico,2025-05-08,Bajo
 938,Máximo,Ripoll,39.0,F,64.96,1.71,22.22,161.0,127,70,335.99,334.37,95.72,38.0,True,False,False,Media,Paciente sano,Alto,2026-01-16,Crítico
 939,César,Saldaña,53.0,M,68.68,1.75,22.43,183.0,62,124,124.96,187.97,77.88,38.5,True,True,True,Baja,Hipertensión,Crítico,2025-05-26,Crítico
@@ -946,7 +946,7 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 950,Fabio,Montenegro,20.0,F,63.2,1.66,22.94,181.0,76,63,173.11,286.8,82.74,38.9,True,False,True,Baja,Prehipertensión,Crítico,2025-02-20,Crítico
 951,Juanita,Ripoll,67.0,F,56.75,1.92,15.39,137.0,97,136,312.56,129.73,84.23,37.7,True,False,True,Alta,Hipertensión,Crítico,2024-09-21,Crítico
 952,Ambrosio,Arregui,78.0,F,73.3,1.66,26.6,125.0,97,63,213.63,340.79,84.21,37.8,True,False,False,Media,Paciente sano,Bajo,2025-07-17,Crítico
-953,Félix,Aragón,25.0,F,95.53,1.62,36.4,127.0,67,76,348.08,187.02,99.24,39.1,True,False,False,Alta,Hipertensión,Medio,2026-04-15,Crítico
+953,Félix,Aragón,25.0,M,95.53,1.62,36.4,127.0,67,76,348.08,187.02,99.24,39.1,True,False,False,Alta,Hipertensión,Medio,2026-04-15,Crítico
 954,Pastora,Suárez,46.0,F,105.5,1.85,30.83,101.0,72,65,269.17,224.59,88.61,38.0,True,True,True,Media,Paciente sano,Crítico,2024-09-27,Alto
 955,Esperanza,Farré,45.0,M,55.1,1.77,17.59,118.0,65,128,317.07,316.61,94.03,37.5,False,False,True,Baja,Riesgo cardiovascular,Bajo,2025-03-14,Crítico
 956,Javi,Solsona,70.0,M,103.42,1.81,31.57,157.0,61,125,72.99,162.51,77.67,38.9,True,True,True,Media,Hipertensión,Bajo,2025-10-01,Crítico
@@ -968,11 +968,11 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 972,Ricarda,Linares,18.0,M,95.08,1.71,32.52,166.0,110,99,324.05,209.54,87.6,35.4,True,False,True,Alta,Hipertensión,Bajo,2025-09-08,Crítico
 973,Gisela,Perera,66.0,M,84.59,1.76,27.31,125.0,70,108,152.05,259.5,85.19,35.9,True,False,False,Media,Hipertensión,Alto,2025-11-27,Medio
 974,Rafa,Company,65.0,F,61.54,1.59,24.34,92.0,123,57,193.38,257.73,92.86,37.2,True,False,False,Media,Diabetes Tipo 2,Crítico,2024-10-22,Medio
-975,Sofía,Cañellas,62.0,M,46.46,1.85,13.57,185.0,122,70,273.0,309.98,89.14,39.7,True,False,True,Baja,Riesgo cardiovascular,Crítico,2024-12-02,Crítico
+975,Sofía,Cañellas,62.0,F,46.46,1.85,13.57,185.0,122,70,273.0,309.98,89.14,39.7,True,False,True,Baja,Riesgo cardiovascular,Crítico,2024-12-02,Crítico
 976,Nacio,Alcaraz,86.0,M,64.71,1.94,17.19,115.0,85,95,197.08,140.51,92.87,35.9,False,False,True,Baja,Riesgo cardiovascular,Medio,2025-07-24,Medio
 977,Matilde,Gaya,28.0,M,79.82,1.55,33.22,111.0,73,78,92.01,157.58,93.76,36.2,False,True,False,Baja,Riesgo cardiovascular,Crítico,2026-02-06,Bajo
 978,Luis Miguel,Vila,62.0,M,73.2,1.55,30.47,147.0,69,125,319.59,245.39,76.23,39.8,False,True,True,Baja,Prehipertensión,Alto,2024-12-02,Crítico
-979,Toño,Diez,83.0,F,48.23,1.86,13.94,145.0,95,137,149.73,132.17,81.25,35.5,False,True,True,Baja,Paciente sano,Crítico,2024-10-31,Crítico
+979,Toño,Diez,83.0,M,48.23,1.86,13.94,145.0,95,137,149.73,132.17,81.25,35.5,False,True,True,Baja,Paciente sano,Crítico,2024-10-31,Crítico
 980,Olivia,Pozuelo,83.0,M,57.77,1.54,24.36,91.0,80,130,248.94,321.98,79.83,37.6,False,True,False,Baja,Paciente sano,Medio,2024-10-22,Crítico
 981,Marcelo,Borja,47.0,M,101.84,1.88,28.81,119.0,129,137,138.05,146.45,99.9,37.0,False,True,False,Alta,Paciente sano,Medio,2024-12-01,Bajo
 982,Pepito,Benitez,87.0,F,98.94,1.66,35.91,177.0,75,80,197.0,281.03,97.51,37.6,True,True,False,Alta,Hipertensión,Crítico,2025-06-12,Alto
@@ -999,10 +999,10 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 1004,Flora,Lasa,88.0,F,79.74,1.46,37.41,111.0,120,73,183.13,282.42,97.5,37.4,False,False,False,Baja,Paciente sano,Crítico,2025-12-31,Medio
 1005,Graciana,Fajardo,35.0,F,82.49000000000001,1.88,23.34,94.0,101,134,109.88,140.75,88.84,38.6,False,True,True,Baja,Hipertensión,Crítico,2026-01-21,Bajo
 1006,Clotilde,Trujillo,78.0,M,58.17,1.68,20.61,117.0,85,133,194.01,284.95,89.56,35.9,True,False,True,Media,Diabetes Tipo 2,Medio,2024-10-11,Medio
-1007,Álvaro,Segarra,90.0,F,113.22,1.56,46.52,142.0,81,124,337.5,288.55,76.88,36.5,True,True,True,Baja,Obesidad,Alto,2024-06-10,Crítico
+1007,Álvaro,Segarra,90.0,M,113.22,1.56,46.52,142.0,81,124,337.5,288.55,76.88,36.5,True,True,True,Baja,Obesidad,Alto,2024-06-10,Crítico
 1008,Trinidad,Menendez,49.0,F,104.2,1.88,29.48,159.0,86,65,159.66,336.13,87.23,38.2,False,True,True,Baja,Prehipertensión,Alto,2025-04-07,Medio
 1009,Juana,Montaña,49.0,M,115.64,1.74,38.2,123.0,92,64,231.73,339.21,79.51,37.2,False,True,True,Media,Paciente sano,Crítico,2025-07-04,Crítico
-1010,José Antonio,Vilanova,26.0,F,57.16,1.62,21.78,175.0,119,112,282.73,329.45,92.7,39.1,True,True,True,Media,Hipertensión,Bajo,2024-06-25,Alto
+1010,José Antonio,Vilanova,26.0,M,57.16,1.62,21.78,175.0,119,112,282.73,329.45,92.7,39.1,True,True,True,Media,Hipertensión,Bajo,2024-06-25,Alto
 1011,Adrián,Reina,30.0,M,55.1,1.63,20.74,183.0,66,120,223.43,159.85,87.22,39.1,False,False,False,Media,Obesidad,Bajo,2025-12-26,Crítico
 1012,Alejo,Gilabert,83.0,F,71.8,1.57,29.13,158.0,110,52,328.8,303.7,81.95,36.5,False,True,False,Alta,Paciente sano,Bajo,2024-12-13,Crítico
 1013,Vilma,Sanabria,26.0,F,71.02,1.89,19.88,116.0,71,125,76.4,154.32,93.73,38.3,True,False,True,Baja,Prehipertensión,Medio,2025-06-18,Bajo
@@ -1043,7 +1043,7 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 1048,Alfonso,Vázquez,88.0,M,78.03,1.92,21.17,138.0,99,125,262.83,319.35,81.53,36.6,True,True,True,Media,Diabetes Tipo 2,Alto,2024-07-16,Crítico
 1049,Otilia,Benavent,25.0,M,108.36,1.84,32.01,136.0,91,64,265.16,207.74,76.76,35.4,True,True,False,Media,Hipertensión,Bajo,2024-11-24,Crítico
 1050,Ceferino,Montesinos,58.0,M,63.64,1.94,16.91,172.0,76,126,98.0,253.23,76.4,37.4,True,True,False,Media,Prehipertensión,Alto,2024-12-14,Crítico
-1051,Gustavo,Morata,85.0,F,117.85,1.58,47.21,96.0,97,121,327.74,349.69,90.33,37.2,False,True,False,Baja,Prehipertensión,Alto,2024-10-27,Crítico
+1051,Gustavo,Morata,85.0,M,117.85,1.58,47.21,96.0,97,121,327.74,349.69,90.33,37.2,False,True,False,Baja,Prehipertensión,Alto,2024-10-27,Crítico
 1052,Alicia,Bejarano,38.0,M,46.08,1.85,13.46,129.0,100,118,188.61,203.76,97.31,37.5,False,False,True,Media,Riesgo cardiovascular,Crítico,2025-10-10,Medio
 1053,Rosa,Cámara,21.0,F,76.89,1.57,31.19,190.0,107,131,142.26,213.02,79.61,37.1,False,True,True,Baja,Obesidad,Crítico,2025-09-28,Crítico
 1054,Noé,Villalonga,62.0,F,62.17,1.48,28.38,178.0,114,87,114.87,162.95,79.53,38.8,False,False,False,Baja,Prehipertensión,Medio,2026-01-12,Crítico
@@ -1054,32 +1054,32 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 1059,Cecilio,Valera,64.0,M,104.77,1.94,27.84,124.0,66,133,78.8,337.25,84.19,38.3,False,True,True,Alta,Hipertensión,Alto,2026-03-12,Crítico
 1060,Silvia,Hernando,35.0,F,115.83,1.53,49.48,181.0,117,129,149.93,243.57,93.34,39.9,False,False,False,Media,Cardiopatía,Crítico,2025-06-05,Crítico
 1061,Teófila,Fabregat,55.0,F,93.38,1.79,29.14,111.0,122,71,117.52,164.07,95.49,39.5,False,True,True,Alta,Hipertensión,Crítico,2026-02-04,Bajo
-1062,María Teresa,Cuesta,49.0,M,82.49000000000001,1.58,33.04,181.0,84,119,79.3,260.04,87.58,35.7,True,False,True,Baja,Hipertensión,Medio,2024-09-05,Crítico
+1062,María Teresa,Cuesta,49.0,F,82.49000000000001,1.58,33.04,181.0,84,119,79.3,260.04,87.58,35.7,True,False,True,Baja,Hipertensión,Medio,2024-09-05,Crítico
 1063,Eli,Gallo,22.0,F,109.34,1.88,30.94,190.0,73,110,214.12,284.49,87.63,37.6,True,False,False,Media,Prehipertensión,Crítico,2024-10-10,Crítico
-1064,Leire,Bayo,50.0,M,64.08,1.79,20.0,136.0,93,96,143.33,234.7000283768445,92.21,37.4,True,False,True,Alta,Obesidad,Medio,2024-11-24,Medio
+1064,Leire,Bayo,50.0,F,64.08,1.79,20.0,136.0,93,96,143.33,234.7000283768445,92.21,37.4,True,False,True,Alta,Obesidad,Medio,2024-11-24,Medio
 1065,Federico,Carbonell,48.0,M,93.27,1.51,40.91,158.0,118,99,338.9,237.87,95.1,37.8,False,True,True,Baja,Obesidad,Alto,2024-09-22,Crítico
 1066,Gustavo,Bolaños,79.0,M,88.41,1.52,38.27,151.0,73,98,146.79,223.37,80.81,39.1,False,False,True,Baja,Diabetes Tipo 2,Medio,2024-07-15,Crítico
 1067,Eva María,Boada,44.0,F,107.37,1.77,34.27,165.0,117,64,115.57,174.16,99.63,38.3,False,True,False,Media,Cardiopatía,Bajo,2025-11-22,Alto
-1068,Rosario,Vall,40.0,M,83.78,1.71,28.65,96.0,87,73,116.98,147.86,80.75,39.4,True,True,False,Baja,Hipertensión,Bajo,2025-02-04,Crítico
+1068,Rosario,Vall,40.0,F,83.78,1.71,28.65,96.0,87,73,116.98,147.86,80.75,39.4,True,True,False,Baja,Hipertensión,Bajo,2025-02-04,Crítico
 1069,Dani,Ferrer,66.0,M,53.6,1.91,14.69,155.0,121,74,270.16,147.99,84.32,39.0,False,True,True,Baja,Obesidad,Bajo,2025-08-28,Crítico
 1070,Javiera,Santos,49.0,F,93.09,1.49,41.93,155.0,66,90,290.13,183.56,82.73,39.3,False,True,True,Alta,Cardiopatía,Medio,2026-03-14,Crítico
-1071,Félix,Múñiz,20.0,F,79.28,1.83,23.67,113.0,60,125,173.62,307.58,84.48,39.2,False,True,True,Baja,Hipertensión,Alto,2025-03-16,Crítico
+1071,Félix,Múñiz,20.0,M,79.28,1.83,23.67,113.0,60,125,173.62,307.58,84.48,39.2,False,True,True,Baja,Hipertensión,Alto,2025-03-16,Crítico
 1072,Ignacia,Lucena,67.0,F,76.66,1.5,34.07,91.0,110,61,326.52,188.79,92.6,39.5,True,False,True,Baja,Riesgo cardiovascular,Bajo,2025-12-18,Crítico
 1073,Paulino,Santamaria,59.0,M,52.54,1.76,16.96,165.0,94,121,286.28,227.97,94.01,37.1,True,False,True,Baja,Riesgo cardiovascular,Bajo,2025-10-05,Alto
 1074,Odalys,Solís,90.0,M,87.35,1.65,32.08,139.0,118,121,289.78,241.43,88.0,38.2,True,False,False,Alta,Obesidad,Crítico,2025-07-27,Alto
 1075,Juanito,Ferrando,21.0,F,72.82,1.75,23.78,113.0,106,52,196.99,137.83,92.33,36.2,True,True,True,Baja,Obesidad,Crítico,2025-07-27,Medio
-1076,Paloma,Bermudez,76.0,M,108.7,1.77,34.7,163.0,83,50,176.44,189.63,94.03,39.9,False,True,True,Baja,Obesidad,Bajo,2025-10-30,Alto
+1076,Paloma,Bermudez,76.0,F,108.7,1.77,34.7,163.0,83,50,176.44,189.63,94.03,39.9,False,True,True,Baja,Obesidad,Bajo,2025-10-30,Alto
 1077,Lara,Mateo,60.0,F,83.29,1.94,22.13,105.0,118,67,206.26,186.88,87.21,36.9,True,True,True,Media,Prehipertensión,Bajo,2026-04-07,Alto
-1078,Laura,Hierro,29.0,M,90.64,1.75,29.6,107.0,115,115,144.56,157.43,89.69,37.2,False,False,False,Media,Hipertensión,Crítico,2025-02-14,Medio
+1078,Laura,Hierro,29.0,F,90.64,1.75,29.6,107.0,115,115,144.56,157.43,89.69,37.2,False,False,False,Media,Hipertensión,Crítico,2025-02-14,Medio
 1079,Ambrosio,Collado,88.0,M,71.0,1.6,27.73,152.0,65,123,159.31,299.29,78.54,39.2,False,False,True,Alta,Hipertensión,Medio,2025-12-12,Crítico
 1080,Dimas,Tapia,26.0,F,92.41,1.56,37.97,180.0,103,77,184.8,338.65,95.68,36.4,False,True,True,Baja,Prehipertensión,Crítico,2025-01-18,Alto
 1081,Amancio,Nicolás,18.0,F,49.38,1.69,17.29,173.0,126,61,121.18,278.43,78.41,37.1,False,False,True,Baja,Hipertensión,Crítico,2024-10-01,Crítico
 1082,Luciano,Tejedor,25.0,M,103.97,1.92,28.2,172.0,67,72,95.61,252.1,96.1,39.4,True,True,False,Media,Hipertensión,Bajo,2026-05-20,Alto
 1083,Crescencia,Teruel,28.0,M,101.06,1.47,46.77,136.0,89,122,335.16,318.3,78.4,35.2,False,True,False,Baja,Hipertensión,Crítico,2026-01-20,Crítico
-1084,Lidia,Jerez,18.0,M,116.77,1.58,46.78,179.0,71,91,315.63,252.02,92.48,36.1,True,False,False,Media,Hipertensión,Alto,2024-06-14,Crítico
+1084,Lidia,Jerez,18.0,F,116.77,1.58,46.78,179.0,71,91,315.63,252.02,92.48,36.1,True,False,False,Media,Hipertensión,Alto,2024-06-14,Crítico
 1085,Yaiza,Ripoll,62.0,F,54.86,1.58,21.98,150.0,74,75,185.76,288.52,95.12,39.1,True,True,True,Alta,Prehipertensión,Medio,2025-09-06,Medio
-1086,Mireia,Chaves,60.0,M,48.41,1.63,18.22,161.0,111,77,132.1,162.13,99.27,38.9,False,False,False,Media,Obesidad,Crítico,2025-02-24,Alto
-1087,Félix,Ibarra,55.0,F,76.55,1.48,34.95,200.0,94,74,344.12,220.15,89.71,36.1,False,False,True,Baja,Diabetes Tipo 2,Crítico,2024-11-20,Crítico
+1086,Mireia,Chaves,60.0,F,48.41,1.63,18.22,161.0,111,77,132.1,162.13,99.27,38.9,False,False,False,Media,Obesidad,Crítico,2025-02-24,Alto
+1087,Félix,Ibarra,55.0,M,76.55,1.48,34.95,200.0,94,74,344.12,220.15,89.71,36.1,False,False,True,Baja,Diabetes Tipo 2,Crítico,2024-11-20,Crítico
 1088,Zacarías,Luna,58.0,M,105.02,1.64,39.05,192.0,98,92,183.65,151.72,76.33,39.1,False,True,False,Baja,Paciente sano,Bajo,2025-05-29,Crítico
 1089,Socorro,Arrieta,60.0,M,71.43,1.63,26.88,140.0,80,54,127.68,162.04,88.52,36.7,False,True,True,Baja,Prehipertensión,Bajo,2025-08-02,Bajo
 1090,Espiridión,Baquero,21.0,M,94.96,1.75,31.01,119.0,72,99,336.29,349.26,77.37,39.9,True,True,False,Baja,Paciente sano,Crítico,2026-04-05,Crítico
@@ -1093,7 +1093,7 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 1098,Cecilio,Antúnez,18.0,F,74.45,1.68,26.38,187.0,80,94,163.57,121.85,95.71,35.4,True,False,False,Baja,Diabetes Tipo 2,Medio,2026-03-19,Crítico
 1099,Lisandro,Serrano,68.0,F,58.77,1.5,26.12,158.0,92,123,121.46,134.06,92.56,35.7,True,False,False,Alta,Hipertensión,Medio,2026-02-09,Medio
 1100,Edelmiro,Aguilar,19.0,M,100.29,1.47,46.41,95.0,113,131,304.9,130.67,94.11,37.7,False,False,True,Alta,Diabetes Tipo 2,Medio,2024-10-28,Crítico
-1101,Jose Angel,Ricart,32.0,F,51.63,1.65,18.96,118.0,77,92,242.55,121.49,93.86,40.0,False,False,True,Alta,Diabetes Tipo 2,Alto,2025-11-24,Alto
+1101,Jose Angel,Ricart,32.0,M,51.63,1.65,18.96,118.0,77,92,242.55,121.49,93.86,40.0,False,False,True,Alta,Diabetes Tipo 2,Alto,2025-11-24,Alto
 1102,Ignacia,Rojas,72.0,M,68.38,1.65,25.12,119.0,90,138,207.5121282633371,304.94,78.54,36.9,True,True,False,Baja,Paciente sano,Medio,2025-04-17,Crítico
 1103,Melchor,Pujadas,21.0,F,97.12,1.51,42.59,146.0,74,120,95.43,199.18,75.15,35.9,True,True,True,Alta,Obesidad,Medio,2026-04-16,Crítico
 1104,Pío,Padilla,85.0,M,103.93,1.71,35.54,152.0,60,64,262.19,250.07,87.58,36.1,False,False,True,Baja,Paciente sano,Crítico,2025-08-28,Alto
@@ -1101,11 +1101,11 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 1106,Sandra,Alvarado,79.0,F,112.44,1.85,32.85,125.0,102,62,339.2,191.53,99.89,35.7,False,True,True,Alta,Diabetes Tipo 2,Bajo,2025-04-18,Crítico
 1107,Simón,Prats,88.0,M,61.03,1.6,23.84,106.0,89,61,107.88,337.47,81.94,37.4,False,True,True,Alta,Hipertensión,Bajo,2024-12-21,Crítico
 1108,Chita,Alvarado,71.0,F,118.05,1.93,31.69,163.0,85,54,266.31,274.82,90.85,39.9,False,True,True,Media,Diabetes Tipo 2,Bajo,2025-12-25,Alto
-1109,Juan Francisco,Gallart,74.0,F,82.35,1.88,23.3,106.0,73,114,138.24,285.11,77.34,36.7,True,False,False,Baja,Cardiopatía,Bajo,2025-09-11,Crítico
+1109,Juan Francisco,Gallart,74.0,M,82.35,1.88,23.3,106.0,73,114,138.24,285.11,77.34,36.7,True,False,False,Baja,Cardiopatía,Bajo,2025-09-11,Crítico
 1110,Eladio,Sáenz,18.0,M,96.16,1.86,27.8,134.0,89,100,331.77,221.19,97.58,35.5,True,True,True,Alta,Diabetes Tipo 2,Crítico,2025-02-11,Crítico
 1111,María Manuela,Amat,29.0,F,76.18,1.89,21.33,177.0,69,124,201.51,206.97,93.73,37.7,True,True,False,Media,Riesgo cardiovascular,Bajo,2025-09-22,Alto
 1112,Marita,Calvet,53.0,M,50.02,1.64,18.6,110.0,79,103,228.9,304.34,87.17,37.5,False,False,False,Baja,Hipertensión,Medio,2026-02-13,Alto
-1113,Maristela,Gallego,76.0,M,116.55,1.89,32.63,95.0,109,123,135.48,210.62,87.8,37.0,False,True,False,Baja,Prehipertensión,Medio,2025-08-17,Bajo
+1113,Maristela,Gallego,76.0,F,116.55,1.89,32.63,95.0,109,123,135.48,210.62,87.8,37.0,False,True,False,Baja,Prehipertensión,Medio,2025-08-17,Bajo
 1114,Abril,Maldonado,56.0,F,94.2,1.67,33.78,145.0,110,78,344.32,277.52,89.19,36.7,False,False,True,Baja,Cardiopatía,Medio,2024-10-31,Crítico
 1115,Regina,Godoy,34.0,F,108.49,1.64,40.34,145.0,75,102,94.77,342.79,91.64,39.6,False,False,False,Media,Hipertensión,Alto,2025-02-26,Medio
 1116,Basilio,Francisco,83.0,F,108.76,1.77,34.72,95.0,128,129,275.79,338.3,98.26,35.7,True,False,True,Baja,Prehipertensión,Bajo,2025-06-30,Alto
@@ -1115,10 +1115,10 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 1120,Epifanio,Correa,66.0,M,117.17,1.48,53.49,116.0,95,52,105.41,160.73,88.39,39.5,False,False,True,Baja,Diabetes Tipo 2,Alto,2026-02-27,Bajo
 1121,Óscar,Busquets,69.0,M,89.7,1.61,34.61,137.0,108,80,181.18,314.18,75.34,39.4,False,True,True,Baja,Hipertensión,Medio,2025-03-22,Crítico
 1122,Melania,Cerro,52.0,F,58.62,1.51,25.71,194.0,96,119,84.74,273.57,89.59,36.2,True,False,True,Baja,Obesidad,Alto,2026-02-26,Crítico
-1123,Ruperta,Estevez,57.0,M,61.01,1.85,17.83,147.0,112,137,131.6,297.17,97.59,35.1,True,False,False,Media,Diabetes Tipo 2,Medio,2024-10-20,Medio
+1123,Ruperta,Estevez,57.0,F,61.01,1.85,17.83,147.0,112,137,131.6,297.17,97.59,35.1,True,False,False,Media,Diabetes Tipo 2,Medio,2024-10-20,Medio
 1124,Asunción,Quintana,33.0,F,50.96,1.81,15.56,147.0,71,76,326.52,248.11,84.07,39.8,False,True,False,Baja,Prehipertensión,Alto,2024-10-27,Crítico
 1125,Delia,Hierro,52.0,F,108.31,1.78,34.18,176.0,123,136,83.61,234.36,75.63,37.6,False,True,True,Baja,Paciente sano,Medio,2026-05-14,Crítico
-1126,Fátima,Peñas,75.0,M,54.9,1.66,19.92,177.0,101,85,183.89,164.85,97.78,38.2,True,False,True,Baja,Riesgo cardiovascular,Bajo,2024-11-07,Alto
+1126,Fátima,Peñas,75.0,F,54.9,1.66,19.92,177.0,101,85,183.89,164.85,97.78,38.2,True,False,True,Baja,Riesgo cardiovascular,Bajo,2024-11-07,Alto
 1127,Agapito,Amor,26.0,F,46.84,1.92,12.71,131.0,126,111,254.32,130.49,96.41,35.9,True,True,False,Media,Obesidad,Bajo,2025-07-05,Alto
 1128,Lidia,Heras,77.0,F,94.69,1.92,25.69,105.0,114,100,77.41,189.26,88.23,38.1,True,False,True,Alta,Cardiopatía,Bajo,2025-01-01,Bajo
 1129,Melisa,Alcalde,33.0,M,59.86,1.76,19.32,134.0,79,132,215.07,209.88,79.66,38.6,False,True,False,Media,Obesidad,Bajo,2026-03-31,Crítico
@@ -1132,15 +1132,15 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 1137,Sofía,Milla,80.0,F,95.18,1.56,39.11,161.0,99,51,286.21,270.24,97.21,35.4,False,True,False,Alta,Riesgo cardiovascular,Alto,2025-02-27,Alto
 1138,Emigdio,Carranza,54.0,F,94.8,1.56,38.95,196.0,120,85,253.92,208.81,94.77,35.2,False,False,True,Media,Hipertensión,Alto,2026-04-09,Crítico
 1139,Lola,Gárate,65.0,M,51.49,1.94,13.68,124.0,69,104,91.7,296.28,81.79,37.8,True,False,True,Baja,Paciente sano,Alto,2024-12-15,Crítico
-1140,Mónica,Sancho,88.0,M,82.25,1.85,24.03,97.0,121,71,294.96,306.58,85.86,35.8,True,True,False,Alta,Diabetes Tipo 2,Bajo,2025-11-03,Alto
+1140,Mónica,Sancho,88.0,F,82.25,1.85,24.03,97.0,121,71,294.96,306.58,85.86,35.8,True,True,False,Alta,Diabetes Tipo 2,Bajo,2025-11-03,Alto
 1141,Mariana,Iglesia,29.0,F,56.23,1.49,25.33,115.0,91,118,280.53,218.9,89.16,37.3,True,False,True,Alta,Diabetes Tipo 2,Crítico,2025-04-02,Alto
 1142,Custodia,Córdoba,72.0,F,81.79,1.69,28.64,100.0,83,93,106.92,269.97,92.39,39.8,False,False,False,Media,Cardiopatía,Bajo,2025-04-15,Bajo
 1143,Alcides,Sevillano,57.0,F,60.23,1.75,19.67,170.0,108,79,162.07,163.33,78.12,35.2,True,True,False,Alta,Obesidad,Alto,2026-02-28,Crítico
-1144,Adrián,Martin,80.0,F,105.57,1.59,41.76,126.0,118,56,293.87,185.34,75.03,37.1,False,False,False,Baja,Riesgo cardiovascular,Bajo,2025-08-07,Crítico
+1144,Adrián,Martin,80.0,M,105.57,1.59,41.76,126.0,118,56,293.87,185.34,75.03,37.1,False,False,False,Baja,Riesgo cardiovascular,Bajo,2025-08-07,Crítico
 1145,Feliciano,Fiol,73.0,F,82.23,1.6,32.12,147.0,117,75,328.54,323.51,84.64,36.7,True,False,False,Alta,Hipertensión,Bajo,2024-10-30,Crítico
 1146,Felipa,Almagro,70.0,M,63.32,1.61,24.43,118.0,120,122,125.77,255.44,85.67,35.9,False,False,True,Alta,Obesidad,Crítico,2024-07-27,Bajo
 1147,Fito,Llabrés,35.0,F,87.7,1.64,32.61,131.0,86,51,83.87,205.32,79.48,36.7,True,True,False,Baja,Cardiopatía,Crítico,2025-03-20,Crítico
-1148,Lara,Lluch,72.0,M,67.48,1.94,17.93,199.0,100,100,241.94,330.72,83.72,36.4,False,True,False,Baja,Prehipertensión,Alto,2026-04-15,Crítico
+1148,Lara,Lluch,72.0,F,67.48,1.94,17.93,199.0,100,100,241.94,330.72,83.72,36.4,False,True,False,Baja,Prehipertensión,Alto,2026-04-15,Crítico
 1149,Ofelia,Alberto,55.0,F,100.9,1.6,39.41,122.0,69,122,291.68,190.23,98.2,37.9,True,False,False,Baja,Prehipertensión,Bajo,2025-10-08,Alto
 1150,Julián,Martinez,46.0,F,88.12,1.58,35.3,142.0,93,78,74.81,294.59,76.19,36.6,False,True,False,Media,Riesgo cardiovascular,Medio,2025-11-09,Crítico
 1151,Poncio,Bauzà,84.0,F,88.7,1.92,24.06,102.0,91,57,114.15,342.49,92.28,35.6,False,True,False,Baja,Prehipertensión,Crítico,2026-02-04,Bajo
@@ -1157,7 +1157,7 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 1162,Xavier,Marcos,21.0,M,61.26,1.81,18.7,191.0,76,124,83.07,244.24,95.24,39.0,True,True,False,Media,Diabetes Tipo 2,Crítico,2026-03-24,Crítico
 1163,Victoria,Serra,34.0,F,66.95,1.89,18.74,97.0,116,119,298.01,286.11,86.56,38.9,True,False,False,Baja,Prehipertensión,Alto,2026-02-24,Alto
 1164,Marino,Arcos,70.0,F,52.94,1.84,15.64,166.0,83,119,329.18,131.51,80.68,39.4,False,True,False,Media,Obesidad,Alto,2024-05-20,Crítico
-1165,Jose Angel,Raya,82.0,F,110.42,1.48,50.41,109.0,100,100,237.66,304.61,93.96,36.4,False,True,True,Baja,Cardiopatía,Alto,2025-11-06,Alto
+1165,Jose Angel,Raya,82.0,M,110.42,1.48,50.41,109.0,100,100,237.66,304.61,93.96,36.4,False,True,True,Baja,Cardiopatía,Alto,2025-11-06,Alto
 1166,Bibiana,Pedrero,42.0,M,78.85,1.83,23.55,99.0,83,117,97.92,139.44,86.45,37.6,True,False,False,Alta,Hipertensión,Bajo,2025-02-01,Bajo
 1167,Lupe,Lopez,76.0,M,109.13,1.88,30.88,152.0,97,69,264.2,303.53,83.81,37.9,False,False,True,Baja,Hipertensión,Medio,2025-01-08,Crítico
 1168,Jonatan,Fábregas,81.0,F,52.65,1.54,22.2,153.0,109,70,279.56,234.7000283768445,75.54,39.3,True,True,True,Baja,Diabetes Tipo 2,Crítico,2024-07-20,Crítico
@@ -1173,7 +1173,7 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 1178,Fanny,Reyes,84.0,F,69.55,1.82,21.0,139.0,111,65,148.9,320.15,89.89,38.6,True,False,True,Alta,Diabetes Tipo 2,Alto,2026-03-02,Medio
 1179,Aarón,Aragón,73.0,M,105.65,1.54,44.55,114.0,83,70,74.79,278.74,90.29,37.7,True,False,False,Alta,Hipertensión,Bajo,2024-11-22,Bajo
 1180,Isidoro,Espinosa,78.0,M,109.7,1.67,39.33,195.0,112,138,234.68,256.63,88.17,38.3,True,True,True,Alta,Cardiopatía,Alto,2026-02-14,Crítico
-1181,Jesús,Pallarès,73.0,F,76.67,1.46,35.97,178.0,81,70,267.74,134.35,88.48,36.0,False,True,True,Alta,Obesidad,Alto,2025-09-17,Alto
+1181,Jesús,Pallarès,73.0,M,76.67,1.46,35.97,178.0,81,70,267.74,134.35,88.48,36.0,False,True,True,Alta,Obesidad,Alto,2025-09-17,Alto
 1182,Bernarda,Paz,23.0,M,69.5,1.54,29.31,121.0,127,120,321.76,246.46,92.23,39.6,True,True,True,Baja,Hipertensión,Bajo,2025-04-23,Crítico
 1183,Balduino,Real,86.0,M,97.31,1.53,41.57,148.0,115,76,331.4,317.29,97.05,37.5,False,True,True,Baja,Hipertensión,Medio,2025-03-20,Crítico
 1184,Armida,Mármol,28.0,F,82.92,1.77,26.47,170.0,129,100,325.65,292.51,86.37,36.2,False,True,True,Alta,Cardiopatía,Crítico,2025-09-04,Crítico
@@ -1181,7 +1181,7 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 1186,Gabino,Santamaría,79.0,M,81.98,1.5,36.44,95.0,114,131,281.54,286.37,97.47,37.7,True,False,True,Alta,Diabetes Tipo 2,Medio,2024-12-25,Alto
 1187,Fernanda,Saez,77.0,M,90.5,1.93,24.3,104.0,118,103,327.1,279.8,89.49,37.5,True,False,False,Baja,Diabetes Tipo 2,Alto,2024-10-21,Crítico
 1188,Odalys,Leal,20.0,M,119.3,1.86,34.48,109.0,110,99,175.52,280.06,94.09,38.1,False,True,True,Baja,Paciente sano,Crítico,2025-08-08,Medio
-1189,Diego,Pomares,44.0,F,68.1,1.7,23.56,162.0,80,105,166.16,171.41,90.71,35.0,False,False,True,Alta,Paciente sano,Alto,2025-08-18,Alto
+1189,Diego,Pomares,44.0,M,68.1,1.7,23.56,162.0,80,105,166.16,171.41,90.71,35.0,False,False,True,Alta,Paciente sano,Alto,2025-08-18,Alto
 1190,Demetrio,Sandoval,52.0,M,92.06,1.52,39.85,169.0,112,106,188.45,347.35,89.35,37.0,True,True,False,Baja,Paciente sano,Alto,2025-08-02,Alto
 1191,Sarita,Castañeda,50.0,M,86.94,1.79,27.13,198.0,96,114,183.58,137.31,96.17,35.6,False,True,False,Baja,Riesgo cardiovascular,Medio,2025-12-27,Crítico
 1192,Manolo,Rojas,61.0,M,60.47,1.82,18.26,158.0,128,87,99.91,207.59,82.9,39.0,True,False,True,Baja,Diabetes Tipo 2,Bajo,2024-09-25,Crítico
@@ -1193,9 +1193,9 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 1198,Roberta,Cornejo,55.0,F,67.73,1.93,18.18,106.0,65,121,180.15,183.08,97.56,37.0,False,True,False,Alta,Hipertensión,Alto,2025-11-30,Medio
 1199,Tatiana,Calatayud,36.0,F,104.05,1.51,45.63,131.0,104,90,241.16,220.32,98.31,38.8,True,True,True,Alta,Obesidad,Crítico,2024-12-12,Alto
 1200,Jose Manuel,Cervantes,48.0,M,61.16,1.77,19.52,174.0,97,111,193.08,126.76,97.52,36.5,False,False,False,Media,Hipertensión,Crítico,2025-04-04,Alto
-1201,Julia,Benavent,59.0,M,57.8,1.87,16.53,194.0,89,67,219.63,191.88,82.19,38.6,True,True,True,Alta,Hipertensión,Crítico,2026-03-11,Crítico
+1201,Julia,Benavent,59.0,F,57.8,1.87,16.53,194.0,89,67,219.63,191.88,82.19,38.6,True,True,True,Alta,Hipertensión,Crítico,2026-03-11,Crítico
 1202,Ainoa,Castilla,49.0,F,74.58,1.78,23.54,101.0,68,68,330.2,299.2,90.83,37.3,True,False,False,Media,Obesidad,Medio,2025-11-29,Crítico
-1203,Carlos,Bayón,89.0,F,69.07,1.79,21.56,160.0,101,137,117.87,254.42,96.04,35.7,False,True,False,Alta,Riesgo cardiovascular,Alto,2025-07-09,Medio
+1203,Carlos,Bayón,89.0,M,69.07,1.79,21.56,160.0,101,137,117.87,254.42,96.04,35.7,False,True,False,Alta,Riesgo cardiovascular,Alto,2025-07-09,Medio
 1204,Emiliano,Ibáñez,59.0,M,81.69,1.76,26.37,147.0,68,89,85.33,234.7000283768445,89.98,36.3,False,False,False,Baja,Cardiopatía,Bajo,2024-10-02,Medio
 1205,Edelmiro,Quevedo,64.0,M,92.9,1.63,34.97,108.0,98,109,192.74,241.65,77.98,37.9,False,True,False,Baja,Cardiopatía,Alto,2025-02-25,Crítico
 1206,Marciano,Aliaga,22.0,F,70.0,1.69,24.51,158.0,63,60,132.23,148.71,96.85,35.3,True,True,True,Baja,Hipertensión,Medio,2026-04-13,Medio
@@ -1222,14 +1222,14 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 1227,Wilfredo,Rozas,86.0,M,101.15,1.68,35.84,198.0,122,132,104.52,181.15,99.2,39.0,True,True,False,Baja,Hipertensión,Medio,2025-05-30,Crítico
 1228,Fernando,Valcárcel,43.0,M,67.88,1.55,28.25,154.0,126,110,322.32,236.67,86.08,38.7,True,True,True,Baja,Prehipertensión,Medio,2024-12-25,Crítico
 1229,Luciano,Bou,78.0,M,78.71,1.86,22.75,102.0,89,74,270.89,259.16,87.82,38.2,False,True,True,Media,Hipertensión,Bajo,2025-04-23,Alto
-1230,Belén,Buendía,35.0,M,71.15,1.84,21.02,95.0,93,128,88.99,314.9,75.87,38.3,False,False,True,Alta,Prehipertensión,Medio,2025-10-08,Crítico
+1230,Belén,Buendía,35.0,F,71.15,1.84,21.02,95.0,93,128,88.99,314.9,75.87,38.3,False,False,True,Alta,Prehipertensión,Medio,2025-10-08,Crítico
 1231,Anita,Moles,53.0,M,49.97,1.48,22.81,178.0,123,122,263.05,312.94,80.38,36.4,True,True,True,Baja,Prehipertensión,Alto,2026-05-01,Crítico
 1232,María Luisa,Solsona,30.0,F,116.61,1.91,31.96,108.0,95,99,222.32,227.09,99.57,39.3,False,True,True,Media,Obesidad,Crítico,2025-03-28,Alto
 1233,Lola,Fuente,28.0,F,119.39,1.87,34.14,191.0,78,103,121.95,123.22,77.49,37.7,True,True,True,Baja,Hipertensión,Medio,2025-12-08,Crítico
 1234,Yaiza,Escrivá,85.0,F,77.37,1.79,24.15,117.0,66,138,202.97,154.34,91.32,35.3,True,True,True,Baja,Cardiopatía,Crítico,2026-04-12,Alto
 1235,León,Fernandez,68.0,M,111.99,1.66,40.64,107.0,68,93,229.95,165.22,86.62,38.0,True,True,True,Baja,Cardiopatía,Bajo,2025-07-28,Alto
 1236,Guiomar,Galván,35.0,M,70.02,1.85,20.46,91.0,63,74,207.5121282633371,169.72,93.82,35.2,False,True,True,Alta,Hipertensión,Crítico,2025-05-14,Alto
-1237,Jose Ramón,Tur,44.0,F,85.54,1.64,31.8,95.0,125,68,202.33,137.38,79.64,35.1,False,False,False,Baja,Hipertensión,Crítico,2025-07-02,Crítico
+1237,Jose Ramón,Tur,44.0,M,85.54,1.64,31.8,95.0,125,68,202.33,137.38,79.64,35.1,False,False,False,Baja,Hipertensión,Crítico,2025-07-02,Crítico
 1238,Margarita,Ferrándiz,81.0,M,53.32,1.53,22.78,193.0,68,81,202.71,121.45,85.18,39.9,True,True,False,Baja,Diabetes Tipo 2,Alto,2025-03-12,Crítico
 1239,Martín,Cardona,41.0,M,72.04,1.5,32.02,140.0,61,68,110.34,161.65,98.86,39.6,True,False,False,Baja,Paciente sano,Alto,2025-10-07,Bajo
 1240,Bernardino,Anguita,41.0,M,73.19,1.46,34.34,176.0,83,78,187.79,263.87,98.07,37.4,True,False,False,Alta,Diabetes Tipo 2,Alto,2026-02-19,Alto
@@ -1243,11 +1243,11 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 1249,Carmina,Mosquera,51.0,M,74.14,1.47,34.31,92.0,125,62,147.65,170.4,93.08,36.2,False,True,True,Alta,Obesidad,Crítico,2026-01-21,Medio
 1250,Rosa,Beltrán,29.0,F,94.66,1.73,31.63,137.0,93,52,162.32,152.55,79.73,36.3,True,True,False,Media,Obesidad,Alto,2025-04-28,Crítico
 1251,Aura,Tudela,48.0,M,65.83,1.66,23.89,147.0,101,124,175.02,252.19,97.26,36.4,False,False,False,Media,Hipertensión,Alto,2025-08-13,Medio
-1252,Francisco,Giner,30.0,F,49.39,1.52,21.38,172.0,62,114,296.83,282.46,78.81,35.7,True,False,False,Alta,Diabetes Tipo 2,Bajo,2026-04-10,Crítico
+1252,Francisco,Giner,30.0,M,49.39,1.52,21.38,172.0,62,114,296.83,282.46,78.81,35.7,True,False,False,Alta,Diabetes Tipo 2,Bajo,2026-04-10,Crítico
 1253,Albina,Méndez,68.0,F,55.56,1.72,18.78,154.0,68,79,209.13,234.7000283768445,94.74,36.8,True,False,False,Media,Cardiopatía,Medio,2024-09-21,Alto
 1254,Tania,Comas,62.0,M,82.49000000000001,1.46,38.7,127.0,71,139,114.65,141.78,83.3,37.7,False,True,True,Baja,Obesidad,Medio,2024-12-27,Crítico
 1255,Primitiva,Duran,90.0,F,46.34,1.78,14.63,140.0,74,57,317.34,133.99,81.61,37.0,True,True,True,Media,Riesgo cardiovascular,Medio,2025-02-11,Crítico
-1256,Lara,Domingo,36.0,M,79.37,1.46,37.23,182.0,82,94,126.14,327.94,77.24,35.1,False,False,True,Baja,Hipertensión,Crítico,2025-05-10,Crítico
+1256,Lara,Domingo,36.0,F,79.37,1.46,37.23,182.0,82,94,126.14,327.94,77.24,35.1,False,False,True,Baja,Hipertensión,Crítico,2025-05-10,Crítico
 1257,Victoria,Castrillo,73.0,F,101.36,1.56,41.65,194.0,93,72,157.38,286.84,97.35,39.9,False,True,False,Baja,Hipertensión,Alto,2025-05-07,Crítico
 1258,Leonor,Bou,31.0,F,91.65,1.62,34.92,90.0,106,89,209.78,291.01,87.3,35.7,True,False,False,Alta,Paciente sano,Medio,2025-05-02,Alto
 1259,Begoña,Borja,70.0,F,85.11,1.53,36.36,143.5,72,73,279.85,149.03,84.86,39.9,False,False,False,Baja,Hipertensión,Crítico,2024-08-21,Crítico
@@ -1256,7 +1256,7 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 1262,Eusebia,Reig,66.0,M,86.08,1.92,23.35,109.0,71,95,207.5121282633371,266.56,79.09,36.3,True,True,False,Baja,Prehipertensión,Alto,2025-04-03,Crítico
 1263,Elodia,Valentín,29.0,M,102.48,1.5,45.55,180.0,123,68,286.75,245.74,86.59,35.0,False,True,False,Media,Obesidad,Bajo,2025-11-23,Alto
 1264,Máximo,Gárate,54.0,M,82.53,1.88,23.35,193.0,82,103,272.72,241.49,88.42,40.0,False,False,True,Baja,Hipertensión,Alto,2025-12-28,Crítico
-1265,María Dolores,Iñiguez,30.0,M,119.47,1.54,50.38,110.0,107,73,157.08,271.0,81.18,35.1,False,True,False,Baja,Hipertensión,Alto,2025-09-22,Crítico
+1265,María Dolores,Iñiguez,30.0,F,119.47,1.54,50.38,110.0,107,73,157.08,271.0,81.18,35.1,False,True,False,Baja,Hipertensión,Alto,2025-09-22,Crítico
 1266,Fidela,Torre,48.0,F,82.25,1.5,36.56,183.0,124,57,177.81,347.11,99.99,36.0,False,True,True,Alta,Prehipertensión,Medio,2026-05-19,Crítico
 1267,Marisa,Talavera,22.0,F,115.38,1.55,48.02,150.0,74,62,137.4,292.55,89.74,37.3,False,True,True,Baja,Diabetes Tipo 2,Crítico,2025-11-28,Medio
 1268,Geraldo,Cardona,63.0,F,96.28,1.76,31.08,186.0,66,109,272.09,179.43,95.54,36.6,False,True,True,Alta,Cardiopatía,Alto,2025-11-13,Crítico
@@ -1279,7 +1279,7 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 1285,Guiomar,Ribes,65.0,F,103.31,1.58,41.38,134.0,63,75,262.45,337.03,89.44,38.7,False,False,False,Baja,Hipertensión,Medio,2025-09-22,Alto
 1286,Sarita,Rebollo,58.0,F,59.39,1.78,18.74,131.0,112,140,196.06,289.45,83.48,36.3,False,True,True,Media,Riesgo cardiovascular,Crítico,2025-03-03,Crítico
 1287,Susana,Tudela,51.0,F,56.04,1.54,23.63,116.0,111,57,279.88,149.95,92.65,35.9,True,False,True,Alta,Hipertensión,Medio,2026-05-16,Alto
-1288,José Ángel,Tapia,77.0,F,107.26,1.78,33.85,152.0,114,71,239.89,342.8,76.43,36.5,False,True,False,Baja,Riesgo cardiovascular,Bajo,2025-12-04,Crítico
+1288,José Ángel,Tapia,77.0,M,107.26,1.78,33.85,152.0,114,71,239.89,342.8,76.43,36.5,False,True,False,Baja,Riesgo cardiovascular,Bajo,2025-12-04,Crítico
 1289,Benjamín,Ferrando,69.0,F,88.28,1.57,35.81,137.0,82,124,333.2,312.18,96.41,35.9,True,True,False,Alta,Hipertensión,Bajo,2025-02-26,Crítico
 1290,Íñigo,Martorell,52.0,F,58.83,1.65,21.61,153.0,69,109,86.95,245.66,97.09,38.8,True,True,False,Media,Paciente sano,Bajo,2024-09-12,Medio
 1291,Ainara,Crespo,23.0,F,111.61,1.79,34.83,94.0,97,73,233.32,168.0,81.35,36.4,True,True,False,Media,Prehipertensión,Crítico,2025-03-14,Crítico
@@ -1293,7 +1293,7 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 1299,Jose Francisco,Cal,72.0,M,82.49000000000001,1.86,23.84,93.0,104,66,228.01,290.3,95.79,38.9,False,True,True,Alta,Paciente sano,Medio,2026-03-06,Alto
 1300,Prudencio,Barros,60.0,F,101.35,1.65,37.23,168.0,77,101,336.39,147.12,79.95,37.4,False,False,False,Media,Hipertensión,Medio,2025-05-02,Crítico
 1301,Lucila,Amador,19.0,M,73.79,1.75,24.09,200.0,94,129,249.46,250.26,99.65,35.5,True,True,False,Baja,Hipertensión,Crítico,2025-06-06,Crítico
-1302,Juan Luis,Barrios,47.0,F,52.49,1.64,19.52,182.0,111,90,105.87,217.42,78.78,39.3,False,False,False,Alta,Diabetes Tipo 2,Alto,2025-06-07,Crítico
+1302,Juan Luis,Barrios,47.0,M,52.49,1.64,19.52,182.0,111,90,105.87,217.42,78.78,39.3,False,False,False,Alta,Diabetes Tipo 2,Alto,2025-06-07,Crítico
 1303,Yéssica,Riera,21.0,F,111.78,1.66,40.56,147.0,89,118,77.41,251.35,97.56,36.6,True,False,True,Media,Diabetes Tipo 2,Medio,2024-06-24,Medio
 1304,Pío,Capdevila,31.0,F,49.71,1.8,15.34,200.0,102,67,169.3,193.09,77.51,38.2,False,True,True,Baja,Paciente sano,Alto,2024-11-10,Crítico
 1305,Mariana,Ayuso,77.0,F,92.83,1.58,37.19,167.0,76,61,174.82,290.49,87.54,36.2,False,False,True,Media,Hipertensión,Medio,2025-10-13,Alto
@@ -1313,12 +1313,12 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 1319,Osvaldo,Huertas,75.0,F,87.77,1.95,23.08,111.0,105,78,314.76,297.72,84.46,38.8,False,True,False,Baja,Diabetes Tipo 2,Alto,2026-02-21,Crítico
 1320,Diego,Gisbert,43.0,M,83.68,1.82,25.26,124.0,68,93,252.79,345.23,80.68,39.4,False,False,False,Media,Hipertensión,Bajo,2025-09-03,Crítico
 1321,Guiomar,Sarabia,68.0,F,99.46,1.57,40.35,189.0,62,118,303.86,127.48,76.94,38.4,True,False,False,Baja,Hipertensión,Medio,2025-01-27,Crítico
-1322,Félix,Cuadrado,55.0,F,61.66,1.7,21.34,156.0,93,98,147.23,225.12,77.06,38.8,False,False,False,Baja,Paciente sano,Crítico,2025-12-23,Crítico
+1322,Félix,Cuadrado,55.0,M,61.66,1.7,21.34,156.0,93,98,147.23,225.12,77.06,38.8,False,False,False,Baja,Paciente sano,Crítico,2025-12-23,Crítico
 1323,Loreto,Oliveras,55.0,M,95.96,1.64,35.68,119.0,111,134,224.97,234.7000283768445,82.42,38.5,False,True,True,Media,Paciente sano,Bajo,2025-07-11,Crítico
-1324,Maristela,Alberto,78.0,M,114.34,1.53,48.84,197.0,74,139,73.11,238.92,86.36,39.2,False,True,False,Media,Obesidad,Alto,2025-02-17,Crítico
+1324,Maristela,Alberto,78.0,F,114.34,1.53,48.84,197.0,74,139,73.11,238.92,86.36,39.2,False,True,False,Media,Obesidad,Alto,2025-02-17,Crítico
 1325,Aitana,Guardiola,70.0,F,101.47,1.66,36.82,133.0,64,125,133.81,177.04,87.73,36.1,False,False,False,Media,Hipertensión,Alto,2026-04-21,Bajo
 1326,Ezequiel,Iriarte,69.0,F,80.33,1.85,23.47,105.0,130,102,331.24,162.1,97.2,37.4,False,True,True,Baja,Riesgo cardiovascular,Medio,2026-02-21,Crítico
-1327,Victor Manuel,Frutos,82.0,F,77.32,1.56,31.77,187.0,102,110,259.35,305.92,93.79,37.9,True,False,True,Baja,Hipertensión,Bajo,2024-07-13,Crítico
+1327,Victor Manuel,Frutos,82.0,M,77.32,1.56,31.77,187.0,102,110,259.35,305.92,93.79,37.9,True,False,True,Baja,Hipertensión,Bajo,2024-07-13,Crítico
 1328,Nuria,Mendoza,21.0,M,100.64,1.61,38.83,171.0,101,67,307.48,314.08,78.47,35.6,False,True,False,Baja,Hipertensión,Alto,2024-11-25,Crítico
 1329,Ariel,Angulo,87.0,M,109.82,1.79,34.27,146.0,63,101,184.0,167.36,94.08,37.9,True,False,True,Media,Riesgo cardiovascular,Bajo,2024-07-06,Medio
 1330,Alma,Manrique,28.0,F,95.47,1.73,31.9,158.0,80,91,207.35,249.23,99.14,38.8,True,False,True,Baja,Hipertensión,Crítico,2026-04-22,Alto
@@ -1329,7 +1329,7 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 1335,Úrsula,Ferrán,83.0,F,51.99,1.45,24.73,147.0,65,130,102.04,132.51,82.46,37.2,True,True,True,Alta,Riesgo cardiovascular,Medio,2024-05-21,Crítico
 1336,Patricia,Villar,26.0,F,79.07,1.65,29.04,157.0,81,87,238.18,215.36,95.82,39.2,False,True,True,Baja,Diabetes Tipo 2,Medio,2025-12-19,Alto
 1337,Mario,Acuña,84.0,M,83.07,1.74,27.44,133.0,83,59,249.64,227.39,85.47,35.0,True,False,True,Media,Paciente sano,Alto,2026-05-01,Alto
-1338,Hector,Doménech,69.0,F,74.39,1.46,34.9,94.0,127,57,107.37,123.85,90.89,39.0,False,True,False,Baja,Prehipertensión,Bajo,2026-04-19,Bajo
+1338,Hector,Doménech,69.0,M,74.39,1.46,34.9,94.0,127,57,107.37,123.85,90.89,39.0,False,True,False,Baja,Prehipertensión,Bajo,2026-04-19,Bajo
 1339,Lucila,Flor,45.0,M,69.45,1.75,22.68,170.0,83,60,249.74,196.82,79.47,38.7,False,True,False,Media,Obesidad,Crítico,2024-11-19,Crítico
 1340,Jenny,Sotelo,45.0,M,75.59,1.46,35.46,101.0,79,73,337.91,225.46,88.78,36.3,False,False,True,Media,Hipertensión,Medio,2025-06-17,Crítico
 1341,Ricardo,Moliner,75.0,M,45.06,1.91,12.35,127.0,91,95,175.12,150.58,83.87,38.5,False,False,True,Baja,Obesidad,Alto,2025-02-16,Crítico
@@ -1343,13 +1343,13 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 1349,Aurelio,Adán,67.0,M,67.28,1.82,20.31,175.0,77,116,153.12,122.61,79.57,36.7,True,True,False,Baja,Hipertensión,Medio,2024-10-15,Crítico
 1350,Roxana,Coca,31.0,F,91.68,1.58,36.72,169.0,111,97,105.03,335.67,85.06,35.7,True,True,False,Baja,Cardiopatía,Bajo,2026-04-24,Alto
 1351,Martina,Azorin,18.0,F,78.64,1.65,28.89,102.0,127,133,190.57,196.64,97.88,38.2,False,True,False,Media,Prehipertensión,Crítico,2025-08-29,Medio
-1352,Ignacio,Jurado,80.0,F,64.32,1.81,19.63,130.0,88,129,340.02,271.03,82.89,37.0,True,True,False,Baja,Paciente sano,Crítico,2025-04-21,Crítico
+1352,Ignacio,Jurado,80.0,M,64.32,1.81,19.63,130.0,88,129,340.02,271.03,82.89,37.0,True,True,False,Baja,Paciente sano,Crítico,2025-04-21,Crítico
 1353,Lupe,Cornejo,43.0,M,93.18,1.49,41.97,134.0,67,68,133.21,139.82,92.38,39.2,True,True,False,Media,Cardiopatía,Medio,2025-01-22,Bajo
 1354,Domitila,Noriega,76.0,M,48.02,1.6,18.76,113.0,97,120,308.5,191.42,90.22,38.9,False,False,True,Baja,Riesgo cardiovascular,Crítico,2025-05-27,Crítico
 1355,María Manuela,Pera,71.0,F,109.95,1.84,32.48,130.0,68,91,328.44,323.52,76.91,38.8,True,False,True,Baja,Hipertensión,Crítico,2024-10-22,Crítico
 1356,Filomena,Barral,79.0,F,97.13,1.93,26.08,111.0,128,74,236.07,138.05,99.29,35.2,True,False,True,Baja,Obesidad,Alto,2024-07-09,Alto
 1357,Luisina,Falcón,87.0,M,100.65,1.81,30.72,193.0,72,129,159.87,312.09,84.81,36.8,True,False,True,Baja,Paciente sano,Alto,2025-05-30,Crítico
-1358,Sara,Blanch,18.0,M,48.79,1.46,22.89,121.0,61,119,270.71,193.35,81.91,35.1,True,True,True,Alta,Riesgo cardiovascular,Alto,2025-02-10,Crítico
+1358,Sara,Blanch,18.0,F,48.79,1.46,22.89,121.0,61,119,270.71,193.35,81.91,35.1,True,True,True,Alta,Riesgo cardiovascular,Alto,2025-02-10,Crítico
 1359,Begoña,Escrivá,21.0,F,96.07,1.74,31.73,140.0,80,115,284.81,289.84,84.29,39.1,False,False,True,Baja,Riesgo cardiovascular,Bajo,2025-06-12,Crítico
 1360,Dorita,Escamilla,87.0,F,45.93,1.65,16.87,110.0,103,105,95.35,327.3,92.73,36.0,True,True,False,Baja,Diabetes Tipo 2,Alto,2024-08-11,Bajo
 1361,Anastasio,Zabaleta,43.0,F,49.16,1.54,20.73,149.0,98,112,143.82,124.75,76.06,38.6,False,True,True,Alta,Hipertensión,Bajo,2025-02-01,Crítico
@@ -1363,18 +1363,18 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 1369,Adelaida,Dominguez,65.0,F,87.63,1.8,27.05,136.0,89,55,310.09,252.13,76.24,38.6,False,True,True,Baja,Obesidad,Medio,2025-11-16,Crítico
 1370,Isidro,Oliva,81.0,M,115.08,1.78,36.32,122.0,94,90,344.82,255.82,82.15,37.8,False,False,False,Media,Riesgo cardiovascular,Medio,2026-04-26,Crítico
 1371,Edgardo,Gimeno,29.0,F,54.33,1.46,25.49,161.0,75,94,271.14,256.91,88.23,36.4,False,False,False,Baja,Diabetes Tipo 2,Alto,2024-07-27,Alto
-1372,Roberto,Cazorla,39.0,F,89.78,1.79,28.02,109.0,75,102,208.13,233.86,84.5,36.2,False,True,False,Media,Prehipertensión,Alto,2026-04-11,Crítico
+1372,Roberto,Cazorla,39.0,M,89.78,1.79,28.02,109.0,75,102,208.13,233.86,84.5,36.2,False,True,False,Media,Prehipertensión,Alto,2026-04-11,Crítico
 1373,Rosalinda,Peñalver,87.0,F,76.73,1.67,27.51,127.0,117,52,311.83,155.48,78.28,36.8,True,False,False,Alta,Hipertensión,Crítico,2025-03-14,Crítico
 1374,Valeria,Delgado,65.0,F,116.62,1.79,36.4,98.0,116,113,134.51,286.94,95.22,36.6,True,False,False,Alta,Obesidad,Bajo,2025-04-16,Bajo
 1375,Curro,Merino,34.0,M,58.44,1.6,22.83,116.0,91,140,235.4,190.75,84.38,36.3,False,True,True,Baja,Paciente sano,Alto,2025-12-28,Crítico
-1376,Sebastián,Escobar,24.0,F,68.95,1.68,24.43,163.0,70,88,282.37,334.45,96.19,37.0,True,False,False,Baja,Hipertensión,Crítico,2026-01-28,Alto
+1376,Sebastián,Escobar,24.0,M,68.95,1.68,24.43,163.0,70,88,282.37,334.45,96.19,37.0,True,False,False,Baja,Hipertensión,Crítico,2026-01-28,Alto
 1377,Ricarda,Ferrer,88.0,F,62.63,1.89,17.53,181.0,123,120,143.88,274.23,98.87,36.9,False,True,True,Media,Paciente sano,Crítico,2025-01-19,Crítico
 1378,Anna,Castrillo,78.0,M,105.1,1.49,47.34,123.0,91,73,309.55,305.31,79.1,38.0,False,False,True,Media,Cardiopatía,Bajo,2024-10-22,Crítico
 1379,Purificación,Bautista,36.0,M,96.77,1.75,31.6,151.0,87,83,290.12,150.65,76.0,39.3,True,False,True,Media,Hipertensión,Crítico,2025-09-15,Crítico
 1380,Lorenza,Castelló,76.0,M,73.2,1.88,20.71,173.0,83,140,142.32,221.04,78.99,38.6,False,True,True,Media,Cardiopatía,Medio,2026-02-11,Crítico
 1381,Cornelio,Figueras,41.0,F,46.63,1.5,20.72,178.0,60,116,88.27,261.87,81.97,35.7,False,False,True,Media,Hipertensión,Medio,2024-08-10,Crítico
 1382,Consuelo,Estévez,79.0,F,69.85,1.61,26.95,100.0,102,57,305.97,278.71,97.87,37.2,False,True,True,Media,Hipertensión,Medio,2024-06-23,Crítico
-1383,Enrique,Lucena,21.0,F,45.28,1.87,12.95,190.0,96,105,345.71,169.09,99.82,38.6,True,True,False,Baja,Paciente sano,Medio,2024-10-31,Crítico
+1383,Enrique,Lucena,21.0,M,45.28,1.87,12.95,190.0,96,105,345.71,169.09,99.82,38.6,True,True,False,Baja,Paciente sano,Medio,2024-10-31,Crítico
 1384,Rosaura,Olmo,77.0,F,61.38,1.92,16.65,143.0,124,88,265.96,127.77,93.25,35.1,False,True,True,Baja,Hipertensión,Crítico,2024-05-23,Alto
 1385,Candelaria,Canals,48.0,F,73.38,1.47,33.96,168.0,100,130,117.45,235.79,82.19,38.6,True,False,False,Alta,Diabetes Tipo 2,Alto,2025-09-09,Crítico
 1386,Tania,Aznar,81.0,F,65.27,1.79,20.37,145.0,120,108,288.82,204.37,85.51,36.9,True,False,True,Alta,Hipertensión,Medio,2025-05-06,Alto
@@ -1413,7 +1413,7 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 1420,Carlos,Alfaro,26.0,M,77.4,1.92,21.0,168.0,100,95,204.33,294.43,89.56,37.5,False,True,True,Baja,Cardiopatía,Medio,2025-10-01,Alto
 1421,Albina,Martí,31.0,M,83.18,1.93,22.33,189.0,86,121,268.99,151.44,84.21,38.5,False,True,True,Media,Diabetes Tipo 2,Bajo,2024-07-08,Crítico
 1422,Genoveva,Sanmiguel,56.0,M,51.79,1.88,14.65,184.0,107,81,89.31,199.8,89.58,39.0,True,False,True,Baja,Prehipertensión,Alto,2025-04-25,Crítico
-1423,María,Agustín,67.0,M,108.49,1.8,33.48,139.0,82,86,273.6,199.44,91.26,39.6,False,False,True,Baja,Hipertensión,Alto,2024-12-19,Alto
+1423,María,Agustín,67.0,F,108.49,1.8,33.48,139.0,82,86,273.6,199.44,91.26,39.6,False,False,True,Baja,Hipertensión,Alto,2024-12-19,Alto
 1424,Irene,Donoso,74.0,M,45.22,1.46,21.21,110.0,81,120,91.54,234.7000283768445,76.8,39.2,False,True,True,Baja,Prehipertensión,Crítico,2024-10-05,Crítico
 1425,Juliana,Camps,79.0,F,74.0,1.89,20.72,180.0,92,86,298.84,166.78,75.65,40.0,True,False,False,Media,Cardiopatía,Crítico,2024-09-13,Crítico
 1426,Remigio,Tirado,21.0,F,105.89,1.66,38.43,199.0,104,73,341.39,292.29,77.91,39.5,False,False,False,Baja,Hipertensión,Crítico,2026-01-18,Crítico
@@ -1427,7 +1427,7 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 1434,Flavio,Palacios,76.0,M,84.45,1.68,29.92,195.0,100,51,129.82,150.82,89.58,36.4,False,False,False,Baja,Hipertensión,Bajo,2025-07-02,Crítico
 1435,Emiliano,Osorio,83.0,F,59.57,1.8,18.39,192.0,107,60,210.57,133.75,82.8,37.9,False,True,True,Baja,Cardiopatía,Crítico,2024-08-23,Crítico
 1436,Saturnina,Cabrera,73.0,M,81.1,1.66,29.43,170.0,73,108,334.68,123.4,77.43,38.1,False,False,False,Baja,Diabetes Tipo 2,Bajo,2025-09-23,Crítico
-1437,María Cristina,Guitart,60.0,M,102.07,1.87,29.19,142.0,130,134,252.48,120.53,79.95,39.6,True,False,False,Media,Cardiopatía,Crítico,2024-06-02,Crítico
+1437,María Cristina,Guitart,60.0,F,102.07,1.87,29.19,142.0,130,134,252.48,120.53,79.95,39.6,True,False,False,Media,Cardiopatía,Crítico,2024-06-02,Crítico
 1438,Vinicio,Somoza,19.0,F,75.32,1.48,34.39,114.0,66,138,121.81,234.7000283768445,98.56,39.5,True,False,True,Media,Prehipertensión,Alto,2024-08-03,Bajo
 1439,Jose Angel,Heras,30.0,M,52.19,1.84,15.42,93.0,111,82,184.48,128.43,82.99,37.9,True,True,True,Baja,Hipertensión,Alto,2025-11-17,Crítico
 1440,Úrsula,Garmendia,49.0,M,60.44,1.82,18.25,108.0,76,90,107.99,151.42,80.8,39.9,True,True,True,Alta,Obesidad,Bajo,2024-07-11,Crítico
@@ -1440,7 +1440,7 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 1447,Manuelita,Chacón,61.0,M,101.1,1.53,43.19,115.0,109,93,208.28,256.25,86.87,35.8,False,False,True,Media,Obesidad,Alto,2025-05-18,Alto
 1448,Eulalia,Clemente,52.0,F,60.94,1.78,19.23,142.0,130,123,161.99,292.29,75.65,38.9,False,True,False,Baja,Cardiopatía,Medio,2025-11-09,Crítico
 1449,Pascuala,Canet,87.0,M,104.05,1.49,46.87,102.0,105,100,310.92,274.98,97.42,37.6,True,False,True,Alta,Cardiopatía,Bajo,2025-06-04,Crítico
-1450,Laura,Aller,20.0,M,82.28,1.55,34.25,106.0,108,85,86.5,278.96,88.41,37.1,False,True,True,Baja,Prehipertensión,Bajo,2024-08-09,Bajo
+1450,Laura,Aller,20.0,F,82.28,1.55,34.25,106.0,108,85,86.5,278.96,88.41,37.1,False,True,True,Baja,Prehipertensión,Bajo,2024-08-09,Bajo
 1451,Gracia,Trujillo,44.0,F,53.84,1.94,14.31,126.0,110,100,289.45,256.2,79.6,38.2,True,True,False,Baja,Obesidad,Alto,2025-07-24,Crítico
 1452,Xiomara,Aller,69.0,M,60.38,1.86,17.45,166.0,73,77,198.8,292.05,84.89,37.9,True,True,True,Baja,Hipertensión,Alto,2024-09-28,Crítico
 1453,Adán,Arenas,55.0,F,87.54,1.49,39.43,142.0,117,92,347.08,125.88,80.52,35.6,True,False,True,Media,Obesidad,Medio,2026-03-16,Crítico
@@ -1454,7 +1454,7 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 1461,Juanito,Talavera,42.0,M,90.39,1.57,36.67,190.0,70,64,80.5,266.54,91.44,36.9,False,True,True,Media,Hipertensión,Alto,2025-10-13,Crítico
 1462,Ale,Santos,62.0,M,66.3,1.47,30.68,180.0,90,102,93.07,197.17,89.92,37.2,True,False,True,Baja,Riesgo cardiovascular,Alto,2025-05-12,Alto
 1463,Diana,Ayllón,50.0,M,106.06,1.62,40.41,131.0,82,50,282.14,234.28,78.47,36.8,False,True,False,Baja,Riesgo cardiovascular,Alto,2025-01-14,Crítico
-1464,Leire,Pizarro,85.0,M,113.62,1.63,42.76,139.0,96,53,211.87,345.85,84.23,38.0,False,False,False,Baja,Hipertensión,Medio,2024-10-09,Crítico
+1464,Leire,Pizarro,85.0,F,113.62,1.63,42.76,139.0,96,53,211.87,345.85,84.23,38.0,False,False,False,Baja,Hipertensión,Medio,2024-10-09,Crítico
 1465,Celestina,Coloma,44.0,F,72.42,1.84,21.39,127.0,78,69,308.49,162.37,84.74,35.7,False,False,False,Alta,Prehipertensión,Bajo,2026-04-23,Crítico
 1466,Andrés Felipe,Sosa,66.0,M,110.55,1.69,38.71,174.0,65,78,93.24,317.57,75.13,39.1,False,True,False,Alta,Riesgo cardiovascular,Alto,2025-02-13,Crítico
 1467,Mauricio,Madrid,74.0,F,103.35,1.5,45.93,90.0,60,119,341.16,345.51,89.99,38.4,True,False,True,Media,Hipertensión,Crítico,2026-05-14,Crítico
@@ -1491,7 +1491,7 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 1498,Leandro,Mendez,73.0,F,110.15,1.78,34.77,90.0,83,120,111.26,165.05,99.6,38.4,True,False,False,Baja,Paciente sano,Crítico,2025-01-06,Bajo
 1499,Lorena,Sevillano,35.0,M,73.02,1.88,20.66,127.0,66,87,198.51,166.83,86.32,38.4,True,True,True,Baja,Diabetes Tipo 2,Medio,2026-03-16,Medio
 1500,Maura,Narváez,25.0,F,114.48,1.8,35.33,124.0,100,106,87.93,332.18,75.29,36.0,True,True,False,Media,Hipertensión,Crítico,2026-01-20,Crítico
-1501,Alfonso,Llorente,32.0,F,50.05,1.52,21.66,191.0,79,136,77.58,338.3,87.95,37.5,False,True,False,Baja,Riesgo cardiovascular,Bajo,2026-03-05,Crítico
+1501,Alfonso,Llorente,32.0,M,50.05,1.52,21.66,191.0,79,136,77.58,338.3,87.95,37.5,False,True,False,Baja,Riesgo cardiovascular,Bajo,2026-03-05,Crítico
 1502,Herberto,Vicens,44.0,F,60.34,1.83,18.02,144.0,117,119,259.19,207.64,90.13,37.5,True,True,False,Alta,Obesidad,Medio,2025-02-25,Alto
 1503,Cándido,Cózar,50.0,M,90.49,1.59,35.79,145.0,77,122,76.73,346.64,92.88,35.3,True,True,False,Baja,Hipertensión,Crítico,2025-09-27,Medio
 1504,Sara,Oliver,90.0,F,114.79,1.64,42.68,195.0,60,64,91.68,326.75,86.88,38.9,True,True,True,Alta,Prehipertensión,Alto,2026-04-15,Crítico
@@ -1523,7 +1523,7 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 1530,Emilia,Carreño,80.0,F,77.04,1.8,23.78,102.0,125,117,208.67,211.57,88.57,39.8,False,True,False,Baja,Hipertensión,Medio,2025-12-25,Alto
 1531,Joel,Macías,29.0,F,99.65,1.65,36.6,189.0,80,104,198.77,212.35,85.81,37.2,True,True,False,Baja,Hipertensión,Medio,2024-10-18,Crítico
 1532,Baudelio,Bru,68.0,F,119.21,1.61,45.99,113.0,130,87,326.7,258.51,89.52,36.2,False,True,True,Baja,Obesidad,Bajo,2025-03-29,Crítico
-1533,Isidora,Elorza,79.0,M,81.02,1.53,34.61,131.0,123,97,176.45,234.7000283768445,98.99,37.7,False,True,True,Baja,Hipertensión,Medio,2024-08-17,Medio
+1533,Isidora,Elorza,79.0,F,81.02,1.53,34.61,131.0,123,97,176.45,234.7000283768445,98.99,37.7,False,True,True,Baja,Hipertensión,Medio,2024-08-17,Medio
 1534,Espiridión,Moraleda,74.0,F,53.2,1.92,14.43,139.0,102,125,205.2,254.02,98.93,39.3,False,False,True,Baja,Hipertensión,Bajo,2025-06-29,Alto
 1535,Matías,Batlle,32.0,M,108.11,1.6,42.23,144.0,65,127,85.7,269.84,79.59,36.3,True,False,False,Baja,Paciente sano,Bajo,2024-12-27,Crítico
 1536,Viviana,Morales,24.0,F,91.98,1.77,29.36,189.0,78,69,235.1,124.14,83.5,35.1,False,True,False,Baja,Diabetes Tipo 2,Bajo,2024-07-28,Crítico
@@ -1548,10 +1548,10 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 1555,Edelmiro,Olivares,26.0,M,53.26,1.62,20.29,165.0,63,116,279.58,264.6,96.27,36.0,False,True,False,Baja,Cardiopatía,Medio,2025-11-08,Alto
 1556,Francisca,Lumbreras,28.0,M,111.49,1.79,34.8,199.0,80,136,256.05,254.61,91.06,36.6,False,True,True,Baja,Diabetes Tipo 2,Crítico,2026-05-20,Crítico
 1557,Juanito,Acedo,67.0,M,112.74,1.93,30.27,193.0,68,64,207.5121282633371,169.13,96.05,35.7,True,True,False,Media,Diabetes Tipo 2,Medio,2025-05-15,Crítico
-1558,Enrique,Roig,38.0,F,52.35,1.72,17.7,140.0,69,111,290.32,221.81,77.85,35.1,True,False,False,Alta,Paciente sano,Crítico,2024-10-29,Crítico
+1558,Enrique,Roig,38.0,M,52.35,1.72,17.7,140.0,69,111,290.32,221.81,77.85,35.1,True,False,False,Alta,Paciente sano,Crítico,2024-10-29,Crítico
 1559,Lorenza,Sebastián,55.0,M,70.97,1.75,23.17,169.0,70,90,174.48,165.19,76.28,39.0,True,True,True,Baja,Riesgo cardiovascular,Alto,2025-10-02,Crítico
-1560,María José,Berenguer,49.0,M,87.03,1.73,29.08,94.0,87,71,278.54,191.23,89.86,37.5,False,False,True,Media,Hipertensión,Alto,2024-08-28,Alto
-1561,Andrés Felipe,Ripoll,52.0,F,45.64,1.84,13.48,190.0,86,94,146.48,277.51,82.44,35.3,True,True,False,Alta,Hipertensión,Crítico,2025-01-05,Crítico
+1560,María José,Berenguer,49.0,F,87.03,1.73,29.08,94.0,87,71,278.54,191.23,89.86,37.5,False,False,True,Media,Hipertensión,Alto,2024-08-28,Alto
+1561,Andrés Felipe,Ripoll,52.0,M,45.64,1.84,13.48,190.0,86,94,146.48,277.51,82.44,35.3,True,True,False,Alta,Hipertensión,Crítico,2025-01-05,Crítico
 1562,Tiburcio,Bernad,27.0,M,82.49000000000001,1.87,23.59,175.0,76,81,194.99,136.48,81.11,36.9,True,False,True,Media,Hipertensión,Alto,2025-11-20,Crítico
 1564,Javi,Perera,48.0,F,85.31,1.79,26.63,177.0,71,98,251.58,281.33,90.01,37.3,False,False,False,Baja,Diabetes Tipo 2,Medio,2025-03-19,Alto
 1565,Albino,Martin,55.0,F,48.21,1.63,18.15,100.0,92,51,265.65,142.94,86.42,37.2,False,False,True,Baja,Hipertensión,Bajo,2026-02-22,Alto
@@ -1581,8 +1581,8 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 1589,Curro,Álvaro,42.0,M,91.57,1.76,29.56,98.0,84,91,200.89,193.58,99.75,38.4,True,True,False,Alta,Hipertensión,Medio,2026-02-01,Alto
 1590,Ángel,Bolaños,21.0,M,93.23,1.61,35.97,130.0,94,131,120.75,252.92,98.92,36.2,False,False,False,Baja,Diabetes Tipo 2,Medio,2024-09-18,Bajo
 1591,Emiliano,Llamas,39.0,F,87.74,1.57,35.6,158.0,109,119,96.12,177.51,94.56,36.0,True,True,False,Media,Prehipertensión,Bajo,2025-11-16,Medio
-1592,Sebastián,Bautista,37.0,F,82.49000000000001,1.64,30.67,176.0,82,75,213.47,163.2,95.15,38.4,True,True,False,Media,Paciente sano,Crítico,2025-09-25,Alto
-1593,Ana Sofía,Bermúdez,65.0,M,52.69,1.93,14.15,157.0,108,105,192.13,260.83,94.4,36.8,False,True,False,Media,Riesgo cardiovascular,Bajo,2026-03-27,Medio
+1592,Sebastián,Bautista,37.0,M,82.49000000000001,1.64,30.67,176.0,82,75,213.47,163.2,95.15,38.4,True,True,False,Media,Paciente sano,Crítico,2025-09-25,Alto
+1593,Ana Sofía,Bermúdez,65.0,F,52.69,1.93,14.15,157.0,108,105,192.13,260.83,94.4,36.8,False,True,False,Media,Riesgo cardiovascular,Bajo,2026-03-27,Medio
 1594,Miguel Ángel,Esteve,40.0,F,73.78,1.76,23.82,107.0,130,93,162.34,124.79,95.53,35.1,False,True,False,Baja,Paciente sano,Alto,2025-12-21,Medio
 1595,Octavia,Calvo,19.0,F,63.66,1.66,23.1,167.0,114,101,149.35,168.19,83.2,36.3,True,True,True,Alta,Obesidad,Bajo,2024-11-17,Crítico
 1596,Poncio,Baró,53.0,F,55.23,1.7,19.11,148.0,87,98,331.68,346.77,87.91,37.2,False,False,False,Alta,Hipertensión,Crítico,2024-11-17,Crítico
@@ -1590,9 +1590,9 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 1598,Pánfilo,Huertas,85.0,F,64.55,1.93,17.33,181.0,117,105,98.74,210.2,93.2,35.0,False,True,False,Alta,Hipertensión,Alto,2025-04-15,Crítico
 1599,Anabel,Alvarez,67.0,M,81.85,1.6,31.97,162.0,83,131,127.23,279.69,99.58,37.9,False,True,False,Baja,Hipertensión,Alto,2024-12-06,Alto
 1601,Diego,Mateu,75.0,M,54.33,1.93,14.59,198.0,76,91,162.52,345.48,96.78,37.5,False,True,False,Baja,Riesgo cardiovascular,Medio,2025-08-27,Crítico
-1602,Elena,Prat,27.0,M,92.19,1.83,27.53,121.0,126,56,251.11,251.78,91.78,36.0,False,True,True,Alta,Hipertensión,Crítico,2026-02-04,Alto
+1602,Elena,Prat,27.0,F,92.19,1.83,27.53,121.0,126,56,251.11,251.78,91.78,36.0,False,True,True,Alta,Hipertensión,Crítico,2026-02-04,Alto
 1603,Trinidad,Llorens,28.0,M,108.76,1.52,47.07,160.0,108,87,238.3,139.33,91.07,37.5,False,True,False,Baja,Obesidad,Medio,2025-09-04,Alto
-1604,José Ángel,Borrego,85.0,F,73.2,1.69,25.63,117.0,109,104,161.71,153.74,80.39,36.5,False,True,False,Baja,Riesgo cardiovascular,Medio,2025-06-25,Crítico
+1604,José Ángel,Borrego,85.0,M,73.2,1.69,25.63,117.0,109,104,161.71,153.74,80.39,36.5,False,True,False,Baja,Riesgo cardiovascular,Medio,2025-06-25,Crítico
 1605,Estrella,Viana,66.0,F,101.04,1.81,30.84,119.0,73,78,220.42,275.08,84.27,38.4,True,False,True,Baja,Cardiopatía,Medio,2024-10-15,Crítico
 1606,Aroa,Mateo,33.0,F,111.44,1.6,43.53,200.0,105,102,199.08,323.81,97.25,36.9,False,False,False,Alta,Riesgo cardiovascular,Medio,2024-08-18,Crítico
 1607,Román,Sevilla,88.0,M,113.61,1.75,37.1,194.0,123,84,144.19,234.7000283768445,92.1,38.3,False,False,True,Baja,Cardiopatía,Alto,2025-05-13,Crítico
@@ -1610,7 +1610,7 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 1619,Encarna,Villegas,52.0,M,112.55,1.94,29.9,188.0,100,117,219.66,138.06,94.4,36.8,True,True,False,Baja,Obesidad,Medio,2024-08-04,Crítico
 1620,Nydia,Garcia,25.0,M,105.66,1.71,36.13,180.0,69,96,326.67,343.36,95.19,39.2,True,False,False,Baja,Diabetes Tipo 2,Crítico,2025-07-21,Crítico
 1621,Salvador,Piquer,45.0,M,85.35,1.92,23.15,102.0,88,55,207.5121282633371,295.31,93.31,40.0,True,False,False,Media,Prehipertensión,Bajo,2025-06-18,Alto
-1622,Angelina,Amor,34.0,M,97.77,1.94,25.98,112.0,99,109,326.12,143.64,93.61,36.2,True,True,True,Alta,Riesgo cardiovascular,Alto,2024-08-14,Crítico
+1622,Angelina,Amor,34.0,F,97.77,1.94,25.98,112.0,99,109,326.12,143.64,93.61,36.2,True,True,True,Alta,Riesgo cardiovascular,Alto,2024-08-14,Crítico
 1623,Liliana,Barragán,58.0,M,56.61,1.9,15.68,127.0,71,75,347.24,188.02,81.24,36.7,False,False,True,Alta,Hipertensión,Crítico,2024-08-27,Crítico
 1624,Amarilis,Juárez,59.0,F,61.76,1.54,26.04,193.0,99,62,207.5121282633371,223.45,97.34,38.1,False,False,False,Baja,Obesidad,Bajo,2024-11-27,Crítico
 1625,Alejandra,Arenas,76.0,M,75.51,1.87,21.59,145.0,90,121,279.81,190.25,93.55,35.9,True,True,False,Baja,Obesidad,Alto,2025-04-23,Alto
@@ -1623,7 +1623,7 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 1632,Rodolfo,Duque,28.0,F,92.59,1.94,24.6,164.0,124,54,162.53,210.19,77.34,36.9,False,False,True,Media,Riesgo cardiovascular,Alto,2026-04-02,Crítico
 1633,Rufino,Acosta,89.0,F,81.91,1.7,28.34,155.0,116,128,273.84,207.61,90.59,36.2,True,False,True,Baja,Diabetes Tipo 2,Crítico,2026-02-08,Alto
 1634,Adriana,Marin,35.0,M,82.49000000000001,1.46,38.7,101.0,72,85,293.82,319.67,87.05,37.9,False,True,True,Media,Riesgo cardiovascular,Crítico,2025-04-14,Alto
-1635,Juan Antonio,Ayuso,20.0,F,60.55,1.51,26.56,182.0,92,81,309.91,239.84,89.0,37.5,False,False,True,Alta,Prehipertensión,Alto,2025-10-02,Crítico
+1635,Juan Antonio,Ayuso,20.0,M,60.55,1.51,26.56,182.0,92,81,309.91,239.84,89.0,37.5,False,False,True,Alta,Prehipertensión,Alto,2025-10-02,Crítico
 1636,Ambrosio,Colom,76.0,M,105.67,1.82,31.9,136.0,89,95,156.14,149.47,97.07,39.8,False,False,True,Alta,Obesidad,Medio,2025-01-26,Medio
 1637,Elodia,Cantón,46.0,F,54.46,1.82,16.44,153.0,61,117,296.19,178.84,93.71,37.1,False,False,True,Media,Obesidad,Crítico,2025-08-07,Alto
 1638,Aránzazu,Agustí,86.0,M,94.77,1.89,26.53,110.0,127,117,323.75,284.89,80.46,36.2,True,True,False,Baja,Hipertensión,Bajo,2024-06-02,Crítico
@@ -1633,13 +1633,13 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 1642,Alba,Abascal,60.0,M,61.8,1.76,19.95,135.0,100,64,90.14,202.38,90.28,37.2,False,True,True,Alta,Cardiopatía,Crítico,2026-03-01,Bajo
 1643,Juan Bautista,Santiago,62.0,M,100.23,1.86,28.97,97.0,74,91,180.88,164.08,89.39,38.3,True,True,False,Media,Diabetes Tipo 2,Bajo,2026-05-14,Medio
 1644,Trinidad,Pina,85.0,F,66.06,1.72,22.33,185.0,87,98,155.49,272.45,85.26,35.2,False,False,True,Alta,Riesgo cardiovascular,Medio,2026-01-18,Crítico
-1645,Jose Angel,Salvà,22.0,F,65.59,1.85,19.16,115.0,98,106,224.99,136.56,93.69,36.9,False,False,False,Alta,Obesidad,Alto,2024-08-16,Alto
+1645,Jose Angel,Salvà,22.0,M,65.59,1.85,19.16,115.0,98,106,224.99,136.56,93.69,36.9,False,False,False,Alta,Obesidad,Alto,2024-08-16,Alto
 1646,Encarnación,Planas,59.0,M,64.59,1.66,23.44,92.0,104,128,138.61,155.48,97.26,37.4,False,False,True,Baja,Diabetes Tipo 2,Crítico,2025-05-13,Bajo
 1647,Josep,Araujo,24.0,F,92.18,1.82,27.83,140.0,98,117,244.73,134.48,95.53,36.7,False,True,False,Alta,Diabetes Tipo 2,Medio,2024-10-18,Alto
-1648,Jose Angel,Fabregat,28.0,F,110.96,1.92,30.1,131.0,87,93,225.98,318.01,96.87,37.7,True,True,False,Media,Hipertensión,Crítico,2026-05-12,Alto
+1648,Jose Angel,Fabregat,28.0,M,110.96,1.92,30.1,131.0,87,93,225.98,318.01,96.87,37.7,True,True,False,Media,Hipertensión,Crítico,2026-05-12,Alto
 1649,Ernesto,Girona,51.0,M,61.32,1.75,20.02,140.0,121,107,249.58,181.41,89.03,38.9,True,False,False,Alta,Hipertensión,Crítico,2026-01-17,Alto
-1650,Angelina,Goñi,82.0,M,49.85,1.69,17.45,137.0,68,62,112.89,275.84,94.84,38.0,True,False,True,Alta,Hipertensión,Alto,2025-10-11,Bajo
-1651,María Dolores,Ochoa,53.0,M,91.49,1.54,38.58,187.0,91,106,214.86,268.14,86.12,36.8,False,True,False,Alta,Obesidad,Crítico,2024-11-15,Crítico
+1650,Angelina,Goñi,82.0,F,49.85,1.69,17.45,137.0,68,62,112.89,275.84,94.84,38.0,True,False,True,Alta,Hipertensión,Alto,2025-10-11,Bajo
+1651,María Dolores,Ochoa,53.0,F,91.49,1.54,38.58,187.0,91,106,214.86,268.14,86.12,36.8,False,True,False,Alta,Obesidad,Crítico,2024-11-15,Crítico
 1652,Jose Carlos,Nevado,59.0,M,67.72,1.76,21.86,173.0,86,110,248.82,190.36,91.43,35.5,False,True,True,Alta,Prehipertensión,Crítico,2024-09-05,Alto
 1653,Jose Ramón,Vila,24.0,M,81.52,1.92,22.11,178.0,90,125,153.57,145.89,86.6,35.6,True,True,True,Alta,Obesidad,Medio,2025-12-02,Alto
 1654,Severino,Falcó,50.0,F,79.68,1.88,22.54,188.0,96,83,242.08,180.45,92.36,37.4,True,False,False,Baja,Riesgo cardiovascular,Bajo,2025-11-25,Crítico
@@ -1651,7 +1651,7 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 1660,Anselma,Carreño,22.0,F,82.49000000000001,1.68,29.23,191.0,94,126,230.89,232.44,79.45,37.6,False,True,False,Media,Hipertensión,Crítico,2024-08-12,Crítico
 1661,Galo,Pagès,64.0,F,88.37,1.84,26.1,175.0,130,101,285.78,332.37,91.92,36.8,True,False,False,Media,Obesidad,Crítico,2024-11-15,Alto
 1662,Alejo,Fonseca,63.0,M,97.74,1.75,31.92,95.0,122,60,86.18,149.46,99.18,36.2,False,True,True,Alta,Hipertensión,Medio,2026-02-04,Bajo
-1663,Félix,Asenjo,55.0,F,82.49000000000001,1.75,26.94,199.0,99,101,116.19,266.11,96.28,39.6,False,False,False,Baja,Hipertensión,Medio,2025-06-30,Crítico
+1663,Félix,Asenjo,55.0,M,82.49000000000001,1.75,26.94,199.0,99,101,116.19,266.11,96.28,39.6,False,False,False,Baja,Hipertensión,Medio,2025-06-30,Crítico
 1664,Custodia,Manrique,52.0,M,84.01,1.46,39.41,180.0,61,130,255.97,330.26,85.92,36.8,True,False,True,Media,Obesidad,Medio,2025-02-16,Alto
 1665,Beatriz,Dalmau,41.0,F,116.14,1.78,36.66,120.0,120,114,296.74,337.57,96.6,37.6,False,True,True,Media,Diabetes Tipo 2,Bajo,2024-12-09,Alto
 1666,Berto,Pavón,43.0,M,104.76,1.53,44.75,123.0,81,63,160.24,156.59,89.64,38.9,True,False,False,Baja,Obesidad,Crítico,2024-11-02,Medio
@@ -1665,8 +1665,8 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 1674,Martina,Zamora,90.0,F,98.95,1.83,29.55,172.0,61,126,134.25,150.06,86.27,35.3,True,False,True,Media,Hipertensión,Bajo,2025-08-25,Alto
 1675,Josué,Rincón,87.0,F,55.67,1.65,20.45,91.0,119,58,147.64,147.11,89.96,38.2,False,True,False,Media,Hipertensión,Alto,2024-06-14,Medio
 1676,Celestina,Sobrino,18.0,M,55.54,1.51,24.36,163.0,63,115,224.11,237.31,75.26,39.3,True,True,False,Media,Riesgo cardiovascular,Alto,2025-11-26,Crítico
-1677,Josefa,Carballo,56.0,M,59.41,1.87,16.99,171.0,70,60,71.19,203.28,87.0,36.7,False,False,True,Baja,Hipertensión,Medio,2025-07-18,Alto
-1678,Concepción,Baena,21.0,M,110.71,1.82,33.42,128.0,66,81,324.06,295.99,79.73,37.9,False,False,True,Media,Obesidad,Medio,2025-06-27,Crítico
+1677,Josefa,Carballo,56.0,F,59.41,1.87,16.99,171.0,70,60,71.19,203.28,87.0,36.7,False,False,True,Baja,Hipertensión,Medio,2025-07-18,Alto
+1678,Concepción,Baena,21.0,F,110.71,1.82,33.42,128.0,66,81,324.06,295.99,79.73,37.9,False,False,True,Media,Obesidad,Medio,2025-06-27,Crítico
 1679,Pelayo,Ferreras,76.0,F,52.5,1.91,14.39,100.0,122,114,265.79,164.22,86.3,35.3,False,True,True,Baja,Hipertensión,Alto,2024-06-26,Alto
 1680,Felisa,Garmendia,18.0,F,69.75,1.93,18.73,122.0,129,80,296.56,294.98,86.21,37.8,True,False,False,Baja,Paciente sano,Alto,2025-01-30,Alto
 1681,Mirta,Múgica,73.0,F,109.33,1.45,52.0,125.0,88,131,156.85,336.6,91.71,36.2,True,False,True,Alta,Cardiopatía,Crítico,2025-02-09,Medio
@@ -1680,19 +1680,19 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 1689,Elba,Calleja,42.0,M,96.33,1.84,28.45,96.0,78,85,130.39,255.56,84.48,38.9,True,False,False,Media,Hipertensión,Medio,2024-08-30,Crítico
 1690,Azahar,Soria,69.0,F,90.9,1.78,28.69,114.0,103,126,192.54,322.39,82.64,35.7,False,True,False,Alta,Hipertensión,Alto,2026-05-18,Crítico
 1691,Florentino,Montaña,66.0,F,109.61,1.58,43.91,157.0,103,63,150.44,230.14,77.91,37.9,True,False,True,Baja,Obesidad,Alto,2024-06-03,Crítico
-1692,Jose Ramón,Seco,57.0,F,112.84,1.71,38.59,90.0,101,96,139.32,222.14,83.33,35.1,False,False,False,Alta,Diabetes Tipo 2,Alto,2025-02-01,Crítico
+1692,Jose Ramón,Seco,57.0,M,112.84,1.71,38.59,90.0,101,96,139.32,222.14,83.33,35.1,False,False,False,Alta,Diabetes Tipo 2,Alto,2025-02-01,Crítico
 1693,Pili,Osorio,23.0,M,62.15,1.75,20.29,106.0,81,61,104.26,324.17,90.54,38.6,False,False,False,Media,Diabetes Tipo 2,Crítico,2026-02-22,Bajo
 1694,Hortensia,Mayoral,87.0,F,105.83,1.73,35.36,189.0,121,139,114.65,323.68,76.91,39.0,False,False,False,Media,Hipertensión,Crítico,2026-03-10,Crítico
 1695,Macarena,Cornejo,78.0,F,113.68,1.74,37.55,129.0,98,119,102.16,121.92,88.92,35.0,True,True,False,Alta,Hipertensión,Medio,2026-03-27,Bajo
 1696,Estela,Duarte,40.0,F,84.53,1.61,32.61,177.0,70,140,112.02,124.88,91.4,35.0,False,False,False,Baja,Prehipertensión,Medio,2025-03-07,Alto
 1697,Noelia,Pujadas,26.0,M,74.88,1.71,25.61,169.0,77,101,254.39,234.7000283768445,85.38,39.4,False,True,True,Baja,Diabetes Tipo 2,Bajo,2025-10-08,Alto
 1698,Hilda,Montoya,69.0,M,96.07,1.74,31.73,122.0,95,111,207.5121282633371,131.68,88.36,38.8,False,True,True,Alta,Obesidad,Crítico,2025-07-13,Alto
-1699,Felix,Roldan,55.0,F,116.43,1.52,50.39,120.0,87,56,181.41,282.66,94.89,39.3,False,False,True,Media,Diabetes Tipo 2,Bajo,2025-08-29,Medio
+1699,Felix,Roldan,55.0,M,116.43,1.52,50.39,120.0,87,56,181.41,282.66,94.89,39.3,False,False,True,Media,Diabetes Tipo 2,Bajo,2025-08-29,Medio
 1700,Juan Luis,Oller,69.0,M,81.41,1.58,32.61,174.0,128,62,165.83,281.85,84.12,38.6,False,False,False,Media,Hipertensión,Crítico,2025-06-29,Crítico
 1701,Paco,Granados,34.0,F,71.28,1.74,23.54,95.0,75,80,307.55,155.59,80.67,35.7,False,True,False,Media,Paciente sano,Alto,2025-07-28,Crítico
 1702,Fabio,Uriarte,61.0,M,82.91,1.75,27.07,103.0,103,65,219.95,335.72,76.93,39.2,False,True,False,Media,Hipertensión,Alto,2025-01-19,Crítico
 1703,Américo,Campoy,77.0,M,70.07,1.92,19.01,128.0,74,121,348.58,341.53,95.27,39.1,False,True,False,Media,Obesidad,Medio,2024-11-15,Crítico
-1704,Germán,Segovia,28.0,F,83.78,1.72,28.32,178.0,68,107,119.79,270.22,80.89,39.6,False,False,False,Media,Prehipertensión,Crítico,2025-04-17,Crítico
+1704,Germán,Segovia,28.0,M,83.78,1.72,28.32,178.0,68,107,119.79,270.22,80.89,39.6,False,False,False,Media,Prehipertensión,Crítico,2025-04-17,Crítico
 1705,Damián,Portillo,56.0,M,59.35,1.6,23.18,170.0,103,113,310.78,263.21,79.12,39.9,False,False,False,Alta,Obesidad,Crítico,2025-08-18,Crítico
 1706,Sergio,Morante,69.0,M,101.45,1.88,28.7,118.0,126,123,312.63,268.95,76.17,39.0,False,True,False,Media,Prehipertensión,Medio,2025-05-19,Crítico
 1707,Ezequiel,Company,78.0,M,88.59,1.66,32.15,96.0,63,58,271.88,250.55,85.47,36.8,True,False,False,Media,Prehipertensión,Bajo,2025-11-19,Alto
@@ -1713,7 +1713,7 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 1722,Ulises,Miró,23.0,M,66.69,1.48,30.45,167.0,109,107,210.27,202.45,86.51,35.4,True,True,False,Alta,Riesgo cardiovascular,Crítico,2024-10-11,Alto
 1723,Inocencio,Comas,23.0,F,100.89,1.75,32.94,103.0,65,62,92.02,185.44,96.24,38.7,True,False,True,Media,Hipertensión,Crítico,2024-07-02,Bajo
 1724,Perla,Saldaña,53.0,F,82.49000000000001,1.9,22.85,174.0,74,115,178.04,175.91,86.83,37.7,False,True,False,Baja,Hipertensión,Bajo,2025-12-07,Alto
-1725,Victor Manuel,Jerez,62.0,F,92.08,1.78,29.06,138.0,102,111,207.5121282633371,294.51,79.4,35.2,False,True,False,Media,Hipertensión,Medio,2024-06-19,Crítico
+1725,Victor Manuel,Jerez,62.0,M,92.08,1.78,29.06,138.0,102,111,207.5121282633371,294.51,79.4,35.2,False,True,False,Media,Hipertensión,Medio,2024-06-19,Crítico
 1726,Calista,Murcia,88.0,F,53.42,1.78,16.86,200.0,97,95,195.28,265.42,85.5,35.1,True,True,True,Alta,Hipertensión,Crítico,2024-11-26,Crítico
 1727,Tecla,Martorell,74.0,M,116.42,1.71,39.81,166.0,107,120,98.91,234.7000283768445,80.11,37.3,True,False,False,Baja,Prehipertensión,Alto,2024-06-25,Crítico
 1728,Hernando,Vilar,90.0,M,47.65,1.67,17.09,157.0,125,93,272.5,223.37,94.07,39.5,True,False,False,Baja,Hipertensión,Bajo,2025-04-17,Alto
@@ -1724,7 +1724,7 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 1733,Ainoa,Meléndez,84.0,F,83.25,1.52,36.03,138.0,72,117,179.68,123.03,80.49,38.4,True,True,True,Baja,Cardiopatía,Alto,2025-04-11,Crítico
 1734,Filomena,Bernat,58.0,M,56.8,1.6,22.19,118.0,62,106,207.68,343.94,99.79,37.8,False,False,False,Baja,Hipertensión,Alto,2025-09-06,Alto
 1735,Ulises,Baquero,37.0,F,83.4,1.7,28.86,114.0,105,68,97.94,259.3,83.42,37.3,False,False,True,Alta,Diabetes Tipo 2,Crítico,2024-05-25,Crítico
-1736,Fátima,Conesa,34.0,M,63.74,1.51,27.95,126.0,64,73,174.24,291.02,83.99,38.3,True,False,True,Media,Riesgo cardiovascular,Crítico,2025-05-12,Crítico
+1736,Fátima,Conesa,34.0,F,63.74,1.51,27.95,126.0,64,73,174.24,291.02,83.99,38.3,True,False,True,Media,Riesgo cardiovascular,Crítico,2025-05-12,Crítico
 1737,América,Sosa,19.0,F,70.26,1.66,25.5,145.0,65,124,268.7,304.24,78.18,37.6,False,False,False,Alta,Riesgo cardiovascular,Medio,2026-01-27,Crítico
 1738,Maximiliano,Caro,66.0,M,104.97,1.66,38.09,131.0,77,88,202.62,260.64,78.88,35.7,False,True,False,Baja,Cardiopatía,Alto,2024-11-30,Crítico
 1739,Paco,Cañas,27.0,M,63.32,1.68,22.43,149.0,69,118,154.06,129.56,75.79,35.8,False,True,False,Alta,Cardiopatía,Bajo,2024-06-14,Crítico
@@ -1732,9 +1732,9 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 1741,Tecla,Navas,70.0,M,87.01,1.78,27.46,117.0,97,85,87.75,130.41,77.33,38.8,True,True,True,Baja,Hipertensión,Alto,2025-09-27,Crítico
 1742,Remigio,Chaves,61.0,M,114.12,1.8,35.22,119.0,80,89,158.16,146.64,86.26,37.5,False,True,False,Alta,Hipertensión,Bajo,2024-06-30,Medio
 1743,Marcelo,Zamorano,76.0,M,52.51,1.78,16.57,154.0,118,83,217.44,135.92,95.23,37.5,False,False,False,Baja,Diabetes Tipo 2,Medio,2024-10-25,Alto
-1744,Mónica,Martorell,37.0,M,79.33,1.78,25.04,150.0,94,78,291.36,224.65,80.37,40.0,False,False,False,Baja,Hipertensión,Alto,2025-05-18,Crítico
+1744,Mónica,Martorell,37.0,F,79.33,1.78,25.04,150.0,94,78,291.36,224.65,80.37,40.0,False,False,False,Baja,Hipertensión,Alto,2025-05-18,Crítico
 1745,Vito,Cobo,47.0,M,63.52,1.5,28.23,119.0,110,73,279.38,349.74,95.4,37.0,False,True,True,Baja,Hipertensión,Alto,2025-12-08,Alto
-1746,Luisa,Pareja,46.0,M,57.59,1.83,17.2,147.0,104,112,135.45,135.03,98.14,37.0,True,True,True,Alta,Riesgo cardiovascular,Bajo,2026-05-17,Medio
+1746,Luisa,Pareja,46.0,F,57.59,1.83,17.2,147.0,104,112,135.45,135.03,98.14,37.0,True,True,True,Alta,Riesgo cardiovascular,Bajo,2026-05-17,Medio
 1747,Sabas,Vallejo,69.0,F,93.3,1.6,36.45,190.0,72,86,116.41,171.95,75.53,36.4,False,False,False,Baja,Riesgo cardiovascular,Bajo,2025-07-16,Crítico
 1748,Aránzazu,Vendrell,66.0,F,103.12,1.77,32.92,194.0,126,51,235.46,237.02,97.45,36.2,True,True,True,Baja,Paciente sano,Bajo,2024-06-01,Crítico
 1749,Aristides,Lobo,18.0,M,101.51,1.67,36.4,187.0,88,75,253.08,192.04,95.22,39.1,True,False,True,Alta,Hipertensión,Alto,2025-01-26,Crítico
@@ -1743,7 +1743,7 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 1752,Noemí,Vara,49.0,F,113.02,1.89,31.64,186.0,67,130,157.11,279.79,85.11,36.7,False,True,False,Baja,Cardiopatía,Medio,2025-12-18,Crítico
 1753,Hernán,Caro,31.0,M,119.58,1.56,49.14,162.0,98,114,283.74,279.73,87.38,38.6,True,False,False,Baja,Cardiopatía,Medio,2025-04-06,Alto
 1754,Crescencia,Mínguez,37.0,F,109.93,1.78,34.7,139.0,130,85,196.91,141.27,89.41,39.0,False,False,False,Alta,Hipertensión,Bajo,2026-01-08,Medio
-1755,Sofía,Mascaró,18.0,M,72.4,1.73,24.19,102.0,121,66,314.36,309.69,77.96,38.6,False,True,False,Alta,Hipertensión,Crítico,2025-01-29,Crítico
+1755,Sofía,Mascaró,18.0,F,72.4,1.73,24.19,102.0,121,66,314.36,309.69,77.96,38.6,False,True,False,Alta,Hipertensión,Crítico,2025-01-29,Crítico
 1756,Óscar,Trujillo,89.0,M,90.93,1.92,24.67,137.0,93,63,180.08,212.15,98.47,38.3,False,False,False,Alta,Cardiopatía,Crítico,2025-05-14,Medio
 1757,Pilar,Bonilla,48.0,F,63.79,1.52,27.61,179.0,72,124,272.8,346.68,99.12,36.8,True,True,False,Alta,Diabetes Tipo 2,Crítico,2025-11-08,Alto
 1758,Maricruz,Aguado,67.0,F,118.87,1.45,56.54,175.0,70,57,289.46,303.14,77.08,36.6,True,False,True,Baja,Cardiopatía,Bajo,2025-05-25,Crítico
@@ -1757,19 +1757,19 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 1766,Guillermo,Llorens,72.0,M,64.31,1.75,21.0,156.0,63,90,159.73,234.93,92.56,38.0,True,False,True,Baja,Riesgo cardiovascular,Bajo,2024-09-15,Medio
 1767,Georgina,Cózar,79.0,F,114.68,1.48,52.36,135.0,72,80,262.67,123.64,86.7,35.6,True,False,False,Alta,Cardiopatía,Alto,2025-01-14,Alto
 1768,Jessica,Luján,36.0,M,59.27,1.7,20.51,99.0,128,134,292.97,160.3,90.48,37.8,False,False,True,Baja,Cardiopatía,Alto,2025-04-23,Alto
-1769,Blanca,Llanos,63.0,M,118.26,1.88,33.46,130.0,104,107,88.89,341.18,81.74,35.4,True,False,True,Baja,Paciente sano,Medio,2024-10-18,Crítico
-1770,Susana,Alfonso,19.0,M,61.38,1.71,20.99,108.0,105,63,180.02,270.18,79.01,39.7,False,True,True,Media,Hipertensión,Crítico,2025-02-21,Crítico
+1769,Blanca,Llanos,63.0,F,118.26,1.88,33.46,130.0,104,107,88.89,341.18,81.74,35.4,True,False,True,Baja,Paciente sano,Medio,2024-10-18,Crítico
+1770,Susana,Alfonso,19.0,F,61.38,1.71,20.99,108.0,105,63,180.02,270.18,79.01,39.7,False,True,True,Media,Hipertensión,Crítico,2025-02-21,Crítico
 1771,Máximo,Garriga,19.0,M,85.73,1.63,32.27,121.0,64,71,278.07,236.88,90.71,40.0,True,False,True,Media,Hipertensión,Medio,2026-01-07,Alto
 1772,Heraclio,Pérez,23.0,F,111.6,1.79,34.83,156.0,127,104,126.76,159.51,99.54,38.8,False,False,True,Media,Hipertensión,Crítico,2024-12-11,Medio
 1773,Melisa,Cadenas,78.0,M,55.03,1.48,25.12,147.0,62,136,224.12,151.68,76.73,38.4,True,False,False,Media,Hipertensión,Crítico,2026-04-05,Crítico
 1774,Jaime,Alemany,59.0,M,49.97,1.76,16.13,183.0,101,96,168.98,141.02,97.13,35.2,True,False,False,Media,Diabetes Tipo 2,Bajo,2025-01-18,Crítico
 1775,Pacífica,Méndez,72.0,F,110.78,1.55,46.11,96.0,61,66,128.75,122.47,81.02,35.2,True,True,True,Baja,Diabetes Tipo 2,Crítico,2026-02-02,Crítico
-1776,Rocío,Domínguez,53.0,M,59.81,1.68,21.19,193.0,86,53,230.81,345.54,96.61,35.6,False,False,True,Alta,Hipertensión,Medio,2026-02-24,Crítico
+1776,Rocío,Domínguez,53.0,F,59.81,1.68,21.19,193.0,86,53,230.81,345.54,96.61,35.6,False,False,True,Alta,Hipertensión,Medio,2026-02-24,Crítico
 1777,Blas,García,72.0,M,90.92,1.87,26.0,150.0,99,97,72.59,167.46,81.96,37.5,True,False,True,Baja,Hipertensión,Bajo,2024-12-12,Crítico
 1778,África,Pujadas,51.0,M,88.52,1.45,42.1,177.0,129,53,150.47,301.42,77.5,38.6,True,False,False,Baja,Diabetes Tipo 2,Alto,2026-05-06,Crítico
 1779,Amparo,Gracia,70.0,M,107.26,1.53,45.82,90.0,76,52,152.8,147.37,91.35,39.8,False,False,True,Media,Hipertensión,Bajo,2026-04-30,Medio
 1780,Trini,Pozo,60.0,F,107.73,1.8,33.25,137.0,80,120,265.48,280.15,98.39,36.6,True,False,False,Baja,Cardiopatía,Medio,2026-04-06,Alto
-1781,Ricardo,Serra,62.0,F,114.09,1.82,34.44,179.0,99,136,209.14,213.06,79.96,36.8,True,True,True,Baja,Diabetes Tipo 2,Alto,2024-10-04,Crítico
+1781,Ricardo,Serra,62.0,M,114.09,1.82,34.44,179.0,99,136,209.14,213.06,79.96,36.8,True,True,True,Baja,Diabetes Tipo 2,Alto,2024-10-04,Crítico
 1782,Carla,Palomares,59.0,F,68.95,1.79,21.52,196.0,83,55,199.64,281.95,80.53,39.9,False,True,True,Alta,Prehipertensión,Medio,2026-04-14,Crítico
 1783,Amarilis,Fernandez,63.0,M,105.18,1.72,35.55,192.0,124,119,71.96,294.62,85.79,39.0,False,True,True,Media,Obesidad,Crítico,2024-10-23,Crítico
 1784,Heriberto,Palmer,60.0,F,116.97,1.83,34.93,174.0,106,95,236.95,161.64,89.09,37.2,False,False,True,Alta,Cardiopatía,Alto,2025-01-07,Alto
@@ -1790,4 +1790,4 @@ id_paciente,nombres,apellidos,edad,sexo,peso,altura,IMC,presión_sistólica,pres
 1799,Leticia,Morata,38.0,F,53.08,1.73,17.74,174.0,71,91,337.83,153.92,75.74,38.7,True,True,True,Media,Riesgo cardiovascular,Bajo,2026-01-16,Crítico
 1800,Candelaria,Lluch,48.0,F,94.22,1.77,30.07,136.0,109,135,152.89,216.43,75.11,36.3,False,False,False,Baja,Hipertensión,Alto,2025-05-09,Crítico
 1272,Úrsula,Ojeda,39.0,F,82.49000000000001,1.78,26.04,127.0,84,70,293.55,151.04,99.26,35.6,True,False,False,Baja,Paciente sano,Crítico,2025-07-22,Alto
-1663,Félix,Asenjo,52.0,F,82.49000000000001,1.75,26.94,199.0,99,101,116.19,266.11,96.28,39.6,False,False,False,Baja,Hipertensión,Medio,2025-06-30,Crítico
+1663,Félix,Asenjo,52.0,M,82.49000000000001,1.75,26.94,199.0,99,101,116.19,266.11,96.28,39.6,False,False,False,Baja,Hipertensión,Medio,2025-06-30,Crítico

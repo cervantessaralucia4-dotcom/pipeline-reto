@@ -40,8 +40,8 @@ ACTIVIDAD_MAP = {
 # ── Funciones auxiliares ──────────────────────────────────────
 
 def normalizar_sexo(valor):
-    if pd.isna(valor):
-        return 'M'
+    if pd.isna(valor) or str(valor).strip() == '':
+        return ''
     return SEXO_MAP.get(str(valor).strip(), str(valor).strip().upper()[:1])
 
 
@@ -86,6 +86,69 @@ def clasificar_riesgo(row):
         return 'Bajo'
 
 
+# ── Corrección de género según nombre ─────────────────────────
+
+NOMBRES_FEMENINOS = {
+    'adela', 'america', 'américa', 'ana', 'anabelen', 'angelina', 'ariadna',
+    'beatriz', 'begoña', 'begoa', 'belen', 'belén', 'blanca',
+    'carla', 'carmen', 'claudia', 'concepcion', 'concepción', 'cristina',
+    'dolores', 'dulce',
+    'elena', 'elisa', 'esther', 'eugenia',
+    'fatima', 'fátima',
+    'gloria', 'gracia',
+    'helena',
+    'ines', 'inés', 'isabel', 'isidora',
+    'josefa', 'josefina', 'julia', 'juliana',
+    'lara', 'laura', 'leire', 'lidia', 'lourdes', 'lucia', 'lucía', 'luisa',
+    'manuel', 'maria', 'maría', 'maristela',
+    'mireia', 'mónica', 'monica',
+    'natalia', 'nil',
+    'olga',
+    'pablo', 'paloma', 'patricia', 'paula', 'pilar',
+    'raquel', 'rocio', 'rocío', 'rosa', 'rosario', 'ruperta',
+    'sandra', 'sara', 'silvia', 'sofia', 'sofía', 'sonia', 'susana', 'susanita',
+    'teodora', 'tere', 'teresa',
+    'vicenta', 'victoria',
+    'yolanda',
+}
+
+NOMBRES_MASCULINOS = {
+    'abel', 'adrian', 'adrián', 'alberto', 'alejandro', 'alfonso', 'alfredo',
+    'alonso', 'alvaro', 'álvaro', 'ander', 'andres', 'andrés', 'angel', 'ángel',
+    'antonio', 'ariel',
+    'bartolome', 'bartolomé', 'bernabe', 'bernabe', 'bernardo', 'borja',
+    'carlos', 'cesar', 'cesar', 'cristian', 'cristóbal',
+    'daniel', 'david', 'diego',
+    'eduardo', 'emilio', 'enrique', 'ernesto', 'esteban',
+    'federico', 'felix', 'félix', 'fernando', 'francisco', 'felipe',
+    'gerardo', 'german', 'germán', 'gonzalo', 'guillermo', 'gustavo',
+    'haroldo',
+    'hector', 'héctor', 'hugo',
+    'ignacio', 'isidro',
+    'jaime', 'javier', 'jesus', 'jesús', 'joaquin', 'joaquín', 'jorge',
+    'jose', 'josé', 'juan',
+    'luis', 'lluis',
+    'manuel',
+    'narciso', 'nilo',
+    'pablo', 'patricio', 'pedro', 'plinio',
+    'ramon', 'ramón', 'raul', 'raúl', 'ricardo', 'rico', 'roberto',
+    'rodrigo', 'roque', 'ruben', 'rubén',
+    'salvador', 'santiago', 'sergio', 'sebastian', 'sebastián',
+    'tono', 'toño',
+    'vicente', 'victor', 'víctor',
+}
+
+def corregir_sexo_por_nombre(row):
+    nombre = str(row['nombres']).strip().split()[0].lower()
+    nombre = nombre.translate(str.maketrans('áéíóúñ', 'aeioun'))
+    sexo_actual = row['sexo']
+    if nombre in NOMBRES_FEMENINOS and sexo_actual != 'F':
+        return 'F'
+    if nombre in NOMBRES_MASCULINOS and sexo_actual != 'M':
+        return 'M'
+    return sexo_actual
+
+
 # ── Pipeline principal ────────────────────────────────────────
 
 def run_etl(file_path='datasets/dataset_clinico_etl_1800_registros.xlsx'):
@@ -94,15 +157,16 @@ def run_etl(file_path='datasets/dataset_clinico_etl_1800_registros.xlsx'):
     Retorna un dict con estadísticas y el DataFrame limpio.
     """
     stats = {
-        'archivo_fuente':       file_path,
-        'registros_extraidos':  0,
-        'registros_duplicados': 0,
-        'registros_nulos':      0,
+        'archivo_fuente':        file_path,
+        'registros_extraidos':   0,
+        'registros_duplicados':  0,
+        'registros_nulos':       0,
         'registros_fuera_rango': 0,
-        'registros_cargados':   0,
-        'mensaje':              '',
-        'tiempo_ejecucion':     0,
-        'df_limpio':            None,
+        'generos_corregidos':    0,
+        'registros_cargados':    0,
+        'mensaje':               '',
+        'tiempo_ejecucion':      0,
+        'df_limpio':             None,
     }
 
     t_inicio = time.time()
@@ -178,16 +242,23 @@ def run_etl(file_path='datasets/dataset_clinico_etl_1800_registros.xlsx'):
     df['diagnóstico_preliminar'] = df['diagnóstico_preliminar'].apply(normalizar_diagnostico)
     df['actividad_física']      = df['actividad_física'].apply(normalizar_actividad)
 
-    # ── 2f. Recalcular IMC ─────────────────
+    # ── 2f. Corregir género según nombre ────
+    df['sexo_corregido'] = df.apply(corregir_sexo_por_nombre, axis=1)
+    stats['generos_corregidos'] = int((df['sexo'] != df['sexo_corregido']).sum())
+    df['sexo'] = df['sexo_corregido']
+    df = df.drop(columns=['sexo_corregido'])
+
+    # ── 2g. Recalcular IMC ─────────────────
     df['IMC'] = df.apply(
         lambda r: calcular_imc(r['peso'], r['altura']), axis=1
     )
 
-    # ── 2g. Clasificar riesgo calculado ────
+    # ── 2h. Clasificar riesgo calculado ────
     df['riesgo_calculado'] = df.apply(clasificar_riesgo, axis=1)
 
-    # ── 2h. Eliminar filas con nulos críticos
+    # ── 2i. Eliminar filas con nulos críticos
     df = df.dropna(subset=['nombres', 'apellidos', 'edad', 'sexo'])
+    df = df[df['sexo'] != '']
 
     # ══════════════════════════════════════
     # 3. LOAD — exportar CSV limpio
@@ -202,6 +273,7 @@ def run_etl(file_path='datasets/dataset_clinico_etl_1800_registros.xlsx'):
         f"Duplicados eliminados: {stats['registros_duplicados']} | "
         f"Nulos tratados: {stats['registros_nulos']} | "
         f"Fuera de rango: {stats['registros_fuera_rango']} | "
+        f"Géneros corregidos: {stats['generos_corregidos']} | "
         f"Cargados: {stats['registros_cargados']} | "
         f"Tiempo: {stats['tiempo_ejecucion']}s"
     )
