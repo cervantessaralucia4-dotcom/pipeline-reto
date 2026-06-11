@@ -35,14 +35,9 @@ services:
     healthCheckPath: /api/token/
 
   # ── Frontend: React Static Site ─────────────────────────────
-  - type: web
+  - type: static_site
     name: healthcare-frontend
-    runtime: static
-    plan: free
-    buildCommand: |
-      cd frontend
-      npm install
-      npm run build
+    buildCommand: cd frontend && npm install && npm run build
     staticPublishPath: frontend/build
     envVars:
       - key: REACT_APP_API_URL
