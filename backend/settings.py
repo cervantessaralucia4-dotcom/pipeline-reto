@@ -78,8 +78,8 @@ import re
 
 _DATABASE_URL = os.getenv('DATABASE_URL', '')
 if _DATABASE_URL:
-    # Parse Render/Neon DATABASE_URL → psql dict
-    m = re.match(r'postgres://(.+?):(.+?)@(.+?):(\d+)/(.+?)(\?.*)?$', _DATABASE_URL)
+    # Parse Render/Neon DATABASE_URL → psql dict (soporta postgres:// y postgresql://)
+    m = re.match(r'postgres(?:ql)?://(.+?):(.+?)@(.+?):(\d+)/(.+?)(\?.*)?$', _DATABASE_URL)
     if m:
         DATABASES = {
             'default': {
