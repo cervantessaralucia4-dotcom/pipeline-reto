@@ -14,7 +14,6 @@ import {
   FiCheckCircle, FiDroplet, FiBarChart2, FiLogOut,
   FiRefreshCw, FiHeart, FiDatabase, FiCpu, FiFileText,
   FiShield, FiPlay, FiUser, FiPlusCircle, FiDownload,
-  FiChevronUp, FiChevronDown,
 } from "react-icons/fi";
 import "./App.css";
 
@@ -292,8 +291,7 @@ function SectionDashboard() {
 // ═══════════════════════════════════════════════════════════════
 //  SECCIÓN: PACIENTES
 // ═══════════════════════════════════════════════════════════════
-function SectionPacientes({ user }) {
-  const rol = user?.profile?.rol || "medico";
+function SectionPacientes() {
   const [patients, setPatients] = useState([]);
   const [loading, setLoading]   = useState(true);
   const [error, setError]       = useState("");
@@ -530,6 +528,7 @@ function SectionAnalytics() {
   const [filtroActivo, setFiltroActivo] = useState(null);
   const [filtroPacientes, setFiltroPacientes] = useState([]);
   const [filtroCargando, setFiltroCargando] = useState(false);
+  // eslint-disable-next-line no-unused-vars
   const [filtroError, setFiltroError] = useState("");
   const [filtroSearch, setFiltroSearch] = useState("");
 
