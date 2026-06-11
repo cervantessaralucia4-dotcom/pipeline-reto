@@ -134,6 +134,9 @@ USE_TZ        = True
 # ── Archivos estáticos ────────────────────────────────────────
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATICFILES_DIRS = [
+    BASE_DIR / 'frontend' / 'build' / 'static',
+] if (BASE_DIR / 'frontend' / 'build' / 'static').exists() else []
 
 # ── CORS ──────────────────────────────────────────────────────
 CORS_ALLOW_ALL_ORIGINS = os.getenv('CORS_ALLOW_ALL_ORIGINS', 'True') == 'True'
