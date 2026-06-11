@@ -15,19 +15,24 @@ class Command(BaseCommand):
 
         df = pd.read_csv(file_path)
 
+        # Limpiar base de datos antes de cargar para evitar duplicados
+        self.stdout.write("Limpiando registros existentes de pacientes...")
+        Patient.objects.all().delete()
+
         created = 0
+        pacientes = []
 
         for _, row in df.iterrows():
 
-            Patient.objects.create(
-
+            pacientes.append(Patient(
                 first_name=row['nombres'],
                 last_name=row['apellidos'],
                 age=int(row['edad']),
-                sex='M' if row['sexo'] == 'Masculino' else 'F',
+                sex=row['sexo'],
 
                 weight=row['peso'],
                 height=row['altura'],
+                bmi=row['IMC'],
 
                 systolic_pressure=int(row['presión_sistólica']),
                 diastolic_pressure=int(row['presión_diastólica']),
@@ -47,7 +52,7 @@ class Command(BaseCommand):
 
                 alcohol_consumption=row['consumo_alcohol'],
 
-                physical_activity='Media',
+                physical_activity=row['actividad_física'],
 
                 preliminary_diagnosis=row[
                     'diagnóstico_preliminar'
@@ -60,9 +65,11 @@ class Command(BaseCommand):
                 consultation_date=row[
                     'fecha_consulta'
                 ]
-            )
+            ))
 
             created += 1
+
+        Patient.objects.bulk_create(pacientes, ignore_conflicts=True)
 
         self.stdout.write(
             self.style.SUCCESS(

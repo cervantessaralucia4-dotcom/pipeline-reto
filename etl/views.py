@@ -1,4 +1,5 @@
 from datetime import datetime, timezone
+import pandas as pd
 from drf_spectacular.utils import extend_schema
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
@@ -43,6 +44,7 @@ def run_etl_view(request):
                         sex='M' if str(row['sexo']).upper() == 'M' else 'F',
                         weight=float(row['peso']),
                         height=float(row['altura']),
+                        bmi=float(row['IMC']) if pd.notna(row['IMC']) else None,
                         systolic_pressure=int(row['presión_sistólica']),
                         diastolic_pressure=int(row['presión_diastólica']),
                         heart_rate=int(row['frecuencia_cardiaca']),
