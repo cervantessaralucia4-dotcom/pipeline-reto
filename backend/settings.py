@@ -78,7 +78,6 @@ import re
 
 _DATABASE_URL = os.getenv('DATABASE_URL', '')
 if _DATABASE_URL:
-    # Parse Render/Neon DATABASE_URL → psql dict (soporta postgres:// y postgresql://)
     m = re.match(r'postgres(?:ql)?://(.+?):(.+?)@(.+?):(\d+)/(.+?)(\?.*)?$', _DATABASE_URL)
     if m:
         DATABASES = {
@@ -93,6 +92,7 @@ if _DATABASE_URL:
             }
         }
     else:
+        print(f'⚠️  DATABASE_URL found but could not parse: {_DATABASE_URL[:50]}...')
         DATABASES = {
             'default': {
                 'ENGINE':   'django.db.backends.postgresql',
@@ -105,6 +105,7 @@ if _DATABASE_URL:
             }
         }
 else:
+    print('⚠️  DATABASE_URL is not set, using defaults')
     DATABASES = {
         'default': {
             'ENGINE':   'django.db.backends.postgresql',
