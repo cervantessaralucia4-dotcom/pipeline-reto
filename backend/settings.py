@@ -74,36 +74,13 @@ TEMPLATES = [
 WSGI_APPLICATION = 'backend.wsgi.application'
 
 # ── Base de datos ─────────────────────────────────────────────
-import re
+import dj_database_url
 
 _DATABASE_URL = os.getenv('DATABASE_URL', '')
 if _DATABASE_URL:
-    m = re.match(r'postgres(?:ql)?://(.+?):(.+?)@(.+?):(\d+)/(.+?)(\?.*)?$', _DATABASE_URL)
-    if m:
-        DATABASES = {
-            'default': {
-                'ENGINE':   'django.db.backends.postgresql',
-                'NAME':     m.group(5),
-                'USER':     m.group(1),
-                'PASSWORD': m.group(2),
-                'HOST':     m.group(3),
-                'PORT':     m.group(4),
-                'OPTIONS':  {'sslmode': 'require'},
-            }
-        }
-    else:
-        print(f'⚠️  DATABASE_URL found but could not parse: {_DATABASE_URL[:50]}...')
-        DATABASES = {
-            'default': {
-                'ENGINE':   'django.db.backends.postgresql',
-                'NAME':     os.getenv('DB_NAME',     'neondb'),
-                'USER':     os.getenv('DB_USER',     'neondb_owner'),
-                'PASSWORD': os.getenv('DB_PASSWORD', ''),
-                'HOST':     os.getenv('DB_HOST',     'localhost'),
-                'PORT':     os.getenv('DB_PORT',     '5432'),
-                'OPTIONS':  {'sslmode': 'require'},
-            }
-        }
+    DATABASES = {
+        'default': dj_database_url.parse(_DATABASE_URL, conn_max_age=600, ssl_require=True)
+    }
 else:
     print('⚠️  DATABASE_URL is not set, using defaults')
     DATABASES = {
