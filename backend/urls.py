@@ -3,11 +3,13 @@ from django.urls import path, include, re_path
 from django.views.generic import TemplateView
 from django.conf import settings
 from django.conf.urls.static import static
+from django.http import JsonResponse
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView, SpectacularRedocView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/health/', lambda _: JsonResponse({'status': 'ok'}), name='health_check'),
 
     # JWT
     path('api/token/',         TokenObtainPairView.as_view(), name='token_obtain_pair'),
