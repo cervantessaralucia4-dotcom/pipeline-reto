@@ -45,6 +45,7 @@ INSTALLED_APPS = [
 # ── Middleware ────────────────────────────────────────────────
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -111,6 +112,11 @@ USE_TZ        = True
 
 # ── Archivos estáticos ────────────────────────────────────────
 STATIC_URL = 'static/'
+STORAGES = {
+    'staticfiles': {
+        'BACKEND': 'whitenoise.storage.CompressedManifestStaticFilesStorage',
+    },
+}
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS = [
     BASE_DIR / 'frontend' / 'build' / 'static',
