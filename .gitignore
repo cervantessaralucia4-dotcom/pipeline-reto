@@ -4,6 +4,7 @@ __pycache__/
 db.sqlite3
 .env
 datasets/*.xlsx
+!datasets/dataset_clinico_etl_1800_registros.xlsx
 node_modules/
 frontend/build/
 staticfiles/

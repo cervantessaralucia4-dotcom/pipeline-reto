@@ -12,14 +12,15 @@ def seed_users(apps, schema_editor):
     ]
 
     for data in users_data:
-        user, created = User.objects.get_or_create(
+        user, _ = User.objects.get_or_create(
             username=data['username'],
             defaults={'is_staff': data['rol'] == 'administrador', 'is_superuser': data['rol'] == 'administrador'}
         )
-        if created:
-            user.set_password(data['password'])
-            user.save()
-            UserProfile.objects.create(user=user, rol=data['rol'])
+        user.set_password(data['password'])
+        user.is_staff = data['rol'] == 'administrador'
+        user.is_superuser = data['rol'] == 'administrador'
+        user.save()
+        UserProfile.objects.get_or_create(user=user, defaults={'rol': data['rol']})
 
 
 def reverse_seed(apps, schema_editor):
