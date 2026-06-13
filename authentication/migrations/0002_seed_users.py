@@ -1,4 +1,5 @@
 from django.db import migrations
+from django.contrib.auth.hashers import make_password
 
 
 def seed_users(apps, schema_editor):
@@ -12,14 +13,19 @@ def seed_users(apps, schema_editor):
     ]
 
     for data in users_data:
-        user, _ = User.objects.get_or_create(
+        user, created = User.objects.get_or_create(
             username=data['username'],
-            defaults={'is_staff': data['rol'] == 'administrador', 'is_superuser': data['rol'] == 'administrador'}
+            defaults={
+                'password': make_password(data['password']),
+                'is_staff': data['rol'] == 'administrador',
+                'is_superuser': data['rol'] == 'administrador',
+            }
         )
-        user.set_password(data['password'])
-        user.is_staff = data['rol'] == 'administrador'
-        user.is_superuser = data['rol'] == 'administrador'
-        user.save()
+        if not created:
+            user.password = make_password(data['password'])
+            user.is_staff = data['rol'] == 'administrador'
+            user.is_superuser = data['rol'] == 'administrador'
+            user.save()
         UserProfile.objects.get_or_create(user=user, defaults={'rol': data['rol']})
 
 
