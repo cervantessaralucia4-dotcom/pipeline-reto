@@ -183,13 +183,18 @@ function SectionDashboard() {
   const total = chartData.reduce((s,d) => s+d.value, 0);
 
   const kpiList = [
-    { label:"Total Pacientes",    val: kpis?.total_patients,    icon:<FiUsers />,        color:"blue" },
-    { label:"Pacientes Críticos", val: kpis?.critical_patients, icon:<FiAlertTriangle />, color:"red" },
-    { label:"Riesgo Alto",        val: kpis?.high_risk,         icon:<FiTrendingUp />,   color:"amber" },
-    { label:"Riesgo Medio",       val: kpis?.medium_risk,       icon:<FiActivity />,     color:"cyan" },
-    { label:"Riesgo Bajo",        val: kpis?.low_risk,          icon:<FiCheckCircle />,  color:"green" },
-    { label:"Glucosa Promedio",   val: kpis ? `${kpis.average_glucose} mg/dL` : "", icon:<FiDroplet />, color:"purple" },
-    { label:"IMC Promedio",       val: kpis?.average_bmi,       icon:<FiBarChart2 />,    color:"teal" },
+    { label:"Total Pacientes",     val: kpis?.total_patients,       icon:<FiUsers />,        color:"blue" },
+    { label:"Pacientes Críticos",  val: kpis?.critical_patients,    icon:<FiAlertTriangle />, color:"red" },
+    { label:"Riesgo Alto",         val: kpis?.high_risk,            icon:<FiTrendingUp />,   color:"amber" },
+    { label:"Riesgo Medio",        val: kpis?.medium_risk,          icon:<FiActivity />,     color:"cyan" },
+    { label:"Riesgo Bajo",         val: kpis?.low_risk,             icon:<FiCheckCircle />,  color:"green" },
+    { label:"Glucosa Promedio",    val: kpis ? `${kpis.average_glucose} mg/dL` : "", icon:<FiDroplet />, color:"purple" },
+    { label:"IMC Promedio",        val: kpis?.average_bmi,          icon:<FiBarChart2 />,    color:"teal" },
+    { label:"Presión Arterial",    val: kpis ? `${kpis.average_systolic}/${kpis.average_diastolic} mmHg` : "", icon:<FiHeart />, color:"red" },
+    { label:"Frec. Cardíaca",      val: kpis?.average_heart_rate,   icon:<FiActivity />,     color:"cyan" },
+    { label:"Colesterol Prom.",    val: kpis?.average_cholesterol,  icon:<FiDroplet />,      color:"purple" },
+    { label:"Saturación O₂",       val: kpis?.average_oxygen_sat,   icon:<FiBarChart2 />,    color:"teal" },
+    { label:"Temperatura Prom.",   val: kpis?.average_temperature,  icon:<FiBarChart2 />,    color:"blue" },
   ];
 
   return (
@@ -257,27 +262,17 @@ function SectionDashboard() {
           {/* Clinical */}
           <div className="chart-card">
             <div className="chart-title ct-cyan">Indicadores clínicos</div>
-            <ResponsiveContainer width="100%" height={130}>
-              <BarChart data={[{name:"Glucosa",value:kpis?.average_glucose||0},{name:"IMC",value:kpis?.average_bmi||0}]} barSize={28}>
-                <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" />
-                <XAxis dataKey="name" tick={{fill:"#8596b3",fontSize:11}} axisLine={false} tickLine={false} />
-                <YAxis tick={{fill:"#8596b3",fontSize:10}} axisLine={false} tickLine={false} />
-                <Tooltip content={<CTooltip />} cursor={{fill:"rgba(255,255,255,0.03)"}} />
-                <Bar dataKey="value" name="Valor" radius={[4,4,0,0]}>
-                  <Cell fill="#8b5cf6" /><Cell fill="#14b8a6" />
-                </Bar>
-              </BarChart>
-            </ResponsiveContainer>
-            <div className="clin-stats">
-              <div className="clin-stat"><div className="clin-stat-val">{kpis?.average_glucose ?? "—"}</div><div className="clin-stat-lbl">Glucosa mg/dL</div></div>
-              <div className="clin-stat"><div className="clin-stat-val">{kpis?.average_bmi ?? "—"}</div><div className="clin-stat-lbl">IMC promedio</div></div>
+            <div className="clin-stats" style={{gridTemplateColumns:"repeat(2,1fr)"}}>
+              <div className="clin-stat"><div className="clin-stat-val">{kpis?.average_glucose ?? "—"}</div><div className="clin-stat-lbl">Glucosa (mg/dL)</div></div>
+              <div className="clin-stat"><div className="clin-stat-val">{kpis?.average_bmi ?? "—"}</div><div className="clin-stat-lbl">IMC</div></div>
+              <div className="clin-stat"><div className="clin-stat-val">{kpis?.average_systolic ?? "—"}/{kpis?.average_diastolic ?? "—"}</div><div className="clin-stat-lbl">Presión arterial (mmHg)</div></div>
+              <div className="clin-stat"><div className="clin-stat-val">{kpis?.average_heart_rate ?? "—"}</div><div className="clin-stat-lbl">Frec. cardíaca (lpm)</div></div>
+              <div className="clin-stat"><div className="clin-stat-val">{kpis?.average_cholesterol ?? "—"}</div><div className="clin-stat-lbl">Colesterol (mg/dL)</div></div>
+              <div className="clin-stat"><div className="clin-stat-val">{kpis?.average_oxygen_sat ?? "—"}</div><div className="clin-stat-lbl">Saturación O₂ (%)</div></div>
+              <div className="clin-stat"><div className="clin-stat-val">{kpis?.average_temperature ?? "—"}</div><div className="clin-stat-lbl">Temperatura (°C)</div></div>
               <div className="clin-stat">
                 <div className="clin-stat-val">{kpis && kpis.total_patients > 0 ? ((kpis.critical_patients/kpis.total_patients)*100).toFixed(1)+"%" : "—"}</div>
                 <div className="clin-stat-lbl">% Críticos</div>
-              </div>
-              <div className="clin-stat">
-                <div className="clin-stat-val">{kpis && kpis.total_patients > 0 ? ((kpis.high_risk/kpis.total_patients)*100).toFixed(1)+"%" : "—"}</div>
-                <div className="clin-stat-lbl">% Riesgo alto</div>
               </div>
             </div>
           </div>
@@ -370,23 +365,35 @@ function SectionPacientes() {
                 <th className={sortKey==="nombre"?"sorted":""} onClick={()=>handleSort("nombre")}>Paciente {arrow("nombre")}</th>
                 <th className={sortKey==="age"?"sorted":""} onClick={()=>handleSort("age")}>Edad {arrow("age")}</th>
                 <th>Sexo</th>
+                <th>P. Sistólica</th>
+                <th>P. Diastólica</th>
+                <th>Frec. Cardíaca</th>
                 <th>Glucosa</th>
+                <th>Colesterol</th>
+                <th>Sat. O₂</th>
+                <th>Temperatura</th>
                 <th>IMC</th>
                 <th className={sortKey==="disease_risk"?"sorted":""} onClick={()=>handleSort("disease_risk")}>Riesgo {arrow("disease_risk")}</th>
               </tr>
             </thead>
             <tbody>
               {loading ? (
-                <tr><td colSpan={7} style={{textAlign:"center",padding:24,color:"#4a607e"}}>Cargando pacientes…</td></tr>
+                <tr><td colSpan={14} style={{textAlign:"center",padding:24,color:"#4a607e"}}>Cargando pacientes…</td></tr>
               ) : pageData.length === 0 ? (
-                <tr><td colSpan={7} style={{textAlign:"center",padding:28,color:"#4a607e"}}>No se encontraron pacientes.</td></tr>
+                <tr><td colSpan={14} style={{textAlign:"center",padding:28,color:"#4a607e"}}>No se encontraron pacientes.</td></tr>
               ) : pageData.map(p => (
                 <tr key={p.id}>
                   <td className="cell-id">#{String(p.id).padStart(4,"0")}</td>
                   <td className="cell-name">{p.first_name} {p.last_name}</td>
                   <td>{p.age} años</td>
                   <td><span className="b-sex">{p.sex==="M"?"Masc":"Fem"}</span></td>
+                  <td>{p.systolic_pressure ?? "—"}</td>
+                  <td>{p.diastolic_pressure ?? "—"}</td>
+                  <td>{p.heart_rate ?? "—"}</td>
                   <td>{p.glucose ?? "—"}</td>
+                  <td>{p.cholesterol ?? "—"}</td>
+                  <td>{p.oxygen_saturation ?? "—"}</td>
+                  <td>{p.temperature ?? "—"}</td>
                   <td>{p.bmi ?? "—"}</td>
                   <td><span className={RISK_BADGE[p.disease_risk]||"badge"}>{p.disease_risk}</span></td>
                 </tr>
@@ -624,7 +631,7 @@ function SectionAnalytics() {
                 <table>
                   <thead>
                     <tr>
-                      <th>ID</th><th>Paciente</th><th>Edad</th><th>Sexo</th><th>Glucosa</th><th>IMC</th><th>Riesgo</th>
+                      <th>ID</th><th>Paciente</th><th>Edad</th><th>Sexo</th><th>P. Sistólica</th><th>P. Diastólica</th><th>Glucosa</th><th>Colesterol</th><th>Sat. O₂</th><th>IMC</th><th>Riesgo</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -634,7 +641,11 @@ function SectionAnalytics() {
                         <td className="cell-name">{p.first_name} {p.last_name}</td>
                         <td>{p.age} años</td>
                         <td><span className="b-sex">{p.sex==="M"?"Masc":"Fem"}</span></td>
+                        <td>{p.systolic_pressure ?? "—"}</td>
+                        <td>{p.diastolic_pressure ?? "—"}</td>
                         <td>{p.glucose ?? "—"}</td>
+                        <td>{p.cholesterol ?? "—"}</td>
+                        <td>{p.oxygen_saturation ?? "—"}</td>
                         <td>{p.bmi ?? "—"}</td>
                         <td><span className={RISK_BADGE[p.disease_risk]||"badge"}>{p.disease_risk}</span></td>
                       </tr>
@@ -954,10 +965,16 @@ function SectionReportes() {
         ) : (
           <div className="report-print-area" style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(180px,1fr))",gap:10}}>
             {[
-              {label:"Total pacientes",    val:reporte?.total_patients,    color:"blue"},
-              {label:"Pacientes críticos", val:reporte?.critical_patients, color:"red"},
-              {label:"Glucosa promedio",   val:`${reporte?.average_glucose} mg/dL`, color:"purple"},
-              {label:"IMC promedio",       val:reporte?.average_bmi,       color:"teal"},
+              {label:"Total pacientes",      val:reporte?.total_patients,          color:"blue"},
+              {label:"Pacientes críticos",   val:reporte?.critical_patients,       color:"red"},
+              {label:"Glucosa promedio",     val:`${reporte?.average_glucose} mg/dL`, color:"purple"},
+              {label:"IMC promedio",         val:reporte?.average_bmi,             color:"teal"},
+              {label:"Presión sistólica",    val:reporte?.average_systolic,        color:"red"},
+              {label:"Presión diastólica",   val:reporte?.average_diastolic,       color:"amber"},
+              {label:"Frec. cardíaca",       val:reporte?.average_heart_rate,      color:"cyan"},
+              {label:"Colesterol promedio",  val:reporte?.average_cholesterol,     color:"purple"},
+              {label:"Saturación O₂",        val:reporte?.average_oxygen_sat,      color:"teal"},
+              {label:"Temperatura promedio", val:reporte?.average_temperature,     color:"blue"},
             ].map((r,i) => (
               <div key={i} className={`kpi-card ${r.color}`}>
                 <div className="kpi-value">{typeof r.val === "number" ? r.val?.toLocaleString() : r.val}</div>
