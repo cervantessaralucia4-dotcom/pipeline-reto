@@ -4,9 +4,12 @@ import statistics
 from drf_spectacular.utils import extend_schema
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
+from django.http import HttpResponse
 from authentication.permissions import IsAnalista, IsMedicoOrAnalista
 from patients.models import Patient
 from patients.serializers import PatientSerializer
+import csv
+import io
 
 
 @extend_schema(tags=['Analytics'], summary='Estadística descriptiva',
@@ -62,7 +65,10 @@ def estadisticas_descriptivas(request):
 def kpis_medicos(request):
     kpis = Patient.objects.aggregate(
         total=Count('id'),
-        hipertensos=Count('id', filter=Q(systolic_pressure__gt=140)),
+        hipertensos=Count('id', filter=Q(systolic_pressure__gte=140) | Q(diastolic_pressure__gte=90)),
+        normotensos=Count('id', filter=Q(systolic_pressure__lt=120) & Q(diastolic_pressure__lt=80)),
+        prehipertensos=Count('id', filter=(Q(systolic_pressure__gte=120) & Q(systolic_pressure__lt=140)) |
+                             (Q(diastolic_pressure__gte=80) & Q(diastolic_pressure__lt=90))),
         diabeticos=Count('id', filter=Q(glucose__gt=126)),
         fumadores=Count('id', filter=Q(smoker=True)),
         con_antec=Count('id', filter=Q(family_history=True)),
@@ -84,8 +90,10 @@ def kpis_medicos(request):
     
     return Response({
         'total_pacientes': total,
-        'hipertensos':     {'cantidad': kpis['hipertensos'], 'porcentaje': pct(kpis['hipertensos'])},
-        'diabeticos':      {'cantidad': kpis['diabeticos'],  'porcentaje': pct(kpis['diabeticos'])},
+        'hipertensos':     {'cantidad': kpis['hipertensos'],     'porcentaje': pct(kpis['hipertensos'])},
+        'normotensos':     {'cantidad': kpis['normotensos'],     'porcentaje': pct(kpis['normotensos'])},
+        'prehipertensos':  {'cantidad': kpis['prehipertensos'],  'porcentaje': pct(kpis['prehipertensos'])},
+        'diabeticos':      {'cantidad': kpis['diabeticos'],      'porcentaje': pct(kpis['diabeticos'])},
         'fumadores':       {'cantidad': kpis['fumadores'],   'porcentaje': pct(kpis['fumadores'])},
         'con_antecedentes':{'cantidad': kpis['con_antec'],   'porcentaje': pct(kpis['con_antec'])},
         'alcoholismo':     {'cantidad': kpis['alcohol'],     'porcentaje': pct(kpis['alcohol'])},
@@ -149,7 +157,10 @@ def pacientes_criticos(request):
 
 
 FILTROS_CONDICION = {
-    'hipertensos':      Q(systolic_pressure__gt=140),
+    'hipertensos':      Q(systolic_pressure__gte=140) | Q(diastolic_pressure__gte=90),
+    'normotensos':      Q(systolic_pressure__lt=120) & Q(diastolic_pressure__lt=80),
+    'prehipertensos':   Q(systolic_pressure__gte=120, systolic_pressure__lt=140) |
+                        Q(diastolic_pressure__gte=80, diastolic_pressure__lt=90),
     'diabeticos':       Q(glucose__gt=126),
     'fumadores':        Q(smoker=True),
     'con_antecedentes': Q(family_history=True),
@@ -160,6 +171,8 @@ FILTROS_CONDICION = {
 
 FILTROS_ETIQUETA = {
     'hipertensos':      'Hipertensos',
+    'normotensos':      'Normotensos',
+    'prehipertensos':   'Prehipertensos',
     'diabeticos':       'Diabéticos',
     'fumadores':        'Fumadores',
     'con_antecedentes': 'Con antecedentes',
@@ -187,3 +200,101 @@ def pacientes_por_filtro(request):
         'total': pacientes.count(),
         'pacientes': serializer.data,
     })
+
+
+# ── EXPORTAR CSV POR FILTRO ────────────────────────────────────
+@extend_schema(tags=['Analytics'], summary='Exportar filtro a CSV',
+               description='Descarga CSV con pacientes de un filtro específico.')
+@api_view(['GET'])
+@permission_classes([IsMedicoOrAnalista])
+def export_filtro_csv(request):
+    filtro = request.query_params.get('filtro', '')
+    condicion = FILTROS_CONDICION.get(filtro)
+    etiqueta = FILTROS_ETIQUETA.get(filtro, filtro)
+    if not condicion:
+        return HttpResponse('Filtro inválido', status=400)
+
+    pacientes = Patient.objects.filter(condicion).order_by('id')
+    response = HttpResponse(content_type='text/csv; charset=utf-8-sig')
+    response['Content-Disposition'] = f'attachment; filename="{filtro}.csv"'
+    response.write('\ufeff')
+    writer = csv.writer(response)
+    writer.writerow(['ID', 'Nombre', 'Apellido', 'Edad', 'Sexo', 'Peso', 'Altura',
+                     'IMC', 'Presión Sistólica', 'Presión Diastólica',
+                     'Frecuencia Cardíaca', 'Glucosa', 'Colesterol',
+                     'Saturación O₂', 'Temperatura', 'Antecedentes Familiares',
+                     'Fumador', 'Consumo Alcohol', 'Actividad Física',
+                     'Diagnóstico Preliminar', 'Riesgo', 'Fecha Consulta'])
+    campos = ['id', 'first_name', 'last_name', 'age', 'sex', 'weight', 'height',
+              'bmi', 'systolic_pressure', 'diastolic_pressure', 'heart_rate',
+              'glucose', 'cholesterol', 'oxygen_saturation', 'temperature',
+              'family_history', 'smoker', 'alcohol_consumption', 'physical_activity',
+              'preliminary_diagnosis', 'disease_risk', 'consultation_date']
+    for p in pacientes.values_list(*campos):
+        writer.writerow(p)
+    return response
+
+
+# ── EXPORTAR PDF POR FILTRO ────────────────────────────────────
+@extend_schema(tags=['Analytics'], summary='Exportar filtro a PDF',
+               description='Descarga PDF con pacientes de un filtro específico.')
+@api_view(['GET'])
+@permission_classes([IsMedicoOrAnalista])
+def export_filtro_pdf(request):
+    from reportlab.lib.pagesizes import A4, landscape
+    from reportlab.lib import colors
+    from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+    from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle
+    from reportlab.lib.units import mm
+    from reportlab.lib.enums import TA_CENTER
+
+    filtro = request.query_params.get('filtro', '')
+    condicion = FILTROS_CONDICION.get(filtro)
+    etiqueta = FILTROS_ETIQUETA.get(filtro, filtro)
+    if not condicion:
+        return HttpResponse('Filtro inválido', status=400)
+
+    buffer = io.BytesIO()
+    doc = SimpleDocTemplate(buffer, pagesize=landscape(A4),
+                            topMargin=12*mm, bottomMargin=12*mm,
+                            leftMargin=8*mm, rightMargin=8*mm)
+    styles = getSampleStyleSheet()
+    elements = []
+
+    title_style = ParagraphStyle('Title2', parent=styles['Title'],
+                                  fontSize=16, spaceAfter=4, textColor=colors.HexColor('#1F4E79'))
+    elements.append(Paragraph(f'Pacientes: {etiqueta}', title_style))
+    elements.append(Spacer(1, 3*mm))
+
+    pacientes = Patient.objects.filter(condicion).order_by('id')
+    data = [['ID', 'Nombre', 'Edad', 'Sexo', 'P. Sist', 'P. Diast',
+             'FC', 'Glucosa', 'Colesterol', 'Sat O₂', 'Temp', 'IMC', 'Riesgo']]
+    for p in pacientes:
+        data.append([
+            str(p.id), f"{p.first_name} {p.last_name}", str(p.age),
+            p.sex, str(p.systolic_pressure or ''), str(p.diastolic_pressure or ''),
+            str(p.heart_rate or ''), str(p.glucose or ''), str(p.cholesterol or ''),
+            str(p.oxygen_saturation or ''), str(p.temperature or ''),
+            str(p.bmi or ''), p.disease_risk
+        ])
+
+    col_widths = [25, 80, 25, 25, 30, 30, 28, 35, 35, 30, 28, 28, 40]
+    t = Table(data, colWidths=col_widths, repeatRows=1)
+    t.setStyle(TableStyle([
+        ('BACKGROUND', (0, 0), (-1, 0), colors.HexColor('#1F4E79')),
+        ('TEXTCOLOR', (0, 0), (-1, 0), colors.white),
+        ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+        ('FONTSIZE', (0, 0), (-1, -1), 7),
+        ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
+        ('GRID', (0, 0), (-1, -1), 0.5, colors.HexColor('#CCCCCC')),
+        ('ROWBACKGROUNDS', (0, 1), (-1, -1), [colors.white, colors.HexColor('#F2F7FB')]),
+        ('FONTSIZE', (0, 1), (-1, -1), 6.5),
+    ]))
+    elements.append(t)
+
+    doc.build(elements)
+    pdf = buffer.getvalue()
+    buffer.close()
+    response = HttpResponse(pdf, content_type='application/pdf')
+    response['Content-Disposition'] = f'attachment; filename="{filtro}.pdf"'
+    return response

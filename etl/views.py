@@ -1,5 +1,6 @@
 from datetime import datetime, timezone
 import pandas as pd
+import numpy as np
 from drf_spectacular.utils import extend_schema
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
@@ -111,3 +112,125 @@ def etl_detalle(request, pk):
     except ETLLog.DoesNotExist:
         return Response({'error': 'Log no encontrado.'}, status=status.HTTP_404_NOT_FOUND)
     return Response(ETLLogSerializer(log).data)
+
+
+# ── REPORTE DE CALIDAD DE DATOS ────────────────────────────────
+@extend_schema(
+    tags=['ETL'],
+    summary='Reporte de calidad de datos del dataset original',
+    description=(
+        'Analiza el dataset original y muestra qué valores no numéricos o atípicos '
+        'se encontraron en cada columna clínica, permitiendo al médico verificar '
+        'que las correcciones del ETL fueron adecuadas.'
+    ),
+)
+@api_view(['GET'])
+@permission_classes([IsMedicoOrAnalista])
+def data_quality_report(request):
+    archivo = request.query_params.get('archivo', 'datasets/dataset_clinico_etl_1800_registros.xlsx')
+    try:
+        if archivo.endswith('.xlsx') or archivo.endswith('.xls'):
+            df = pd.read_excel(archivo)
+        else:
+            df = pd.read_csv(archivo)
+    except Exception as e:
+        return Response({'error': f'No se pudo leer el archivo: {e}'}, status=400)
+
+    columnas_clinicas = [
+        'edad', 'peso', 'altura', 'IMC',
+        'presión_sistólica', 'presión_diastólica',
+        'frecuencia_cardiaca', 'glucosa', 'colesterol',
+        'saturación_oxígeno', 'temperatura',
+    ]
+
+    reporte = {
+        'total_registros': len(df),
+        'archivo': archivo,
+        'columnas': [],
+        'resumen': {
+            'valores_no_numericos': 0,
+            'valores_nulos': 0,
+            'valores_fuera_rango': 0,
+        },
+    }
+
+    rangos_clinicos = {
+        'presión_sistólica':      (60, 250),
+        'presión_diastólica':     (30, 150),
+        'frecuencia_cardiaca':    (30, 220),
+        'glucosa':                (20, 600),
+        'colesterol':             (50, 500),
+        'saturación_oxígeno':     (50, 100),
+        'temperatura':            (34, 42),
+        'peso':                   (30, 300),
+        'edad':                   (0, 120),
+        'IMC':                    (10, 60),
+        'altura':                 (1.0, 2.5),
+    }
+
+    total_no_numericos = 0
+    total_nulos = 0
+    total_fuera_rango = 0
+
+    for col in columnas_clinicas:
+        if col not in df.columns:
+            continue
+
+        original = df[col].copy()
+        valores_originales = original.dropna().tolist()
+
+        # Detectar valores no numéricos (texto)
+        numericos = pd.to_numeric(original, errors='coerce')
+        mask_no_numerico = original.notna() & numericos.isna()
+        valores_texto = original[mask_no_numerico].unique().tolist()
+        count_no_numericos = int(mask_no_numerico.sum())
+
+        # Contar nulos originales
+        count_nulos = int(original.isna().sum())
+
+        # Valores fuera de rango (sobre los que sí son numéricos)
+        rango = rangos_clinicos.get(col)
+        count_fuera_rango = 0
+        valores_fuera_rango = []
+        if rango:
+            mask_fr = (numericos.notna()) & ((numericos < rango[0]) | (numericos > rango[1]))
+            count_fuera_rango = int(mask_fr.sum())
+            if count_fuera_rango > 0:
+                vals = numericos[mask_fr].dropna().unique().tolist()
+                valores_fuera_rango = [round(float(v), 2) for v in vals[:10]]
+
+        total_no_numericos += count_no_numericos
+        total_nulos += count_nulos
+        total_fuera_rango += count_fuera_rango
+
+        # Mostrar ejemplos de valores no numéricos con contexto
+        ejemplos_texto = []
+        if count_no_numericos > 0:
+            idxs = original[mask_no_numerico].index[:5]
+            for idx in idxs:
+                row_data = df.loc[idx]
+                ejemplos_texto.append({
+                    'fila': int(idx) + 2,
+                    'valor_original': str(original[idx]),
+                    'paciente': f"{row_data.get('nombres', '')} {row_data.get('apellidos', '')}",
+                })
+
+        col_info = {
+            'nombre': col.replace('_', ' ').replace('presión', 'Presión').title(),
+            'columna': col,
+            'valores_no_numericos': count_no_numericos,
+            'valores_texto_encontrados': [str(v) for v in valores_texto],
+            'ejemplos': ejemplos_texto,
+            'valores_nulos': count_nulos,
+            'valores_fuera_rango': count_fuera_rango,
+            'ejemplos_fuera_rango': valores_fuera_rango,
+            'rango_esperado': f"{rangos_clinicos.get(col, ('N/A', 'N/A'))[0]} - {rangos_clinicos.get(col, ('N/A', 'N/A'))[1]}" if col in rangos_clinicos else 'N/A',
+        }
+        reporte['columnas'].append(col_info)
+
+    reporte['resumen']['valores_no_numericos'] = total_no_numericos
+    reporte['resumen']['valores_nulos'] = total_nulos
+    reporte['resumen']['valores_fuera_rango'] = total_fuera_rango
+    reporte['resumen']['total_anomalias'] = total_no_numericos + total_nulos + total_fuera_rango
+
+    return Response(reporte)

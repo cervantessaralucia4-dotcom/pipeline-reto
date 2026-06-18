@@ -213,6 +213,12 @@ tbody tr:last-child td { border-bottom:none; }
 .kpi-med-val { font-size:22px; font-weight:700; color:var(--text); letter-spacing:-.02em; }
 .kpi-med-pct { font-size:12px; color:var(--text-m); }
 .kpi-med-lbl { font-size:12px; color:var(--text-m); }
+.kpi-med-actions { display:flex; gap:6px; margin-top:4px; }
+.kpi-med-actions .btn-xs { padding:2px 8px; font-size:10px; border-radius:4px; background:var(--bg); border:1px solid var(--border); color:var(--text-m); cursor:pointer; font-family:inherit; transition:all .2s; }
+.kpi-med-actions .btn-xs:hover { border-color:var(--primary); color:var(--primary); background:rgba(59,130,246,0.08); }
+.kpi-med-actions .btn-xs:disabled { opacity:0.5; cursor:default; }
+.kpi-med-card.c8::before{background:linear-gradient(90deg,#f97316,#fb923c)}
+.kpi-med-card.c9::before{background:linear-gradient(90deg,#06b6d4,#22d3ee)}
 .seg-row { display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px; }
 .progress-bar-wrap { display:flex; flex-direction:column; gap:10px; }
 .pb-row { display:flex; flex-direction:column; gap:4px; }

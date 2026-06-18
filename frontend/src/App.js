@@ -406,11 +406,8 @@ function SectionPacientes() {
           <div className="pagination">
             <span className="pag-info">{safePage*PAGE_SIZE+1}–{Math.min((safePage+1)*PAGE_SIZE,filtered.length)} de {filtered.length}</span>
             <div className="pag-btns">
-              <button className="pag-btn" disabled={safePage===0} onClick={()=>setPage(safePage-1)}>‹</button>
-              {Array.from({length:totalPages},(_,i) => (
-                <button key={i} className={`pag-btn ${i===safePage?"active":""}`} onClick={()=>setPage(i)}>{i+1}</button>
-              ))}
-              <button className="pag-btn" disabled={safePage>=totalPages-1} onClick={()=>setPage(safePage+1)}>›</button>
+              <button className="pag-btn" disabled={safePage===0} onClick={()=>setPage(safePage-1)}>Anterior</button>
+              <button className="pag-btn" disabled={safePage>=totalPages-1} onClick={()=>setPage(safePage+1)}>Siguiente</button>
             </div>
           </div>
         )}
@@ -428,6 +425,8 @@ function SectionETL() {
   const [error, setError]       = useState("");
   const [historial, setHistorial] = useState([]);
   const [hLoading, setHLoading] = useState(true);
+  const [calidad, setCalidad]     = useState(null);
+  const [calidadLoading, setCalidadLoading] = useState(false);
 
   const fetchHistorial = useCallback(async () => {
     setHLoading(true);
@@ -519,6 +518,87 @@ function SectionETL() {
           </div>
         </div>
       </div>
+
+      {/* Reporte de Calidad de Datos */}
+      <div>
+        <p className="sec-label">Calidad de datos del dataset original</p>
+        <div className="card" style={{padding:20}}>
+          <p style={{fontSize:12,color:"#8596b3",marginBottom:14}}>
+            Analiza el archivo Excel original para identificar valores no numéricos,
+            nulos y fuera de rango antes de la limpieza del ETL.
+          </p>
+          <button className="btn btn-ghost" onClick={async () => {
+            setCalidadLoading(true); setCalidad(null);
+            try {
+              const { data } = await axios.get(`${API}/etl/calidad/`, { headers: authHeaders() });
+              setCalidad(data);
+            } catch { setError("Error al cargar reporte de calidad."); }
+            finally { setCalidadLoading(false); }
+          }} disabled={calidadLoading}>
+            <FiFileText size={13}/> {calidadLoading ? "Analizando…" : "Generar reporte de calidad"}
+          </button>
+
+          {calidad && (
+            <div style={{marginTop:16}}>
+              <div className="etl-stats-grid">
+                <div className="etl-stat"><div className="etl-stat-val" style={{color:"#3b82f6"}}>{calidad.total_registros?.toLocaleString()}</div><div className="etl-stat-lbl">Total registros</div></div>
+                <div className="etl-stat"><div className="etl-stat-val" style={{color:"#ef4444"}}>{calidad.resumen?.valores_no_numericos?.toLocaleString()}</div><div className="etl-stat-lbl">Valores no numéricos</div></div>
+                <div className="etl-stat"><div className="etl-stat-val" style={{color:"#f59e0b"}}>{calidad.resumen?.valores_nulos?.toLocaleString()}</div><div className="etl-stat-lbl">Valores nulos</div></div>
+                <div className="etl-stat"><div className="etl-stat-val" style={{color:"#8b5cf6"}}>{calidad.resumen?.valores_fuera_rango?.toLocaleString()}</div><div className="etl-stat-lbl">Fuera de rango</div></div>
+              </div>
+
+              {calidad.columnas?.some(c => c.valores_no_numericos > 0 || c.valores_nulos > 0 || c.valores_fuera_rango > 0) && (
+                <div className="table-wrap" style={{marginTop:14}}>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Columna</th>
+                        <th>Rango esperado</th>
+                        <th>No numéricos</th>
+                        <th>Valores texto</th>
+                        <th>Nulos</th>
+                        <th>Fuera rango</th>
+                        <th>Ejemplos</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {calidad.columnas?.filter(c => c.valores_no_numericos > 0 || c.valores_nulos > 0 || c.valores_fuera_rango > 0).map((col,i) => (
+                        <tr key={i}>
+                          <td><strong>{col.nombre}</strong></td>
+                          <td style={{fontSize:11}}>{col.rango_esperado}</td>
+                          <td style={{color:col.valores_no_numericos > 0 ? "#ef4444" : "#10b77f"}}>{col.valores_no_numericos}</td>
+                          <td style={{fontSize:11,maxWidth:140}}>{col.valores_texto_encontrados?.join(", ") || "—"}</td>
+                          <td style={{color:col.valores_nulos > 0 ? "#f59e0b" : "#10b77f"}}>{col.valores_nulos}</td>
+                          <td style={{color:col.valores_fuera_rango > 0 ? "#8b5cf6" : "#10b77f"}}>{col.valores_fuera_rango}</td>
+                          <td style={{fontSize:11,maxWidth:200}}>
+                            {col.ejemplos?.length > 0 ? (
+                              <div style={{display:"flex",flexDirection:"column",gap:2}}>
+                                {col.ejemplos.slice(0,3).map((ex,j) => (
+                                  <div key={j} style={{fontSize:10,color:"#ef4444"}}>
+                                    Fila {ex.fila}: "<strong>{ex.valor_original}</strong>" ({ex.paciente})
+                                  </div>
+                                ))}
+                              </div>
+                            ) : col.valores_fuera_rango > 0 ? (
+                              col.ejemplos_fuera_rango?.slice(0,3).join(", ")
+                            ) : "—"}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              )}
+              <p style={{fontSize:11,color:"#8596b3",marginTop:8}}>
+                Total de anomalías detectadas: <strong>{calidad.resumen?.total_anomalias?.toLocaleString()}</strong>
+                {calidad.resumen?.total_anomalias > 0 && (
+                  <span style={{color:"#10b77f"}}> — Corregidas por el ETL antes de cargar a la BD</span>
+                )}
+              </p>
+            </div>
+          )}
+        </div>
+      </div>
     </>
   );
 }
@@ -538,6 +618,7 @@ function SectionAnalytics() {
   // eslint-disable-next-line no-unused-vars
   const [filtroError, setFiltroError] = useState("");
   const [filtroSearch, setFiltroSearch] = useState("");
+  const [exportando, setExportando] = useState(null);
 
   useEffect(() => {
     const h = authHeaders();
@@ -569,14 +650,31 @@ function SectionAnalytics() {
 
   if (loading) return <div style={{color:"#4a607e",padding:24}}>Cargando analítica…</div>;
 
+  const exportFiltro = async (filtro, formato) => {
+    setExportando(`${filtro}-${formato}`);
+    try {
+      const response = await axios.get(`${API}/analytics/export/${formato}/?filtro=${filtro}`, {
+        headers: authHeaders(),
+        responseType: 'blob',
+      });
+      const ext = formato === 'csv' ? 'csv' : 'pdf';
+      const mime = formato === 'csv' ? 'text/csv;charset=utf-8-sig' : 'application/pdf';
+      const url = window.URL.createObjectURL(new Blob([response.data], { type: mime }));
+      const link = document.createElement('a'); link.href = url; link.download = `${filtro}.${ext}`; link.click();
+      window.URL.revokeObjectURL(url);
+    } catch {} finally { setExportando(null); }
+  };
+
   const kpiMed = [
-    {label:"Hipertensos",     filtro:"hipertensos",      cant:kpis?.hipertensos?.cantidad,    pct:kpis?.hipertensos?.porcentaje,    c:"c1"},
-    {label:"Diabéticos",      filtro:"diabeticos",       cant:kpis?.diabeticos?.cantidad,     pct:kpis?.diabeticos?.porcentaje,     c:"c2"},
-    {label:"Fumadores",       filtro:"fumadores",        cant:kpis?.fumadores?.cantidad,      pct:kpis?.fumadores?.porcentaje,      c:"c3"},
-    {label:"Con antecedentes",filtro:"con_antecedentes", cant:kpis?.con_antecedentes?.cantidad,pct:kpis?.con_antecedentes?.porcentaje,c:"c4"},
-    {label:"Alcoholismo",     filtro:"alcoholismo",      cant:kpis?.alcoholismo?.cantidad,    pct:kpis?.alcoholismo?.porcentaje,    c:"c5"},
-    {label:"Obesidad",        filtro:"obesidad",         cant:kpis?.obesidad?.cantidad,       pct:kpis?.obesidad?.porcentaje,       c:"c6"},
-    {label:"Saturación baja", filtro:"saturacion_baja",  cant:kpis?.saturacion_baja?.cantidad,pct:kpis?.saturacion_baja?.porcentaje,c:"c7"},
+    {label:"Hipertensos",     filtro:"hipertensos",      cant:kpis?.hipertensos?.cantidad,      pct:kpis?.hipertensos?.porcentaje,      c:"c1"},
+    {label:"Normotensos",     filtro:"normotensos",      cant:kpis?.normotensos?.cantidad,      pct:kpis?.normotensos?.porcentaje,      c:"c2"},
+    {label:"Prehipertensos",  filtro:"prehipertensos",   cant:kpis?.prehipertensos?.cantidad,   pct:kpis?.prehipertensos?.porcentaje,   c:"c3"},
+    {label:"Diabéticos",      filtro:"diabeticos",       cant:kpis?.diabeticos?.cantidad,       pct:kpis?.diabeticos?.porcentaje,       c:"c4"},
+    {label:"Fumadores",       filtro:"fumadores",        cant:kpis?.fumadores?.cantidad,        pct:kpis?.fumadores?.porcentaje,        c:"c5"},
+    {label:"Con antecedentes",filtro:"con_antecedentes", cant:kpis?.con_antecedentes?.cantidad, pct:kpis?.con_antecedentes?.porcentaje, c:"c6"},
+    {label:"Alcoholismo",     filtro:"alcoholismo",      cant:kpis?.alcoholismo?.cantidad,      pct:kpis?.alcoholismo?.porcentaje,      c:"c7"},
+    {label:"Obesidad",        filtro:"obesidad",         cant:kpis?.obesidad?.cantidad,         pct:kpis?.obesidad?.porcentaje,         c:"c8"},
+    {label:"Saturación baja", filtro:"saturacion_baja",  cant:kpis?.saturacion_baja?.cantidad,  pct:kpis?.saturacion_baja?.porcentaje,  c:"c9"},
   ];
 
   const filtroFiltrados = filtroPacientes.filter(p => {
@@ -585,7 +683,7 @@ function SectionAnalytics() {
       p.disease_risk?.toLowerCase().includes(q) || String(p.id).includes(q);
   });
 
-  const statsKeys = ["glucosa","imc","edad","presion_sistolica","frecuencia_cardiaca"];
+  const statsKeys = ["glucosa","imc","edad","presion_sistolica","presion_diastolica","frecuencia_cardiaca","colesterol","temperatura","saturacion_oxigeno"];
 
   const totalRiesgo = seg?.por_riesgo?.reduce((s,r) => s+r.cantidad, 0) || 1;
 
@@ -596,10 +694,22 @@ function SectionAnalytics() {
         <p className="sec-label">KPIs médicos — {kpis?.total_pacientes?.toLocaleString()} pacientes</p>
         <div className="kpi-med-grid">
           {kpiMed.map((k,i) => (
-            <div key={i} className={`kpi-med-card ${k.c}`} style={{cursor:"pointer"}} onClick={() => abrirFiltro(k.filtro)} title="Ver pacientes">
-              <div className="kpi-med-val">{k.cant?.toLocaleString() ?? "—"}</div>
-              <div className="kpi-med-pct">{k.pct}% del total</div>
-              <div className="kpi-med-lbl">{k.label}</div>
+            <div key={i} className={`kpi-med-card ${k.c}`}>
+              <div style={{cursor:"pointer"}} onClick={() => abrirFiltro(k.filtro)} title="Ver pacientes">
+                <div className="kpi-med-val">{k.cant?.toLocaleString() ?? "—"}</div>
+                <div className="kpi-med-pct">{k.pct}% del total</div>
+                <div className="kpi-med-lbl">{k.label}</div>
+              </div>
+              <div className="kpi-med-actions">
+                <button className="btn btn-xs" onClick={(e) => { e.stopPropagation(); exportFiltro(k.filtro, 'csv'); }}
+                  disabled={exportando === `${k.filtro}-csv`} title="Exportar CSV">
+                  CSV
+                </button>
+                <button className="btn btn-xs" onClick={(e) => { e.stopPropagation(); exportFiltro(k.filtro, 'pdf'); }}
+                  disabled={exportando === `${k.filtro}-pdf`} title="Exportar PDF">
+                  PDF
+                </button>
+              </div>
             </div>
           ))}
         </div>
@@ -929,6 +1039,8 @@ function SectionReportes() {
   const [loading, setLoading] = useState(true);
   const [csvError, setCsvError] = useState("");
   const [csvLoading, setCsvLoading] = useState(false);
+  const [excelLoading, setExcelLoading] = useState(false);
+  const [pdfLoading, setPdfLoading] = useState(false);
 
   useEffect(() => {
     axios.get(`${API}/reportes/`, { headers: authHeaders() })
@@ -952,8 +1064,34 @@ function SectionReportes() {
     } finally { setCsvLoading(false); }
   };
 
-  const exportPDF = () => {
-    window.print();
+  const exportExcel = async () => {
+    setExcelLoading(true);
+    try {
+      const response = await axios.get(`${API}/patients/export/excel/`, {
+        headers: authHeaders(),
+        responseType: 'blob',
+      });
+      const url = window.URL.createObjectURL(new Blob([response.data]));
+      const link = document.createElement('a'); link.href = url; link.download = 'reporte_pacientes.xlsx'; link.click();
+      window.URL.revokeObjectURL(url);
+    } catch {
+      setCsvError("Error al exportar Excel.");
+    } finally { setExcelLoading(false); }
+  };
+
+  const exportPDF = async () => {
+    setPdfLoading(true);
+    try {
+      const response = await axios.get(`${API}/patients/export/pdf/`, {
+        headers: authHeaders(),
+        responseType: 'blob',
+      });
+      const url = window.URL.createObjectURL(new Blob([response.data], { type: 'application/pdf' }));
+      const link = document.createElement('a'); link.href = url; link.download = 'reporte_pacientes.pdf'; link.click();
+      window.URL.revokeObjectURL(url);
+    } catch {
+      setCsvError("Error al exportar PDF.");
+    } finally { setPdfLoading(false); }
   };
 
   return (
@@ -994,10 +1132,13 @@ function SectionReportes() {
           {csvError && <div className="alert alert-error" style={{fontSize:12}}>{csvError}</div>}
           <div style={{display:"flex",gap:10,flexWrap:"wrap"}}>
             <button className="btn btn-ghost" onClick={exportCSV} disabled={csvLoading}>
-              <FiDownload size={13}/> {csvLoading ? "Exportando…" : "Exportar CSV"}
+              <FiDownload size={13}/> {csvLoading ? "Exportando…" : "CSV"}
             </button>
-            <button className="btn btn-primary" onClick={exportPDF}>
-              <FiFileText size={13}/> Exportar Reporte PDF / Imprimir
+            <button className="btn btn-ghost" onClick={exportExcel} disabled={excelLoading}>
+              <FiDownload size={13}/> {excelLoading ? "Exportando…" : "Excel"}
+            </button>
+            <button className="btn btn-primary" onClick={exportPDF} disabled={pdfLoading}>
+              <FiFileText size={13}/> {pdfLoading ? "Exportando…" : "PDF"}
             </button>
           </div>
         </div>
